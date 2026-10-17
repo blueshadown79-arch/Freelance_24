@@ -1,0 +1,16 @@
+# Screenshots y pruebas locales
+screenshot_*.png
+*.log
+.taste-skill/
+.agents/
+capture_*.mjs
+debug_*.mjs
+take_screenshots.mjs
+
+# Archivos de empaquetado para subida directa
+dist/
+*.zip
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
