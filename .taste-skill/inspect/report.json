@@ -1,0 +1,1272 @@
+{
+ "url": "http://localhost:3000",
+ "at": "2026-10-17T19:36:27.139Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 6,
+   "filled": [
+    0.37,
+    0.59,
+    0.53,
+    0.78,
+    0.62,
+    0.7
+   ],
+   "motion": {
+    "elements": 21,
+    "css": 0,
+    "transitions": 21,
+    "scripted": 0,
+    "videos": 5,
+    "playingVideos": 1
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 4596,
+     "screens": 5.1,
+     "words": 374,
+     "img": 2,
+     "video": 5,
+     "canvas": 0,
+     "svg": 11,
+     "sections": 5,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 3,
+     "uiAbuse": false,
+     "realPictures": 3,
+     "videoCount": 3,
+     "uiPictures": 3,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": []
+    },
+    "hero": {
+     "text": "Videos que retienen. Páginas que venden.",
+     "words": 6,
+     "chars": 40,
+     "lines": 2,
+     "size": 68,
+     "vw": 4.7,
+     "font": "Bricolage Grotesque",
+     "weight": 800,
+     "tracking": -0.038,
+     "leading": 0.98,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.41,
+     "top": 191,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Videos que retienen. Páginas que venden.",
+     "words": 6,
+     "lines": 2,
+     "size": 68,
+     "font": "Bricolage Grotesque"
+    },
+    "headings": [
+     {
+      "text": "Videos que retienen. Páginas que venden.",
+      "words": 6,
+      "chars": 40,
+      "lines": 2,
+      "size": 68,
+      "vw": 4.7,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.038,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.41,
+      "top": 191,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Muestras en formato vertical",
+      "words": 4,
+      "chars": 28,
+      "lines": 1,
+      "size": 48,
+      "vw": 3.3,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.84,
+      "top": 732,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Tres servicios claros",
+      "words": 3,
+      "chars": 21,
+      "lines": 1,
+      "size": 48,
+      "vw": 3.3,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.84,
+      "top": 1814,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Casos reales de landing pages",
+      "words": 5,
+      "chars": 29,
+      "lines": 1,
+      "size": 48,
+      "vw": 3.3,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.84,
+      "top": 2383,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Sweet Factory",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 48,
+      "vw": 3.3,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.21,
+      "top": 2706,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Wiky Cosmética",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 48,
+      "vw": 3.3,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.24,
+      "top": 3349,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Sobre mí",
+      "words": 2,
+      "chars": 8,
+      "lines": 1,
+      "size": 48,
+      "vw": 3.3,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.13,
+      "top": 3986,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 7,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "General Sans",
+       "share": 0.88,
+       "mono": false
+      },
+      {
+       "family": "Bricolage Grotesque",
+       "share": 0.12,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      16,
+      19,
+      24,
+      48,
+      68
+     ],
+     "sizeCount": 5,
+     "notLoaded": [],
+     "body": {
+      "font": "General Sans",
+      "size": 19,
+      "leading": 1.58,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.4
+     },
+     "measureChars": 70,
+     "max": {
+      "size": 68,
+      "vw": 4.7,
+      "font": "Bricolage Grotesque",
+      "text": "Videos que retienen.Páginas que venden."
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.06,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#0c0b09",
+     "bodyBgHsl": {
+      "h": 40,
+      "s": 0.14,
+      "l": 0.04
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#161411",
+       "top": 2535,
+       "hsl": {
+        "h": 36,
+        "s": 0.13,
+        "l": 0.08
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#dcdad4",
+       "share": 0.55
+      },
+      {
+       "color": "#a39e93",
+       "share": 0.2
+      },
+      {
+       "color": "#f0efec",
+       "share": 0.18
+      },
+      {
+       "color": "#0c0b09",
+       "share": 0.05
+      },
+      {
+       "color": "#e2a84b",
+       "share": 0.03
+      }
+     ],
+     "button": {
+      "bg": "#e2a84b",
+      "hsl": {
+       "h": 37,
+       "s": 0.72,
+       "l": 0.59
+      },
+      "fg": "#0c0b09"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 14,
+     "inHero": 5,
+     "radius": 6,
+     "height": 48,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Saltar al contenido",
+      "Contactar",
+      "Contactar por WhatsApp",
+      "Ver muestras en video",
+      "WhatsApp"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 14,
+     "boxRadius": 8,
+     "squareMedia": 0,
+     "roundedMedia": 6,
+     "mediaRadius": 8,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "video",
+      "ratio": 0.12
+     }
+    ],
+    "nav": {
+     "links": 6,
+     "fixed": false,
+     "height": 84,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "bricolage grotesque",
+     "general sans"
+    ]
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 8,
+   "filled": [
+    0.4,
+    0.51,
+    0.54,
+    0.44,
+    0.71,
+    0.79,
+    0.79,
+    0.75
+   ],
+   "motion": {
+    "elements": 21,
+    "css": 0,
+    "transitions": 21,
+    "scripted": 0,
+    "videos": 5,
+    "playingVideos": 1
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 7933,
+     "screens": 7.7,
+     "words": 368,
+     "img": 2,
+     "video": 5,
+     "canvas": 0,
+     "svg": 11,
+     "sections": 5,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 3,
+     "uiAbuse": false,
+     "realPictures": 3,
+     "videoCount": 3,
+     "uiPictures": 3,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": []
+    },
+    "hero": {
+     "text": "Videos que retienen. Páginas que venden.",
+     "words": 6,
+     "chars": 40,
+     "lines": 2,
+     "size": 46.8,
+     "vw": 6.1,
+     "font": "Bricolage Grotesque",
+     "weight": 800,
+     "tracking": -0.038,
+     "leading": 0.98,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.55,
+     "top": 112,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Videos que retienen. Páginas que venden.",
+     "words": 6,
+     "lines": 2,
+     "size": 46.8,
+     "font": "Bricolage Grotesque"
+    },
+    "headings": [
+     {
+      "text": "Videos que retienen. Páginas que venden.",
+      "words": 6,
+      "chars": 40,
+      "lines": 2,
+      "size": 46.8,
+      "vw": 6.1,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.038,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.55,
+      "top": 112,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Muestras en formato vertical",
+      "words": 4,
+      "chars": 28,
+      "lines": 1,
+      "size": 38.5,
+      "vw": 5,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.93,
+      "top": 1070,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Tres servicios claros",
+      "words": 3,
+      "chars": 21,
+      "lines": 1,
+      "size": 38.5,
+      "vw": 5,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.93,
+      "top": 4098,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Casos reales de landing pages",
+      "words": 5,
+      "chars": 29,
+      "lines": 1,
+      "size": 38.5,
+      "vw": 5,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.93,
+      "top": 5023,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Sweet Factory",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 38.5,
+      "vw": 5,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.32,
+      "top": 5762,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Wiky Cosmética",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 38.5,
+      "vw": 5,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.36,
+      "top": 6653,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Sobre mí",
+      "words": 2,
+      "chars": 8,
+      "lines": 1,
+      "size": 38.5,
+      "vw": 5,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.2,
+      "top": 7403,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 7,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "General Sans",
+       "share": 0.87,
+       "mono": false
+      },
+      {
+       "family": "Bricolage Grotesque",
+       "share": 0.13,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      16,
+      18,
+      22,
+      39,
+      47
+     ],
+     "sizeCount": 5,
+     "notLoaded": [],
+     "body": {
+      "font": "General Sans",
+      "size": 17.9,
+      "leading": 1.58,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.4
+     },
+     "measureChars": 70,
+     "max": {
+      "size": 46.8,
+      "vw": 6.1,
+      "font": "Bricolage Grotesque",
+      "text": "Videos que retienen.Páginas que venden."
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.06,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#0c0b09",
+     "bodyBgHsl": {
+      "h": 40,
+      "s": 0.14,
+      "l": 0.04
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#050504",
+       "top": 1208,
+       "hsl": {
+        "h": 60,
+        "s": 0.11,
+        "l": 0.02
+       }
+      },
+      {
+       "color": "#161411",
+       "top": 5162,
+       "hsl": {
+        "h": 36,
+        "s": 0.13,
+        "l": 0.08
+       }
+      },
+      {
+       "color": "#0c0b09",
+       "top": 5186,
+       "hsl": {
+        "h": 40,
+        "s": 0.14,
+        "l": 0.04
+       }
+      },
+      {
+       "color": "#080706",
+       "top": 5228,
+       "hsl": {
+        "h": 30,
+        "s": 0.14,
+        "l": 0.03
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#dcdad4",
+       "share": 0.54
+      },
+      {
+       "color": "#a39e93",
+       "share": 0.21
+      },
+      {
+       "color": "#f0efec",
+       "share": 0.18
+      },
+      {
+       "color": "#0c0b09",
+       "share": 0.05
+      },
+      {
+       "color": "#e2a84b",
+       "share": 0.03
+      }
+     ],
+     "button": {
+      "bg": "#e2a84b",
+      "hsl": {
+       "h": 37,
+       "s": 0.72,
+       "l": 0.59
+      },
+      "fg": "#0c0b09"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 14,
+     "inHero": 5,
+     "radius": 6,
+     "height": 48,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Saltar al contenido",
+      "Contactar",
+      "Contactar por WhatsApp",
+      "Ver muestras en video",
+      "WhatsApp"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 14,
+     "boxRadius": 8,
+     "squareMedia": 0,
+     "roundedMedia": 6,
+     "mediaRadius": 8,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "video",
+      "ratio": 0.17
+     }
+    ],
+    "nav": {
+     "links": 2,
+     "fixed": false,
+     "height": 84,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "bricolage grotesque",
+     "general sans"
+    ]
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 9,
+   "filled": [
+    0.73,
+    0.76,
+    0.78,
+    0.76,
+    0.73,
+    0.67,
+    0.91,
+    0.85,
+    0.94
+   ],
+   "motion": {
+    "elements": 21,
+    "css": 0,
+    "transitions": 21,
+    "scripted": 0,
+    "videos": 5,
+    "playingVideos": 1
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 7505,
+     "screens": 8.9,
+     "words": 368,
+     "img": 2,
+     "video": 5,
+     "canvas": 0,
+     "svg": 11,
+     "sections": 5,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 3,
+     "uiAbuse": false,
+     "realPictures": 3,
+     "videoCount": 3,
+     "uiPictures": 3,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": []
+    },
+    "hero": {
+     "text": "Videos que retienen. Páginas que venden.",
+     "words": 6,
+     "chars": 40,
+     "lines": 2,
+     "size": 34.4,
+     "vw": 8.8,
+     "font": "Bricolage Grotesque",
+     "weight": 800,
+     "tracking": -0.038,
+     "leading": 0.98,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.81,
+     "top": 88,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Videos que retienen. Páginas que venden.",
+     "words": 6,
+     "lines": 2,
+     "size": 34.4,
+     "font": "Bricolage Grotesque"
+    },
+    "headings": [
+     {
+      "text": "Videos que retienen. Páginas que venden.",
+      "words": 6,
+      "chars": 40,
+      "lines": 2,
+      "size": 34.4,
+      "vw": 8.8,
+      "font": "Bricolage Grotesque",
+      "weight": 800,
+      "tracking": -0.038,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.81,
+      "top": 88,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Muestras en formato vertical",
+      "words": 4,
+      "chars": 28,
+      "lines": 2,
+      "size": 30.2,
+      "vw": 7.7,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.91,
+      "top": 1120,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Tres servicios claros",
+      "words": 3,
+      "chars": 21,
+      "lines": 1,
+      "size": 30.2,
+      "vw": 7.7,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.91,
+      "top": 3694,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Casos reales de landing pages",
+      "words": 5,
+      "chars": 29,
+      "lines": 2,
+      "size": 30.2,
+      "vw": 7.7,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.91,
+      "top": 4694,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Sweet Factory",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 30.2,
+      "vw": 7.7,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.5,
+      "top": 5215,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Wiky Cosmética",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 30.2,
+      "vw": 7.7,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.57,
+      "top": 5934,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Sobre mí",
+      "words": 2,
+      "chars": 8,
+      "lines": 1,
+      "size": 30.2,
+      "vw": 7.7,
+      "font": "Bricolage Grotesque",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.31,
+      "top": 6766,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 7,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "General Sans",
+       "share": 0.87,
+       "mono": false
+      },
+      {
+       "family": "Bricolage Grotesque",
+       "share": 0.13,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      16,
+      17,
+      20,
+      30,
+      34
+     ],
+     "sizeCount": 5,
+     "notLoaded": [],
+     "body": {
+      "font": "General Sans",
+      "size": 17,
+      "leading": 1.58,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 7.4
+     },
+     "measureChars": 35,
+     "max": {
+      "size": 34.4,
+      "vw": 8.8,
+      "font": "Bricolage Grotesque",
+      "text": "Videos que retienen.Páginas que venden."
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.06,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#0c0b09",
+     "bodyBgHsl": {
+      "h": 40,
+      "s": 0.14,
+      "l": 0.04
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#211e19",
+       "top": 533,
+       "hsl": {
+        "h": 37,
+        "s": 0.14,
+        "l": 0.11
+       }
+      },
+      {
+       "color": "#050504",
+       "top": 545,
+       "hsl": {
+        "h": 60,
+        "s": 0.11,
+        "l": 0.02
+       }
+      },
+      {
+       "color": "#161411",
+       "top": 4879,
+       "hsl": {
+        "h": 36,
+        "s": 0.13,
+        "l": 0.08
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#dcdad4",
+       "share": 0.54
+      },
+      {
+       "color": "#a39e93",
+       "share": 0.21
+      },
+      {
+       "color": "#f0efec",
+       "share": 0.18
+      },
+      {
+       "color": "#0c0b09",
+       "share": 0.05
+      },
+      {
+       "color": "#e2a84b",
+       "share": 0.03
+      }
+     ],
+     "button": {
+      "bg": "#e2a84b",
+      "hsl": {
+       "h": 37,
+       "s": 0.72,
+       "l": 0.59
+      },
+      "fg": "#0c0b09"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 14,
+     "inHero": 5,
+     "radius": 6,
+     "height": 48,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Saltar al contenido",
+      "Contactar",
+      "Contactar por WhatsApp",
+      "Ver muestras en video",
+      "WhatsApp"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 14,
+     "boxRadius": 8,
+     "squareMedia": 0,
+     "roundedMedia": 6,
+     "mediaRadius": 8,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "video",
+      "ratio": 0.25
+     }
+    ],
+    "nav": {
+     "links": 2,
+     "fixed": false,
+     "height": 72,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "bricolage grotesque",
+     "general sans"
+    ]
+   },
+   "consoleErrors": []
+  }
+ ],
+ "findings": [],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "C:\\Paginas web -2026\\06_Portafolio_Freelance_Fabricio\\.taste-skill\\inspect\\desktop-fold.jpg",
+   "pages": [
+    "C:\\Paginas web -2026\\06_Portafolio_Freelance_Fabricio\\.taste-skill\\inspect\\desktop-page-01.jpg",
+    "C:\\Paginas web -2026\\06_Portafolio_Freelance_Fabricio\\.taste-skill\\inspect\\desktop-page-02.jpg"
+   ]
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "C:\\Paginas web -2026\\06_Portafolio_Freelance_Fabricio\\.taste-skill\\inspect\\tablet-fold.jpg",
+   "pages": [
+    "C:\\Paginas web -2026\\06_Portafolio_Freelance_Fabricio\\.taste-skill\\inspect\\tablet-page-01.jpg",
+    "C:\\Paginas web -2026\\06_Portafolio_Freelance_Fabricio\\.taste-skill\\inspect\\tablet-page-02.jpg"
+   ]
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "C:\\Paginas web -2026\\06_Portafolio_Freelance_Fabricio\\.taste-skill\\inspect\\mobile-fold.jpg",
+   "pages": [
+    "C:\\Paginas web -2026\\06_Portafolio_Freelance_Fabricio\\.taste-skill\\inspect\\mobile-page-01.jpg",
+    "C:\\Paginas web -2026\\06_Portafolio_Freelance_Fabricio\\.taste-skill\\inspect\\mobile-page-02.jpg"
+   ]
+  }
+ ]
+}
