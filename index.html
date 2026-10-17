@@ -1,0 +1,1870 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fabricio Sotelo · Creative Studio — Video Ads & Landing Pages CRO</title>
+  <meta name="description" content="Estudio de creación audiovisual y desarrollo web de alta conversión. Video ads para retener audiencia y landing pages diseñadas para convertir visitas en ventas.">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ═══════════════════════════════════════════════════════════════════
+       1. VARIABLES DEL SISTEMA DE DISEÑO (SOBRIO, EDITORIAL & ELEGANTE)
+       ═══════════════════════════════════════════════════════════════════ */
+    :root {
+      --bg-page: #0a0c10;
+      --bg-surface-1: #11141d;
+      --bg-surface-2: #161a25;
+      --bg-surface-3: #1c2130;
+      --bg-glass-nav: rgba(14, 17, 24, 0.92);
+
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-medium: rgba(255, 255, 255, 0.14);
+      --border-focus: #10b981;
+
+      --ink-primary: #f4f5f8;
+      --ink-secondary: #9da4b4;
+      --ink-muted: #656e80;
+
+      --accent: #10b981;
+      --accent-hover: #0ea271;
+      --accent-soft: rgba(16, 185, 129, 0.12);
+
+      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-pill: 9999px;
+
+      --container-max: 1200px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-page);
+      color: var(--ink-primary);
+      text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-main);
+      font-size: 16px;
+      line-height: 1.65;
+      background-color: var(--bg-page);
+      color: var(--ink-primary);
+      min-height: 100vh;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      cursor: url("assets/cursor_monkey.png") 4 4,
+              url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M4 1 L7 20 L11 13 L20 10 Z' fill='white' stroke='%23000' stroke-width='1.2'/%3E%3C/svg%3E") 4 1,
+              auto !important;
+    }
+
+    a, button, input, select {
+      cursor: url("assets/cursor_monkey.png") 4 4, pointer !important;
+    }
+
+    /* Textura de fondo sutil (Cero degradados estridentes) */
+    .bg-grid-subtle {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.7;
+    }
+
+    .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       2. HEADER FLOTANTE FROSTED GLASS
+       ═══════════════════════════════════════════════════════════════════ */
+    .top-header {
+      position: sticky;
+      top: 16px;
+      z-index: 100;
+      margin-top: 14px;
+      margin-bottom: 40px;
+    }
+
+    .header-pill {
+      background: var(--bg-glass-nav);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-pill);
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand-logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--bg-surface-3);
+      border: 1px solid var(--border-medium);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.88rem;
+      color: var(--ink-primary);
+      flex-shrink: 0;
+    }
+
+    .brand-title {
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--ink-secondary);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: color 0.18s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--ink-primary);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .sfx-toggle-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--bg-surface-2);
+      border: 1px solid var(--border-medium);
+      color: var(--ink-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.18s ease;
+    }
+
+    .sfx-toggle-btn:hover {
+      background: var(--bg-surface-3);
+    }
+
+    .sfx-toggle-btn.is-muted svg {
+      opacity: 0.35;
+    }
+
+    .cta-nav {
+      height: 36px;
+      padding: 0 16px;
+      border-radius: var(--radius-pill);
+      background: var(--accent);
+      color: #021a13;
+      font-size: 0.84rem;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .cta-nav:hover {
+      background: var(--accent-hover);
+      color: #ffffff;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       3. HERO SECTION (EDITORIAL, SOBRIO Y DIRECTO)
+       ═══════════════════════════════════════════════════════════════════ */
+    .hero-section {
+      padding-top: 1.5rem;
+      padding-bottom: 3.5rem;
+    }
+
+    .hero-headline {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.035em;
+      margin-bottom: 20px;
+      max-width: 22ch;
+      color: var(--ink-primary);
+    }
+
+    .hero-lead {
+      font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+      color: var(--ink-secondary);
+      line-height: 1.65;
+      max-width: 62ch;
+      margin-bottom: 30px;
+    }
+
+    .hero-lead strong {
+      color: var(--ink-primary);
+      font-weight: 700;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .btn-primary {
+      height: 48px;
+      padding: 0 24px;
+      border-radius: var(--radius-pill);
+      background: var(--accent);
+      color: #021a13;
+      font-size: 0.94rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      height: 48px;
+      padding: 0 22px;
+      border-radius: var(--radius-pill);
+      background: var(--bg-surface-1);
+      border: 1px solid var(--border-medium);
+      color: var(--ink-primary);
+      font-size: 0.92rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-surface-2);
+    }
+
+    /* Placeholders de Métricas Reales */
+    .metrics-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      padding: 20px 24px;
+      border-radius: var(--radius-lg);
+      background: var(--bg-surface-1);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .metric-box {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      border-right: 1px solid var(--border-subtle);
+      padding-right: 14px;
+    }
+
+    .metric-box:last-child {
+      border-right: none;
+    }
+
+    .metric-placeholder {
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--accent);
+      line-height: 1.2;
+    }
+
+    .metric-caption {
+      font-size: 0.82rem;
+      color: var(--ink-secondary);
+      font-weight: 500;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       4. SECCIÓN PRINCIPAL: MUESTRAS DE VIDEO VERTICAL (EL CENTRO)
+       ═══════════════════════════════════════════════════════════════════ */
+    .video-hero-section {
+      padding: 50px 0 70px;
+    }
+
+    .section-header-clean {
+      margin-bottom: 28px;
+    }
+
+    .section-header-clean h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .section-header-clean p {
+      color: var(--ink-secondary);
+      font-size: 1rem;
+      max-width: 58ch;
+    }
+
+    .showcase-video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .video-card-main {
+      background: var(--bg-surface-1);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .video-card-main:hover {
+      border-color: var(--border-medium);
+      transform: translateY(-3px);
+    }
+
+    .video-viewport {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 9 / 14;
+      background: #000000;
+      overflow: hidden;
+    }
+
+    .video-viewport video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-loading-spinner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 36px;
+      height: 36px;
+      border: 3px solid rgba(255, 255, 255, 0.15);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      z-index: 2;
+    }
+
+    .video-card-main.is-buffering .video-loading-spinner {
+      opacity: 1;
+    }
+
+    @keyframes spin {
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    .video-click-play {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+      background: linear-gradient(to top, rgba(10, 12, 16, 0.8) 0%, transparent 40%);
+    }
+
+    .play-btn-circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      padding-left: 3px;
+      opacity: 0;
+      transform: scale(0.9);
+      transition: all 0.2s ease;
+    }
+
+    .video-card-main:hover .play-btn-circle {
+      opacity: 1;
+      transform: scale(1);
+      background: var(--accent);
+      color: #021a13;
+      border-color: var(--accent);
+    }
+
+    .video-footer-info {
+      padding: 18px;
+      background: var(--bg-surface-2);
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .video-category-label {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .video-title-main {
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: var(--ink-primary);
+      line-height: 1.35;
+    }
+
+    .video-dot-selector {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .video-dot-selector button {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--bg-surface-1);
+      border: 1px solid var(--border-subtle);
+      color: var(--ink-muted);
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.18s ease;
+    }
+
+    .video-dot-selector button:hover {
+      background: var(--bg-surface-3);
+      color: var(--ink-primary);
+    }
+
+    .video-dot-selector button.active {
+      background: var(--ink-primary);
+      color: var(--bg-page);
+      border-color: var(--ink-primary);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       5. SERVICIOS: 3 BLOQUES CLAROS (UNA FRASE CADA UNO)
+       ═══════════════════════════════════════════════════════════════════ */
+    .services-3-section {
+      padding: 50px 0 70px;
+    }
+
+    .services-3-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-block {
+      background: var(--bg-surface-1);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color 0.2s ease;
+    }
+
+    .service-block:hover {
+      border-color: var(--border-medium);
+    }
+
+    .service-number {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .service-block h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+      line-height: 1.25;
+    }
+
+    .service-block p.service-single-phrase {
+      font-size: 0.95rem;
+      color: var(--ink-secondary);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .service-link {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--ink-primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.18s ease;
+    }
+
+    .service-link:hover {
+      color: var(--accent);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       6. LANDING PAGES EN GRANDE (CAPTURAS REALES)
+       ═══════════════════════════════════════════════════════════════════ */
+    .landings-large-section {
+      padding: 50px 0 70px;
+    }
+
+    .large-landing-card {
+      background: var(--bg-surface-1);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+
+    .large-landing-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .browser-bar-mac {
+      height: 38px;
+      background: var(--bg-surface-2);
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+    }
+
+    .browser-dots-group {
+      display: flex;
+      gap: 6px;
+    }
+
+    .mac-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .browser-url-text {
+      font-size: 0.74rem;
+      color: var(--ink-secondary);
+      background: var(--bg-surface-1);
+      padding: 4px 14px;
+      border-radius: 4px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .landing-card-body {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+    }
+
+    .landing-image-wrap {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      background: #0d0f15;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .landing-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .landing-content-panel {
+      padding: 36px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--bg-surface-1);
+    }
+
+    .landing-type-badge {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+    }
+
+    .landing-content-panel h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .landing-content-panel p {
+      font-size: 0.95rem;
+      color: var(--ink-secondary);
+      line-height: 1.65;
+      margin-bottom: 22px;
+    }
+
+    .landing-feature-check {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 26px;
+    }
+
+    .landing-feature-check li {
+      font-size: 0.88rem;
+      color: var(--ink-primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .landing-feature-check svg {
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       7. SOBRE MÍ & TESTIMONIOS (CON ESPACIO PARA FOTO Y CITAS)
+       ═══════════════════════════════════════════════════════════════════ */
+    .about-testimonials-section {
+      padding: 50px 0 70px;
+    }
+
+    .about-grid-card {
+      background: var(--bg-surface-1);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: clamp(28px, 4vw, 44px);
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 36px;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .about-photo-placeholder {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      background: var(--bg-surface-2);
+      border: 2px dashed var(--border-medium);
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      color: var(--ink-secondary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-photo-placeholder svg {
+      margin-bottom: 12px;
+      color: var(--accent);
+    }
+
+    .about-photo-placeholder span.photo-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--ink-primary);
+      margin-bottom: 4px;
+    }
+
+    .about-photo-placeholder span.photo-size {
+      font-size: 0.74rem;
+      color: var(--ink-muted);
+    }
+
+    .about-info-text h3 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+
+    .about-info-text p {
+      font-size: 0.98rem;
+      color: var(--ink-secondary);
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+
+    .about-info-text p strong {
+      color: var(--ink-primary);
+    }
+
+    .about-pills-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .about-pill {
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      background: var(--bg-surface-2);
+      border: 1px solid var(--border-subtle);
+      color: var(--ink-secondary);
+    }
+
+    /* Testimonios: Citas Limpias */
+    .testimonials-wrap {
+      margin-top: 30px;
+    }
+
+    .testimonials-wrap h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .testimonial-card {
+      background: var(--bg-surface-1);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .testimonial-quote {
+      font-size: 0.94rem;
+      color: var(--ink-primary);
+      line-height: 1.6;
+      margin-bottom: 18px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .author-avatar-placeholder {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--bg-surface-3);
+      border: 1px solid var(--border-medium);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--ink-secondary);
+    }
+
+    .author-meta .author-name {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--ink-primary);
+    }
+
+    .author-meta .author-role {
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       8. COTIZADOR DIRECTO WHATSAPP (SIMPLIFICADO)
+       ═══════════════════════════════════════════════════════════════════ */
+    .calculator-clean-section {
+      padding: 40px 0 80px;
+    }
+
+    .calculator-card {
+      background: var(--bg-surface-1);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-lg);
+      padding: clamp(26px, 4vw, 40px);
+    }
+
+    .calculator-card h2 {
+      font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+
+    .calculator-card p.calc-sub {
+      color: var(--ink-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+
+    .calc-options-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .calc-opt-btn {
+      padding: 16px;
+      border-radius: var(--radius-md);
+      background: var(--bg-surface-2);
+      border: 1px solid var(--border-subtle);
+      color: var(--ink-secondary);
+      text-align: left;
+      transition: all 0.18s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .calc-opt-btn:hover {
+      background: var(--bg-surface-3);
+      color: var(--ink-primary);
+    }
+
+    .calc-opt-btn.selected {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+      color: var(--ink-primary);
+    }
+
+    .calc-opt-title {
+      font-weight: 700;
+      font-size: 0.94rem;
+    }
+
+    .calc-opt-desc {
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+    }
+
+    .calc-action-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      padding-top: 18px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .calc-preview-box {
+      font-size: 0.84rem;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       9. BOTÓN FLOTANTE PERMANENTE DE WHATSAPP
+       ═══════════════════════════════════════════════════════════════════ */
+    .whatsapp-float-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 990;
+      height: 48px;
+      padding: 0 20px;
+      border-radius: var(--radius-pill);
+      background: #25d366;
+      color: #032014;
+      font-weight: 800;
+      font-size: 0.9rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+      transition: all 0.2s ease;
+    }
+
+    .whatsapp-float-btn:hover {
+      background: #20ba59;
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.55);
+    }
+
+    .whatsapp-pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #032014;
+      position: relative;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       10. FOOTER LIMPIO
+       ═══════════════════════════════════════════════════════════════════ */
+    .site-footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 34px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 0.86rem;
+      color: var(--ink-muted);
+      flex-wrap: wrap;
+    }
+
+    .footer-brand strong {
+      color: var(--ink-primary);
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .footer-links a {
+      color: var(--ink-secondary);
+      text-decoration: none;
+      transition: color 0.18s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--ink-primary);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       11. MODAL FULLSCREEN DE VIDEO
+       ═══════════════════════════════════════════════════════════════════ */
+    .video-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(4, 6, 9, 0.94);
+      backdrop-filter: blur(16px);
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .video-modal-backdrop.active {
+      display: flex;
+    }
+
+    .modal-box {
+      width: 100%;
+      max-width: 440px;
+      max-height: 90vh;
+      border-radius: var(--radius-lg);
+      background: #000000;
+      border: 1px solid var(--border-medium);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .modal-box video {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      object-fit: contain;
+      background: #000000;
+      display: block;
+    }
+
+    .modal-header-bar {
+      padding: 12px 16px;
+      background: var(--bg-surface-2);
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .modal-title-text {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--ink-primary);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: background 0.18s ease;
+    }
+
+    .modal-close-btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       12. RESPONSIVE DESIGN (MÓVIL MÍNIMO 16PX)
+       ═══════════════════════════════════════════════════════════════════ */
+    @media (max-width: 980px) {
+      .landing-card-body {
+        grid-template-columns: 1fr;
+      }
+      .services-3-grid {
+        grid-template-columns: 1fr;
+      }
+      .showcase-video-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      .about-grid-card {
+        grid-template-columns: 1fr;
+      }
+      .about-photo-placeholder {
+        max-width: 280px;
+        margin: 0 auto;
+      }
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+      .metrics-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .metric-box:nth-child(2) {
+        border-right: none;
+      }
+      .calc-options-row {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: 16px;
+      }
+      .container {
+        padding: 0 18px;
+      }
+      .top-header {
+        margin-top: 10px;
+        margin-bottom: 24px;
+      }
+      .header-pill {
+        padding: 8px 14px;
+      }
+      .brand-title {
+        font-size: 0.88rem;
+      }
+      .cta-nav {
+        height: 32px;
+        padding: 0 12px;
+        font-size: 0.78rem;
+      }
+      .hero-headline {
+        font-size: 1.85rem;
+        line-height: 1.15;
+      }
+      .hero-lead {
+        font-size: 1rem;
+        margin-bottom: 24px;
+      }
+      .hero-cta-group {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+      }
+      .btn-primary, .btn-secondary {
+        width: 100%;
+        justify-content: center;
+      }
+      .metrics-row {
+        grid-template-columns: 1fr;
+        padding: 16px;
+      }
+      .metric-box {
+        border-right: none;
+        border-bottom: 1px solid var(--border-subtle);
+        padding-bottom: 10px;
+      }
+      .metric-box:last-child {
+        border-bottom: none;
+      }
+      .landing-content-panel {
+        padding: 24px 20px;
+      }
+      .whatsapp-float-btn span.wa-text {
+        display: none;
+      }
+      .whatsapp-float-btn {
+        width: 48px;
+        height: 48px;
+        padding: 0;
+        justify-content: center;
+        border-radius: 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-grid-subtle"></div>
+
+  <div class="container">
+    
+    <!-- ═══════════════════════════════════════════════════════════════════
+         HEADER FLOTANTE
+         ═══════════════════════════════════════════════════════════════════ -->
+    <header class="top-header">
+      <nav class="header-pill">
+        <a href="#" class="brand-wrap">
+          <div class="brand-logo-icon">FS</div>
+          <div class="brand-title">FABRICIO SOTELO</div>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#videos">Videos</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#landings">Landing Pages</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#cotizador">Cotizador</a></li>
+        </ul>
+
+        <div class="header-actions">
+          <button id="sfxToggleBtn" class="sfx-toggle-btn" title="Activar/Desactivar sonido" aria-label="Efectos de sonido">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+          </button>
+
+          <a href="https://wa.me/51933734627?text=Hola%20Fabricio,%20vi%20tu%20portafolio%20y%20quiero%20cotizar%20un%20proyecto." target="_blank" class="cta-nav">
+            <span>Cotizar</span>
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.825z"/></svg>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         HERO SECTION (TITULAR POTENTE Y DATOS REALES PLACEHOLDER)
+         ═══════════════════════════════════════════════════════════════════ -->
+    <section class="hero-section">
+      <h1 class="hero-headline">
+        Video Ads que retienen.<br>Landing Pages que convierten.
+      </h1>
+
+      <p class="hero-lead">
+        Construyo sistemas audiovisuales y web para marcas: anuncios en formato vertical diseñados para frenar el scroll y páginas de carga instantánea optimizadas para convertir visitas en clientes directos por WhatsApp.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#cotizador" class="btn-primary">
+          <span>Cotizar Proyecto</span>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <a href="#videos" class="btn-secondary">
+          <span>Ver Muestras en Video</span>
+          <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </a>
+      </div>
+
+      <!-- Métricas con placeholders para rellenar con datos reales -->
+      <div class="metrics-row">
+        <div class="metric-box">
+          <div class="metric-placeholder">[ +XX% ]</div>
+          <div class="metric-caption">Retención promedio en primeros 3 segundos</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-placeholder">[ &lt; X.Xs ]</div>
+          <div class="metric-caption">Tiempo de carga web optimizado</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-placeholder">[ XX+ ]</div>
+          <div class="metric-caption">Piezas publicitarias producidas</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-placeholder">[ XX ]</div>
+          <div class="metric-caption">Páginas de captación lanzadas</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         SECCIÓN CENTRAL: MUESTRAS DE VIDEO VERTICAL (EL CENTRO)
+         ═══════════════════════════════════════════════════════════════════ -->
+    <section id="videos" class="video-hero-section">
+      <div class="section-header-clean">
+        <h2>Muestras de Video en Formato Vertical</h2>
+        <p>Producción dinámica optimizada para Reels, TikTok Ads y Spots Corporativos. Cada pieza cuenta con estructura de gancho, ritmo acelerado y diseño sonoro inmersivo.</p>
+      </div>
+
+      <div class="showcase-video-grid">
+        
+        <!-- Video 1: Videos IA -->
+        <div class="video-card-main" id="card-ia">
+          <div class="video-viewport">
+            <video id="video-ia" loop playsinline muted preload="metadata" poster="assets/posters/ia_1.jpg" src="assets/videos_ia/1.mp4?v=10"></video>
+            <div class="video-loading-spinner" aria-hidden="true"></div>
+            <div class="video-click-play" onclick="openFullscreenVideo(document.getElementById('video-ia').src, 'IA Generativa — Spot Cinemático')">
+              <div class="play-btn-circle">▶</div>
+            </div>
+          </div>
+          <div class="video-footer-info">
+            <span class="video-category-label">IA Generativa &amp; Conceptual</span>
+            <div class="video-title-main" id="label-ia">Spot Cinemático 16:9 · Dirección Visual</div>
+            <div class="video-dot-selector" id="bubbles-ia">
+              <button class="active" onclick="switchVideo('ia', 0)">1</button>
+              <button onclick="switchVideo('ia', 1)">2</button>
+              <button onclick="switchVideo('ia', 2)">3</button>
+              <button onclick="switchVideo('ia', 3)">4</button>
+              <button onclick="switchVideo('ia', 4)">5</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video 2: Spots B2B Corporativos -->
+        <div class="video-card-main" id="card-edit">
+          <div class="video-viewport">
+            <video id="video-edit" loop playsinline muted preload="metadata" poster="assets/posters/edit_1.jpg" src="assets/videos_edit/1.mp4?v=10"></video>
+            <div class="video-loading-spinner" aria-hidden="true"></div>
+            <div class="video-click-play" onclick="openFullscreenVideo(document.getElementById('video-edit').src, 'Comercial B2B — Edición Dinámica')">
+              <div class="play-btn-circle">▶</div>
+            </div>
+          </div>
+          <div class="video-footer-info">
+            <span class="video-category-label">Comercial &amp; Corporativo B2B</span>
+            <div class="video-title-main" id="label-edit">Spot Comercial · Clínica Mater Salud</div>
+            <div class="video-dot-selector" id="bubbles-edit">
+              <button class="active" onclick="switchVideo('edit', 0)">1</button>
+              <button onclick="switchVideo('edit', 1)">2</button>
+              <button onclick="switchVideo('edit', 2)">3</button>
+              <button onclick="switchVideo('edit', 3)">4</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video 3: Reels & TikTok Ads -->
+        <div class="video-card-main" id="card-reels">
+          <div class="video-viewport">
+            <video id="video-reels" loop playsinline muted preload="metadata" poster="assets/posters/reels_1.jpg" src="assets/reels/1.mp4?v=10"></video>
+            <div class="video-loading-spinner" aria-hidden="true"></div>
+            <div class="video-click-play" onclick="openFullscreenVideo(document.getElementById('video-reels').src, 'Reels & TikTok — Alta Retención')">
+              <div class="play-btn-circle">▶</div>
+            </div>
+          </div>
+          <div class="video-footer-info">
+            <span class="video-category-label">Alta Retención &amp; Formato Ads</span>
+            <div class="video-title-main" id="label-reels">Campaña Vertical 9:16 · Conversión</div>
+            <div class="video-dot-selector" id="bubbles-reels">
+              <button class="active" onclick="switchVideo('reels', 0)">1</button>
+              <button onclick="switchVideo('reels', 1)">2</button>
+              <button onclick="switchVideo('reels', 2)">3</button>
+              <button onclick="switchVideo('reels', 3)">4</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         SERVICIOS: 3 BLOQUES CLAROS (UNA FRASE CADA UNO)
+         ═══════════════════════════════════════════════════════════════════ -->
+    <section id="servicios" class="services-3-section">
+      <div class="section-header-clean">
+        <h2>Servicios Principales</h2>
+        <p>Soluciones claras y sin adornos para marcas que necesitan captar clientes y no pasar desapercibidas.</p>
+      </div>
+
+      <div class="services-3-grid">
+        
+        <div class="service-block">
+          <div>
+            <div class="service-number">01 // VIDEO ADS</div>
+            <h3>Video Ads &amp; Reels de Alta Retención</h3>
+            <p class="service-single-phrase">
+              Edición dinámica con ganchos visuales en los primeros 3 segundos para frenar el scroll y disparar el tiempo de retención en TikTok y Meta Ads.
+            </p>
+          </div>
+          <a href="#videos" class="service-link">
+            <span>Ver muestras en video</span>
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="service-block">
+          <div>
+            <div class="service-number">02 // DESARROLLO CRO</div>
+            <h3>Landing Pages de Carga Instantánea</h3>
+            <p class="service-single-phrase">
+              Páginas web ultrarrápidas y mobile-first con arquitectura persuasiva diseñadas para convertir clics en pedidos directos por WhatsApp.
+            </p>
+          </div>
+          <a href="#landings" class="service-link">
+            <span>Ver casos de landing pages</span>
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="service-block">
+          <div>
+            <div class="service-number">03 // PRODUCCIÓN COMERCIAL</div>
+            <h3>Spots Comerciales &amp; Creatividad IA</h3>
+            <p class="service-single-phrase">
+              Producción publicitaria corporativa y piezas cinemáticas generadas con IA para posicionar tu marca con autoridad y prestigio comercial.
+            </p>
+          </div>
+          <a href="#cotizador" class="service-link">
+            <span>Cotizar producción</span>
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         LANDING PAGES EN GRANDE (CAPTURAS REALES)
+         ═══════════════════════════════════════════════════════════════════ -->
+    <section id="landings" class="landings-large-section">
+      <div class="section-header-clean">
+        <h2>Casos de Landing Pages Reales</h2>
+        <p>Estructuras de conversión directa desarrolladas sin plantillas infladas, con velocidad de carga optimizada y botón de compra inmediato.</p>
+      </div>
+
+      <!-- Landing 1: Sweet Factory Repostería -->
+      <div class="large-landing-card">
+        <div class="browser-bar-mac">
+          <div class="browser-dots-group">
+            <span class="mac-dot"></span><span class="mac-dot"></span><span class="mac-dot"></span>
+          </div>
+          <span class="browser-url-text">sweetfactory.pe/pedidos-directos</span>
+          <span style="font-size: 0.74rem; color: var(--accent); font-weight: 700;">Mobile-First CRO</span>
+        </div>
+
+        <div class="landing-card-body">
+          <div class="landing-image-wrap">
+            <img src="assets/sweet_factory_personalizados.jpg" alt="Sweet Factory Repostería Landing Page" loading="lazy">
+          </div>
+
+          <div class="landing-content-panel">
+            <div class="landing-type-badge">E-commerce / Catálogo Directo</div>
+            <h3>Sweet Factory · Catálogo de Pedidos a WhatsApp</h3>
+            <p>
+              Landing page orientada a marcas de repostería y eventos. Reemplaza el típico carrito de compras lento por un selector visual de productos y botón que envía la cotización completa y fecha de entrega al chat comercial.
+            </p>
+
+            <ul class="landing-feature-check">
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Carga ultra rápida sin frameworks pesados</span>
+              </li>
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Mensaje estructurado directo para cerrar pedidos en WhatsApp</span>
+              </li>
+            </ul>
+
+            <a href="https://wa.me/51933734627?text=Hola%20Fabricio,%20quiero%20una%20landing%20page%20como%20Sweet%20Factory." target="_blank" class="btn-primary" style="height: 42px; font-size: 0.86rem; align-self: flex-start;">
+              Cotizar una landing similar
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Landing 2: Wiky Cosmética Natural -->
+      <div class="large-landing-card">
+        <div class="browser-bar-mac">
+          <div class="browser-dots-group">
+            <span class="mac-dot"></span><span class="mac-dot"></span><span class="mac-dot"></span>
+          </div>
+          <span class="browser-url-text">wiky.pe/cosmetica-artesanal</span>
+          <span style="font-size: 0.74rem; color: var(--accent); font-weight: 700;">Storytelling &amp; Venta</span>
+        </div>
+
+        <div class="landing-card-body">
+          <div class="landing-image-wrap">
+            <img src="assets/proyectos/WhatsApp Image 2026-05-06 at 9.36.00 AMsds.jpeg" alt="Wiky Cosmética Artesanal Landing Page" loading="lazy">
+          </div>
+
+          <div class="landing-content-panel">
+            <div class="landing-type-badge">Branding &amp; Adquisición B2C</div>
+            <h3>Wiky · Landing Page de Producto Artesanal</h3>
+            <p>
+              Página de presentación para productos naturales y cosmética consciente. Estructurada con storytelling de ingredientes, sellos de autenticidad y flujo de venta sin fricciones para tráfico proveniente de TikTok Ads y Meta Ads.
+            </p>
+
+            <ul class="landing-feature-check">
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Fotografía real integrada con jerarquía tipográfica</span>
+              </li>
+              <li>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Optimizado para alta tasa de conversión en celulares</span>
+              </li>
+            </ul>
+
+            <a href="https://wa.me/51933734627?text=Hola%20Fabricio,%20quiero%20una%20landing%20page%20como%20Wiky." target="_blank" class="btn-primary" style="height: 42px; font-size: 0.86rem; align-self: flex-start;">
+              Cotizar una landing similar
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         SOBRE MÍ & TESTIMONIOS (ESPACIO PARA FOTO Y VALIDACIÓN)
+         ═══════════════════════════════════════════════════════════════════ -->
+    <section id="sobre-mi" class="about-testimonials-section">
+      <div class="section-header-clean">
+        <h2>Sobre Mí</h2>
+        <p>Conoce al profesional detrás de la producción audiovisual y el desarrollo de tus páginas web.</p>
+      </div>
+
+      <!-- Tarjeta de Perfil con Espacio para Foto -->
+      <div class="about-grid-card">
+        
+        <!-- Espacio dedicado para la foto de Fabricio -->
+        <div class="about-photo-placeholder">
+          <svg width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          <span class="photo-label">[ Tu Foto Aquí ]</span>
+          <span class="photo-size">Coloca tu foto de perfil aquí</span>
+        </div>
+
+        <div class="about-info-text">
+          <h3>Fabricio Sotelo</h3>
+          <p>
+            Editor audiovisual y desarrollador web independiente. Mi enfoque combina dos disciplinas que normalmente trabajan separadas: <strong>la retención de audiencia en video</strong> (ritmo, cortes, ganchos y diseño sonoro) y <strong>la conversión web técnica</strong> (páginas de destino que cargan en fracciones de segundo y no pierden prospectos por lentitud).
+          </p>
+          <p>
+            Trabajo con marcas, negocios y creadores que buscan maximizar el retorno de su presupuesto publicitario conectando anuncios efectivos directamente con un canal de compra claro.
+          </p>
+
+          <div class="about-pills-row">
+            <span class="about-pill">Edición en Premiere &amp; CapCut</span>
+            <span class="about-pill">Modelos de IA (Runway / Midjourney)</span>
+            <span class="about-pill">HTML5 / CSS Semántico / CRO</span>
+            <span class="about-pill">Integración con WhatsApp Business</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Espacio para Testimonios de Clientes -->
+      <div class="testimonials-wrap">
+        <h3>Lo que dicen los clientes</h3>
+        
+        <div class="testimonials-grid">
+          
+          <!-- Testimonio 1 Placeholder -->
+          <div class="testimonial-card">
+            <p class="testimonial-quote">
+              "[ 'Los videos para TikTok Ads captaron prospectos desde el segundo día. El gancho inicial y los subtítulos dinámicos marcaron una diferencia enorme en nuestra retención.' ]"
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar-placeholder">CL</div>
+              <div class="author-meta">
+                <div class="author-name">[ Nombre del Cliente / Marca ]</div>
+                <div class="author-role">[ Fundador / Director de Marketing ]</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonio 2 Placeholder -->
+          <div class="testimonial-card">
+            <p class="testimonial-quote">
+              "[ 'La landing page carga al instante en celular. El flujo directo a WhatsApp nos facilitó cerrar pedidos sin que los clientes duden en un carrito complicado.' ]"
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar-placeholder">CL</div>
+              <div class="author-meta">
+                <div class="author-name">[ Nombre del Cliente / Negocio ]</div>
+                <div class="author-role">[ Dueño de Negocio / Gerente Comercial ]</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         COTIZADOR INMEDIATO POR WHATSAPP (SIMPLIFICADO)
+         ═══════════════════════════════════════════════════════════════════ -->
+    <section id="cotizador" class="calculator-clean-section">
+      <div class="calculator-card">
+        <h2>Cotizador Directo</h2>
+        <p class="calc-sub">Selecciona el servicio que necesitas para coordinar presupuesto y plazos de entrega.</p>
+
+        <div class="calc-options-row">
+          <button class="calc-opt-btn selected" onclick="selectServiceClean(this, 'Combo Video Ads + Landing Page')">
+            <span class="calc-opt-title">Combo Ads + Landing Page</span>
+            <span class="calc-opt-desc">Videos publicitarios + Página de venta en WhatsApp</span>
+          </button>
+
+          <button class="calc-opt-btn" onclick="selectServiceClean(this, 'Landing Page CRO')">
+            <span class="calc-opt-title">Solo Landing Page CRO</span>
+            <span class="calc-opt-desc">Página web de alta conversión y carga instantánea</span>
+          </button>
+
+          <button class="calc-opt-btn" onclick="selectServiceClean(this, 'Pack de Video Ads / Reels')">
+            <span class="calc-opt-title">Pack de Video Ads</span>
+            <span class="calc-opt-desc">Edición dinámica para Reels, TikTok o Spots</span>
+          </button>
+        </div>
+
+        <div class="calc-action-bar">
+          <div>
+            <div style="font-size: 0.78rem; color: var(--ink-muted); margin-bottom: 4px;">Mensaje preparado:</div>
+            <div class="calc-preview-box" id="cleanCalcPreview">
+              "Hola Fabricio, quiero cotizar un Combo Video Ads + Landing Page..."
+            </div>
+          </div>
+
+          <a href="#" id="cleanWhatsAppBtn" target="_blank" class="btn-primary">
+            <span>Abrir WhatsApp con Cotización</span>
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.825z"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════════════════════════════════ -->
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <strong>FABRICIO SOTELO</strong> · Creative Studio
+        <div style="font-size: 0.8rem; color: var(--ink-muted); margin-top: 3px;">Video Ads de Alta Retención &amp; Landing Pages CRO</div>
+      </div>
+
+      <div class="footer-links">
+        <a href="https://wa.me/51933734627" target="_blank">WhatsApp Directo</a>
+        <a href="https://www.tiktok.com/@blushadown" target="_blank">TikTok</a>
+        <a href="#cotizador">Cotizar Proyecto</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       BOTÓN FLOTANTE PERMANENTE DE WHATSAPP
+       ═══════════════════════════════════════════════════════════════════ -->
+  <a href="https://wa.me/51933734627?text=Hola%20Fabricio,%20estoy%20viendo%20tu%20portafolio%20y%20quiero%20cotizar%20un%20proyecto." target="_blank" class="whatsapp-float-btn" title="Contactar por WhatsApp" aria-label="Escribir por WhatsApp">
+    <div class="whatsapp-pulse-dot"></div>
+    <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.825z"/></svg>
+    <span class="wa-text">Cotizar por WhatsApp</span>
+  </a>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       MODAL DE VIDEO FULLSCREEN
+       ═══════════════════════════════════════════════════════════════════ -->
+  <div class="video-modal-backdrop" id="videoModal" onclick="closeFullscreenVideo(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeFullscreenVideo()" aria-label="Cerrar video">✕</button>
+      <video id="modalVideo" playsinline controls></video>
+      <div class="modal-header-bar">
+        <span class="modal-title-text" id="modalTitle">Video</span>
+        <span style="font-size: 0.74rem; color: var(--accent); font-weight: 700;">Reproduciendo en HD</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       SCRIPTS: AUDIO HÁPTICO, PLAYLISTS Y COTIZADOR
+       ═══════════════════════════════════════════════════════════════════ -->
+  <script>
+    // ── 1. MOTOR DE AUDIO HÁPTICO SINTETIZADO ──
+    let _audioCtx = null;
+    let sfxEnabled = localStorage.getItem('fs_studio_sfx') !== 'false';
+    const sfxBtn = document.getElementById('sfxToggleBtn');
+
+    function getAudioCtx() {
+      if (!_audioCtx) {
+        const AudioClass = window.AudioContext || window.webkitAudioContext;
+        if (AudioClass) _audioCtx = new AudioClass();
+      }
+      return _audioCtx;
+    }
+
+    function unlockAudio() {
+      const ctx = getAudioCtx();
+      if (ctx && ctx.state === 'suspended') ctx.resume();
+    }
+    window.addEventListener('pointerdown', unlockAudio, { once: true });
+    window.addEventListener('keydown', unlockAudio, { once: true });
+
+    function playHoverSfx() {
+      if (!sfxEnabled) return;
+      try {
+        const ctx = getAudioCtx();
+        if (!ctx) return;
+        if (ctx.state === 'suspended') ctx.resume();
+        const now = ctx.currentTime;
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(950, now);
+        osc.frequency.exponentialRampToValueAtTime(1150, now + 0.02);
+        gain.gain.setValueAtTime(0.015, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.02);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(now);
+        osc.stop(now + 0.02);
+      } catch (e) {}
+    }
+
+    function playClickSfx() {
+      if (!sfxEnabled) return;
+      try {
+        const ctx = getAudioCtx();
+        if (!ctx) return;
+        if (ctx.state === 'suspended') ctx.resume();
+        const now = ctx.currentTime;
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(620, now);
+        osc.frequency.exponentialRampToValueAtTime(840, now + 0.03);
+        gain.gain.setValueAtTime(0.03, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.03);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(now);
+        osc.stop(now + 0.03);
+      } catch (e) {}
+    }
+
+    if (sfxBtn) {
+      if (!sfxEnabled) sfxBtn.classList.add('is-muted');
+      sfxBtn.addEventListener('click', () => {
+        sfxEnabled = !sfxEnabled;
+        localStorage.setItem('fs_studio_sfx', sfxEnabled ? 'true' : 'false');
+        sfxBtn.classList.toggle('is-muted', !sfxEnabled);
+        if (sfxEnabled) playClickSfx();
+      });
+    }
+
+    document.querySelectorAll('a, button, .video-card-main, .service-block').forEach(el => {
+      el.addEventListener('mouseenter', playHoverSfx);
+      el.addEventListener('click', playClickSfx);
+    });
+
+    // ── 2. PLAYLISTS DE VIDEO OPTIMIZADOS CON FASTSTART ──
+    const videoPlaylists = {
+      ia: [
+        { src: 'assets/videos_ia/1.mp4?v=10', poster: 'assets/posters/ia_1.jpg', label: 'Spot Cinemático 16:9 · Dirección Visual' },
+        { src: 'assets/videos_ia/2.mp4?v=10', poster: 'assets/posters/ia_2.jpg', label: 'Composición Publicitaria con IA' },
+        { src: 'assets/videos_ia/3.mp4?v=10', poster: 'assets/posters/ia_3.jpg', label: 'Presentación Comercial IA' },
+        { src: 'assets/videos_ia/4.mp4?v=10', poster: 'assets/posters/ia_4.jpg', label: 'Efectos Avanzados de Generación' },
+        { src: 'assets/videos_ia/5.mp4?v=10', poster: 'assets/posters/ia_5.jpg', label: 'Innovación Visual y Tendencias' }
+      ],
+      edit: [
+        { src: 'assets/videos_edit/1.mp4?v=10', poster: 'assets/posters/edit_1.jpg', label: 'Spot Comercial · Clínica Mater Salud' },
+        { src: 'assets/videos_edit/2.mp4?v=10', poster: 'assets/posters/edit_2.jpg', label: 'Cortes Dinámicos de Alto Impacto' },
+        { src: 'assets/videos_edit/3.mp4?v=10', poster: 'assets/posters/edit_3.jpg', label: 'Montaje y Edición de Producto' },
+        { src: 'assets/videos_edit/4.mp4?v=10', poster: 'assets/posters/edit_4.jpg', label: 'Ritmo Comercial y Retención' }
+      ],
+      reels: [
+        { src: 'assets/reels/1.mp4?v=10', poster: 'assets/posters/reels_1.jpg', label: 'Campaña Vertical 9:16 · Conversión' },
+        { src: 'assets/reels/2.mp4?v=10', poster: 'assets/posters/reels_2.jpg', label: 'Hook en 3 Segundos · Retención' },
+        { src: 'assets/reels/3.mp4?v=10', poster: 'assets/posters/reels_3.jpg', label: 'Formato TikTok / Reels de Pauta' },
+        { src: 'assets/reels/4.mp4?v=10', poster: 'assets/posters/reels_4.jpg', label: 'Micro-Contenido de Alto Rendimiento' }
+      ]
+    };
+
+    function switchVideo(category, index) {
+      const list = videoPlaylists[category];
+      if (!list || index < 0 || index >= list.length) return;
+
+      const item = list[index];
+      const videoEl = document.getElementById(`video-${category}`);
+      const labelEl = document.getElementById(`label-${category}`);
+      const cardEl = document.getElementById(`card-${category}`);
+
+      if (cardEl) cardEl.classList.add('is-buffering');
+      if (item.poster) videoEl.poster = item.poster;
+      videoEl.src = item.src;
+      videoEl.play().catch(() => {});
+      labelEl.innerText = item.label;
+
+      const dots = document.getElementById(`bubbles-${category}`).querySelectorAll('button');
+      dots.forEach((b, i) => b.classList.toggle('active', i === index));
+    }
+
+    // Buffer Listeners
+    ['ia', 'edit', 'reels'].forEach(cat => {
+      const vid = document.getElementById(`video-${cat}`);
+      const card = document.getElementById(`card-${cat}`);
+      if (!vid || !card) return;
+      vid.addEventListener('waiting', () => card.classList.add('is-buffering'));
+      vid.addEventListener('stalled', () => card.classList.add('is-buffering'));
+      vid.addEventListener('playing', () => card.classList.remove('is-buffering'));
+      vid.addEventListener('canplay', () => card.classList.remove('is-buffering'));
+    });
+
+    // IntersectionObserver: Reproducción escalonada automática
+    if ('IntersectionObserver' in window) {
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const video = entry.target;
+          if (entry.isIntersecting) {
+            const delay = video.id === 'video-ia' ? 100 : video.id === 'video-edit' ? 300 : 500;
+            setTimeout(() => {
+              if (video.paused) video.play().catch(() => {});
+            }, delay);
+          } else {
+            if (!video.paused) video.pause();
+          }
+        });
+      }, { threshold: 0.2 });
+
+      ['video-ia', 'video-edit', 'video-reels'].forEach(id => {
+        const v = document.getElementById(id);
+        if (v) videoObserver.observe(v);
+      });
+    }
+
+    // ── 3. MODAL FULLSCREEN DE VIDEO ──
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    const modalTitle = document.getElementById('modalTitle');
+
+    function openFullscreenVideo(src, title) {
+      modalVideo.src = src;
+      modalTitle.innerText = title;
+      modal.classList.add('active');
+      modalVideo.play().catch(() => {});
+    }
+
+    function closeFullscreenVideo(e) {
+      if (e && e.target && e.target.closest('.modal-box') && !e.target.classList.contains('modal-close-btn')) return;
+      modalVideo.pause();
+      modalVideo.src = '';
+      modal.classList.remove('active');
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeFullscreenVideo();
+    });
+
+    // ── 4. COTIZADOR DIRECTO WHATSAPP ──
+    let selectedServiceClean = 'Combo Video Ads + Landing Page';
+
+    function updateCleanWhatsAppUrl() {
+      const previewText = `Hola Fabricio, vi tu portafolio y me gustaría cotizar un ${selectedServiceClean}.`;
+      document.getElementById('cleanCalcPreview').innerText = `"${previewText}"`;
+      const encoded = encodeURIComponent(previewText);
+      document.getElementById('cleanWhatsAppBtn').href = `https://wa.me/51933734627?text=${encoded}`;
+    }
+
+    function selectServiceClean(el, serviceName) {
+      selectedServiceClean = serviceName;
+      el.parentElement.querySelectorAll('.calc-opt-btn').forEach(btn => btn.classList.remove('selected'));
+      el.classList.add('selected');
+      updateCleanWhatsAppUrl();
+    }
+
+    updateCleanWhatsAppUrl();
+  </script>
+
+</body>
+</html>
