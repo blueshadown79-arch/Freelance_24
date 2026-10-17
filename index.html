@@ -1682,6 +1682,10 @@
       ensureAllVideosPlaying();
       setInterval(ensureAllVideosPlaying, 1500);
     });
+    window.addEventListener('load', ensureAllVideosPlaying);
+    ['touchstart', 'pointerdown', 'scroll'].forEach((evt) => {
+      window.addEventListener(evt, ensureAllVideosPlaying, { once: true, passive: true });
+    });
 
     // Cambiar clip con los botones numerados (1, 2, 3, 4, 5) de cada columna
     document.querySelectorAll('.clip-btn').forEach((btn) => {
