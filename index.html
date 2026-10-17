@@ -1,51 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fabricio Sotelo — Edición de Video Vertical &amp; Landing Pages</title>
-  <meta name="description" content="Portafolio de servicios de Fabricio Sotelo: edición de videos y reels verticales, landing pages de catálogo directo a WhatsApp y videos promocionales.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fabricio Sotelo — Edición de Video Vertical & Landing Pages</title>
+  <meta name="description" content="Portafolio de servicios de Fabricio Sotelo: edición de reels y TikToks, videos promocionales con IA y landing pages de catálogo directo a WhatsApp." />
+  <meta name="theme-color" content="#08090c" />
 
-  <!-- Tipografías con carácter: Bricolage Grotesque (Display) + General Sans (Texto) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
+  <!-- Tipografía de Selv: Figtree -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
-    /* ═══════════════════════════════════════════════════════════════════
-       1. TOKENS DEL SISTEMA DE DISEÑO (DARK-ROOM CÁLIDO & ÁMBAR)
-       ═══════════════════════════════════════════════════════════════════ */
     :root {
-      --bg: #0c0b09;
-      --surface: #1b1814;
-      --surface-raised: #26221c;
-      --ink: #f0efec;
-      --ink-body: #e4e2dc;
-      --muted: #b8b2a6;
-      --accent: #e2a84b;
-      --accent-hover: #eeb65b;
-      --accent-ink: #0c0b09;
-
-      --font-display: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-text: 'General Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-
-      /* Escala de 5 pasos estrictos:
-         - small: 16px
-         - body: 17px–18px (descripciones de servicios y videos)
-         - lead: 24px–25px (títulos de tarjetas >= 24px)
-         - head: 31px–48px (títulos de sección)
-         - display: 34px–68px (titular hero) */
-      --step-small: 1rem;                                            /* 16px */
-      --step-body: clamp(1.0625rem, 1.02rem + 0.2vw, 1.125rem);      /* 17px–18px */
-      --step-lead: clamp(1.5rem, 1.45rem + 0.25vw, 1.5625rem);       /* 24px–25px */
-      --step-head: clamp(1.95rem, 1.4rem + 2.1vw, 3rem);             /* 31px–48px */
-      --step-display: clamp(2.15rem, 1.2rem + 3.6vw, 4.25rem);       /* 34px–68px */
-
-      --container: 1240px;
-      --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+      --bg-deep: #050608;
+      --glass-card: rgba(12, 13, 17, 0.48);
+      --glass-card-dark: rgba(8, 9, 12, 0.68);
+      --glass-inner: rgba(0, 0, 0, 0.24);
+      --glass-inner-hover: rgba(255, 255, 255, 0.07);
+      --border-outer: rgba(255, 255, 255, 0.13);
+      --border-pill: rgba(255, 255, 255, 0.18);
+      --border-pill-hover: rgba(255, 255, 255, 0.36);
+      --inner-glow-card: inset 0 0 36px rgba(255, 255, 255, 0.14), inset 0 1px 1px rgba(255, 255, 255, 0.24);
+      --inner-glow-pill: inset 0 0 24px rgba(255, 255, 255, 0.15);
+      --inner-glow-pill-active: inset 0 0 28px rgba(255, 255, 255, 0.28);
+      --shadow-card: 0 28px 70px rgba(0, 0, 0, 0.46);
+      --text-primary: #FFFFFF;
+      --text-secondary: rgba(255, 255, 255, 0.74);
+      --text-muted: rgba(255, 255, 255, 0.52);
+      --accent-gold: #F8CD46;
+      --whatsapp: #25D366;
+      --font-main: 'Figtree', -apple-system, BlinkMacSystemFont, sans-serif;
+      --radius-card: 36px;
+      --radius-inner: 26px;
+      --radius-pill: 20px;
+      --container-max: 1180px;
     }
 
     *, *::before, *::after {
@@ -56,2197 +46,1660 @@
 
     html {
       scroll-behavior: smooth;
-      background-color: var(--bg);
-      color: var(--ink);
-      text-size-adjust: 100%;
+      background-color: var(--bg-deep);
+      color: var(--text-primary);
+      font-family: var(--font-main);
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     body {
-      font-family: var(--font-text);
-      font-size: var(--step-body);
-      line-height: 1.58;
-      background-color: var(--bg);
-      color: var(--ink-body);
-      min-height: 100dvh;
-      overflow-x: clip;
-      -webkit-font-smoothing: antialiased;
-      font-kerning: normal;
-      text-rendering: optimizeLegibility;
+      min-height: 100vh;
+      background-color: var(--bg-deep);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      position: relative;
+      padding: 44px 32px 100px;
     }
 
-    a, button {
-      cursor: pointer;
-      font-family: inherit;
+    /* ==========================================================================
+       FONDO ATMOSFÉRICO ESTILO SELV (COSTA AL ATARDECER + PARALLAX SUTIL)
+       ========================================================================== */
+    .selv-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+      background: #050608;
     }
 
-    ::selection {
-      background: var(--accent);
-      color: var(--accent-ink);
-    }
-
-    :focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 3px;
-    }
-
-    [hidden] {
-      display: none !important;
-    }
-
-    /* Enlace de accesibilidad para teclado */
-    .skip-link {
+    .selv-backdrop__img {
       position: absolute;
-      top: -100px;
-      left: 24px;
-      background: var(--accent);
-      color: var(--accent-ink);
-      padding: 10px 18px;
-      font-weight: 600;
-      font-size: var(--step-small);
-      text-decoration: none;
-      border-radius: 4px;
-      z-index: 960;
-      transition: transform 0.2s var(--ease-out);
+      inset: -3%;
+      width: 106%;
+      height: 106%;
+      object-fit: cover;
+      object-position: center 35%;
+      transform: translate3d(var(--bg-x, 0px), var(--bg-y, 0px), 0) scale(1.03);
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    .skip-link:focus-visible {
-      top: 16px;
+    .selv-backdrop__fade {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(8, 10, 15, 0.04) 0%,
+        rgba(8, 10, 15, 0.16) 48%,
+        rgba(4, 5, 8, 0.66) 84%,
+        rgba(4, 5, 8, 0.92) 100%
+      );
     }
 
-    .container {
-      max-width: var(--container);
+    /* ==========================================================================
+       CONTENEDOR AMPLIO Y ORDENADO (USA BIEN EL ESPACIO EN PANTALLA)
+       ========================================================================== */
+    .selv-layout {
+      position: relative;
+      z-index: 2;
+      max-width: var(--container-max);
       margin: 0 auto;
-      padding: 0 76px 0 28px;
-    }
-
-    h1, h2, h3 {
-      font-family: var(--font-display);
-      color: var(--ink);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1.04;
-      hyphens: none;
-      text-wrap: balance;
-    }
-
-    p {
-      max-width: 60ch;
-      text-wrap: pretty;
-      color: var(--ink-body);
-    }
-
-    section[id] {
-      scroll-margin-top: 32px;
-    }
-
-    /* ═══════════════════════════════════════════════════════════════════
-       2. NAVEGACIÓN PLANA CON IDENTIDAD
-       ═══════════════════════════════════════════════════════════════════ */
-    .site-header {
-      padding: 24px 0 20px;
-    }
-
-    .header-inner {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .brand-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: var(--ink);
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: var(--step-lead);
-      letter-spacing: -0.025em;
-      white-space: nowrap;
-    }
-
-    .brand-mark {
-      width: 14px;
-      height: 14px;
-      background-color: var(--accent);
-      border-radius: 2px 6px 2px 6px;
-      display: inline-block;
-      flex-shrink: 0;
-      transition: transform 0.25s var(--ease-out);
-    }
-
-    .brand-link:hover .brand-mark {
-      transform: rotate(45deg) scale(1.1);
-    }
-
-    .nav-list {
-      display: flex;
-      align-items: center;
+      flex-direction: column;
       gap: 28px;
-      list-style: none;
     }
 
-    .nav-list a {
-      color: var(--ink-body);
-      text-decoration: none;
-      font-size: var(--step-small);
-      font-weight: 500;
-      transition: color 0.2s var(--ease-out);
+    /* Tarjeta base con el efecto exacto Liquid Inner-Glow de Selv */
+    .selv-card {
+      position: relative;
+      width: 100%;
+      border-radius: var(--radius-card);
+      background: var(--glass-card);
+      backdrop-filter: blur(28px) saturate(135%);
+      -webkit-backdrop-filter: blur(28px) saturate(135%);
+      border: 1px solid var(--border-outer);
+      box-shadow: var(--inner-glow-card), var(--shadow-card);
+      padding: 52px 58px;
+      overflow: hidden;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .nav-list a:hover {
-      color: var(--accent);
+    .selv-card:hover {
+      border-color: rgba(255, 255, 255, 0.2);
     }
 
-    .header-controls {
-      display: flex;
-      align-items: center;
-      gap: 12px;
+    .selv-card--dark {
+      background: var(--glass-card-dark);
     }
 
-    .sfx-btn {
-      width: 44px;
-      height: 44px;
-      border: none;
-      border-radius: 6px 14px 6px 14px;
-      background-color: var(--surface);
-      color: var(--ink);
+    /* Pastilla de subtítulo / etiqueta superior resaltada */
+    .section-pill-tag {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      transition: transform 0.2s var(--ease-out), background-color 0.2s var(--ease-out);
-    }
-
-    .sfx-btn:hover {
-      background-color: var(--surface-raised);
-      transform: translateY(-2px);
-    }
-
-    .sfx-btn:active {
-      transform: scale(0.96);
-    }
-
-    .sfx-btn.is-muted svg {
-      opacity: 0.35;
-    }
-
-    /* Botones principales del sistema (bordes asimétricos de autor) */
-    .btn-primary {
-      min-height: 48px;
-      padding: 0 24px;
-      border: none;
-      border-radius: 6px 18px 6px 18px;
-      background-color: var(--accent);
-      color: var(--accent-ink);
-      font-size: var(--step-small);
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: inset 0 0 16px rgba(255, 255, 255, 0.12);
+      font-size: 14px;
       font-weight: 600;
-      text-decoration: none;
+      color: var(--text-primary);
+      letter-spacing: 0.01em;
+    }
+
+    /* Botones con Inner Glow estilo Selv */
+    .selv-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      transition: transform 0.22s var(--ease-out), background-color 0.22s var(--ease-out);
-    }
-
-    .btn-primary:hover {
-      background-color: var(--accent-hover);
-      transform: translateY(-2px);
-    }
-
-    .btn-primary:active {
-      transform: scale(0.98);
-    }
-
-    .btn-secondary {
-      min-height: 48px;
-      padding: 0 24px;
-      border: none;
-      border-radius: 18px 6px 18px 6px;
-      background-color: var(--surface-raised);
-      color: var(--ink);
-      font-size: var(--step-small);
+      padding: 16px 32px;
+      border-radius: var(--radius-pill);
+      background: var(--glass-inner);
+      border: 1px solid var(--border-pill);
+      box-shadow: var(--inner-glow-pill);
+      color: var(--text-primary);
+      font-family: var(--font-main);
+      font-size: 16px;
       font-weight: 600;
       text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      transition: transform 0.22s var(--ease-out), background-color 0.22s var(--ease-out);
+      cursor: pointer;
+      transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
     }
 
-    .btn-secondary:hover {
-      background-color: var(--surface);
-      color: var(--accent);
+    .selv-btn:hover {
       transform: translateY(-2px);
+      background: var(--glass-inner-hover);
+      border-color: var(--border-pill-hover);
+      box-shadow: var(--inner-glow-pill-active);
     }
 
-    .btn-secondary:active {
-      transform: scale(0.98);
+    .selv-btn--gold {
+      background: var(--accent-gold);
+      color: #0B0B0E;
+      border-color: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 12px 30px rgba(248, 205, 70, 0.26);
+      font-weight: 700;
     }
 
-    .btn-header {
-      min-height: 44px;
-      padding: 0 18px;
+    .selv-btn--gold:hover {
+      background: #ffe066;
+      color: #000000;
+      border-color: #ffffff;
+      box-shadow: 0 16px 36px rgba(248, 205, 70, 0.38);
     }
 
-    /* ═══════════════════════════════════════════════════════════════════
-       3. HERO: TITULAR GRANDE + CELULAR EN BUCLE CON AIRE SUPERIOR
-       ═══════════════════════════════════════════════════════════════════ */
-    .hero-section {
-      padding: 44px 0 56px;
-    }
-
-    .hero-grid {
+    /* ==========================================================================
+       1. HERO AMPLIO DE 2 COLUMNAS + MINI CELULAR PROTAGONISTA A LA DERECHA
+       ========================================================================== */
+    .hero-card {
       display: grid;
-      grid-template-columns: 1.18fr 0.82fr;
+      grid-template-columns: 1.25fr 0.85fr;
       align-items: center;
-      gap: 48px;
+      gap: 56px;
+      padding: 56px 64px;
     }
 
-    .hero-copy {
+    .hero-content {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      text-align: left;
     }
 
-    .hero-title {
-      font-size: var(--step-display);
-      font-weight: 800;
-      letter-spacing: -0.038em;
-      line-height: 0.98;
-      margin-bottom: 22px;
-      max-width: 18ch;
-      margin-left: -0.04em;
+    .hero-kicker-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
     }
 
-    .hero-lead {
-      font-size: var(--step-lead);
-      line-height: 1.42;
-      color: var(--ink-body);
-      max-width: 44ch;
-      margin-bottom: 32px;
+    .hero-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(37, 211, 102, 0.12);
+      border: 1px solid rgba(37, 211, 102, 0.32);
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #E8FFF0;
+    }
+
+    .hero-status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--whatsapp);
+      box-shadow: 0 0 10px var(--whatsapp);
+    }
+
+    .hero-name {
+      font-size: clamp(46px, 5.2vw, 68px);
+      font-weight: 700;
+      line-height: 1.03;
+      letter-spacing: -0.035em;
+      color: var(--text-primary);
+      margin-bottom: 18px;
+    }
+
+    .hero-tagline {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.08);
+      font-size: clamp(18px, 2vw, 22px);
+      font-weight: 600;
+      color: #FFFFFF;
+      margin-bottom: 18px;
+    }
+
+    .hero-desc {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      max-width: 520px;
+      margin-bottom: 34px;
     }
 
     .hero-actions {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
+      flex-wrap: wrap;
       gap: 14px;
     }
 
-    /* Mockup de celular con aire generoso arriba para no tocar la barra superior */
-    .hero-phone-stage {
+    /* Escenario del Mini Celular a la derecha */
+    .hero-phone-wrap {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding-top: 24px;
-    }
-
-    .phone-chassis {
-      width: 100%;
-      max-width: 312px;
-      background-color: var(--surface-raised);
-      padding: 12px;
-      border-radius: 44px;
       position: relative;
-      transform: rotate(-1.5deg);
-      transition: transform 0.4s var(--ease-out);
     }
 
-    .phone-chassis:hover {
-      transform: rotate(0deg) scale(1.015);
+    .mini-phone {
+      position: relative;
+      width: 272px;
+      aspect-ratio: 9 / 18.6;
+      border-radius: 46px;
+      padding: 10px;
+      background: #14151b;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow:
+        0 30px 75px rgba(0, 0, 0, 0.78),
+        inset 0 1px 1px rgba(255, 255, 255, 0.22),
+        inset 0 -1px 2px rgba(0, 0, 0, 0.7);
+      cursor: pointer;
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
     }
 
-    .phone-screen {
+    .mini-phone:hover {
+      transform: translateY(-6px) scale(1.015);
+      border-color: rgba(255, 255, 255, 0.28);
+      box-shadow:
+        0 42px 95px rgba(0, 0, 0, 0.88),
+        inset 0 1px 2px rgba(255, 255, 255, 0.32);
+    }
+
+    /* Botones físicos laterales del mini celular */
+    .mini-phone::before {
+      content: "";
+      position: absolute;
+      left: -3px;
+      top: 96px;
+      width: 3px;
+      height: 52px;
+      border-radius: 3px 0 0 3px;
+      background: #232530;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .mini-phone::after {
+      content: "";
+      position: absolute;
+      right: -3px;
+      top: 112px;
+      width: 3px;
+      height: 68px;
+      border-radius: 0 3px 3px 0;
+      background: #232530;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .mini-phone__screen {
+      position: relative;
       width: 100%;
-      aspect-ratio: 9 / 16;
-      background-color: #050504;
-      border-radius: 34px;
+      height: 100%;
+      border-radius: 36px;
       overflow: hidden;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      background: #000000;
     }
 
-    .phone-notch {
-      width: 92px;
-      height: 22px;
-      background-color: #050504;
-      border-radius: 99px;
-      margin: 12px auto 0;
-      position: relative;
+    /* Isla dinámica del mini celular */
+    .mini-phone__island {
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
       z-index: 4;
+      width: 82px;
+      height: 22px;
+      border-radius: 999px;
+      background: #000000;
+      border: 1px solid rgba(255, 255, 255, 0.12);
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      padding-right: 10px;
+      padding-right: 8px;
     }
 
-    .phone-notch-dot {
+    .mini-phone__cam {
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background-color: var(--accent);
+      background: radial-gradient(circle, #3b5998 0%, #090c15 70%);
     }
 
-    .phone-video {
-      position: absolute;
-      inset: 0;
+    .mini-phone__screen video {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      z-index: 1;
+      display: block;
     }
 
-    .phone-controls-bar {
+    .mini-phone__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.25) 0%,
+        transparent 25%,
+        transparent 68%,
+        rgba(0, 0, 0, 0.82) 100%
+      );
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 18px 16px;
+    }
+
+    .mini-phone__badge-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 16px;
+      background: rgba(12, 13, 18, 0.72);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .mini-phone__badge-text {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #FFFFFF;
+    }
+
+    .mini-phone__audio-pill {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--accent-gold);
+    }
+
+    /* ==========================================================================
+       2. MUESTRAS DE VIDEO VERTICAL: 3 COLUMNAS VISIBLES SIN TAPARSE
+       ========================================================================== */
+    .showcase-card {
+      padding: 52px 52px 56px;
+    }
+
+    .section-header {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+
+    .section-header--split {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .section-title {
+      font-size: clamp(30px, 3.6vw, 42px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.12;
+      color: var(--text-primary);
+    }
+
+    /* Subtítulo en pastilla con inner-glow para que resalte siempre */
+    .subtitle-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.09);
+      font-size: 16px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.45;
+    }
+
+    /* Grilla de 3 columnas amplias para ver los 3 videos completos a la vez */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .video-column {
+      display: flex;
+      flex-direction: column;
+      border-radius: 30px;
+      background: rgba(0, 0, 0, 0.24);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: var(--inner-glow-pill);
+      padding: 18px;
+      transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+    }
+
+    .video-column:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.28);
+      box-shadow: var(--inner-glow-pill-active), 0 22px 48px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Marco vertical 9:16 limpio donde el video se ve completo sin recortes */
+    .video-frame {
       position: relative;
-      z-index: 4;
-      margin: 0 12px 12px;
-      padding: 10px 12px;
-      background-color: rgba(12, 11, 9, 0.88);
-      border-radius: 20px;
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #0d0f14;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      margin-bottom: 18px;
+      cursor: pointer;
+    }
+
+    .video-frame video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .video-frame:hover video {
+      transform: scale(1.02);
+    }
+
+    .video-frame__top {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      pointer-events: none;
+    }
+
+    .video-frame__badge {
+      padding: 6px 13px;
+      border-radius: 999px;
+      background: rgba(10, 11, 15, 0.72);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      font-size: 13px;
+      font-weight: 600;
+      color: #FFFFFF;
+    }
+
+    .video-frame__sound-btn {
+      pointer-events: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(10, 11, 15, 0.76);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      color: #FFFFFF;
+      font-family: var(--font-main);
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .video-frame__sound-btn:hover {
+      background: rgba(255, 255, 255, 0.22);
+      transform: scale(1.05);
+    }
+
+    /* Información ordenada debajo de cada video (sin tapar la imagen) */
+    .video-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+      padding: 2px 4px 4px;
+    }
+
+    .video-meta__title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+    }
+
+    .video-meta__sub-pill {
+      display: block;
+      padding: 10px 14px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 15.5px;
+      line-height: 1.45;
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    /* Selector de clips (1, 2, 3, 4, 5) propio de cada columna */
+    .video-clips-bar {
+      margin-top: auto;
+      padding-top: 8px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 8px;
     }
 
-    .phone-reel-pills {
-      display: flex;
+    .video-clips-label {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .video-clips-buttons {
+      display: inline-flex;
       align-items: center;
       gap: 6px;
     }
 
-    .phone-pill-btn {
-      min-height: 36px;
-      padding: 0 11px;
-      border: none;
-      border-radius: 14px;
-      background-color: var(--surface);
-      color: var(--ink-body);
-      font-size: var(--step-small);
-      font-weight: 600;
-      transition: background-color 0.2s var(--ease-out), color 0.2s var(--ease-out);
-    }
-
-    .phone-pill-btn.active {
-      background-color: var(--accent);
-      color: var(--accent-ink);
-    }
-
-    .phone-sound-btn {
-      width: 38px;
-      height: 38px;
-      border: none;
-      border-radius: 50%;
-      background-color: var(--surface-raised);
-      color: var(--ink);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition: transform 0.2s var(--ease-out), background-color 0.2s var(--ease-out);
-    }
-
-    .phone-sound-btn:hover {
-      background-color: var(--accent);
-      color: var(--accent-ink);
-      transform: scale(1.06);
-    }
-
-    /* ═══════════════════════════════════════════════════════════════════
-       4. MUESTRAS DE VIDEO VERTICAL (TÍTULOS Y DESCRIPCIONES CON ALTO CONTRASTE)
-       ═══════════════════════════════════════════════════════════════════ */
-    .videos-section {
-      padding: 36px 0 68px;
-    }
-
-    .section-intro {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 32px;
-    }
-
-    .section-title {
-      font-size: var(--step-head);
-    }
-
-    .section-desc {
-      font-size: var(--step-body);
-      color: var(--ink-body);
-      max-width: 58ch;
-    }
-
-    .video-showcase-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      align-items: start;
-    }
-
-    .video-stage-card {
-      background-color: transparent;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      transition: transform 0.28s var(--ease-out);
-    }
-
-    .video-stage-card:hover,
-    .video-stage-card.is-playing {
-      transform: translateY(-4px);
-    }
-
-    .video-frame-vertical {
-      width: 100%;
-      aspect-ratio: 9 / 16;
-      background-color: #050504;
-      border-radius: 8px 26px 8px 26px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .video-stage-card:nth-child(2) .video-frame-vertical {
-      border-radius: 26px 8px 26px 8px;
-    }
-
-    .video-frame-vertical video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .video-expand-btn {
-      position: absolute;
-      bottom: 14px;
-      right: 14px;
-      min-height: 42px;
-      padding: 0 14px;
-      border: none;
-      border-radius: 6px 14px 6px 14px;
-      background-color: rgba(12, 11, 9, 0.88);
-      color: var(--ink);
-      font-size: var(--step-small);
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      z-index: 3;
-      transition: background-color 0.2s var(--ease-out), color 0.2s var(--ease-out), transform 0.2s var(--ease-out);
-    }
-
-    .video-expand-btn:hover {
-      background-color: var(--accent);
-      color: var(--accent-ink);
-      transform: scale(1.04);
-    }
-
-    /* Bloque inferior con superficie cálida y alto contraste */
-    .video-meta-bar {
-      background-color: var(--surface);
-      padding: 18px 20px;
-      border-radius: 6px 20px 6px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .video-stage-card:nth-child(2) .video-meta-bar {
-      border-radius: 20px 6px 20px 6px;
-    }
-
-    .video-card-heading {
-      font-size: var(--step-lead);
-      color: var(--ink);
-      font-weight: 700;
-      line-height: 1.15;
-      margin-bottom: 6px;
-    }
-
-    .video-card-sub {
-      font-size: var(--step-body);
-      color: var(--ink-body);
-      line-height: 1.45;
-    }
-
-    .clip-switcher {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
     .clip-btn {
-      min-width: 42px;
-      height: 42px;
-      padding: 0 12px;
-      border: none;
-      border-radius: 6px 12px 6px 12px;
-      background-color: var(--surface-raised);
-      color: var(--ink);
-      font-size: var(--step-small);
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(0, 0, 0, 0.35);
+      color: var(--text-secondary);
+      font-family: var(--font-main);
+      font-size: 13.5px;
       font-weight: 600;
-      font-variant-numeric: tabular-nums;
-      transition: background-color 0.18s var(--ease-out), color 0.18s var(--ease-out), transform 0.18s var(--ease-out);
+      cursor: pointer;
+      transition: all 0.2s ease;
     }
 
     .clip-btn:hover {
-      background-color: var(--bg);
-      color: var(--accent);
+      color: #FFFFFF;
+      border-color: rgba(255, 255, 255, 0.38);
     }
 
-    .clip-btn.active {
-      background-color: var(--accent);
-      color: var(--accent-ink);
+    .clip-btn.is-active {
+      background: rgba(255, 255, 255, 0.18);
+      color: #FFFFFF;
+      border-color: rgba(255, 255, 255, 0.5);
+      box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.24);
     }
 
-    /* ═══════════════════════════════════════════════════════════════════
-       5. SERVICIOS: 3 TARJETAS CON TONO DISTINTO, TÍTULO >= 24PX Y ALTO CONTRASTE
-       ═══════════════════════════════════════════════════════════════════ */
-    .services-section {
-      padding: 56px 0 68px;
+    /* ==========================================================================
+       3. FRANJA MARQUEE HORIZONTAL ESTILO SELV
+       ========================================================================== */
+    .marquee-card {
+      padding: 24px 0;
+      border-radius: 28px;
+      overflow: hidden;
     }
 
-    .services-list {
+    .marquee-mask {
+      width: 100%;
+      overflow: hidden;
+      mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      gap: 48px;
+      animation: selvMarquee 26s linear infinite;
+    }
+
+    .marquee-card:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    .marquee-item {
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      letter-spacing: -0.01em;
+    }
+
+    .marquee-item strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    @keyframes selvMarquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ==========================================================================
+       4. SERVICIOS: 3 BLOQUES ORDENADOS EN GRILLA DE 3 COLUMNAS CON INNER-GLOW
+       ========================================================================== */
+    .services-card {
+      padding: 52px 56px;
+    }
+
+    .services-grid {
       display: grid;
-      grid-template-columns: 1.24fr 1fr 0.86fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
-      align-items: stretch;
     }
 
-    .service-panel {
-      background-color: var(--surface);
-      padding: 36px 32px;
-      border-radius: 8px 28px 8px 28px;
+    .service-pill-card {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 26px;
-      transition: transform 0.25s var(--ease-out), background-color 0.25s var(--ease-out);
+      border-radius: 28px;
+      background: rgba(0, 0, 0, 0.24);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: var(--inner-glow-pill);
+      padding: 32px 30px;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
     }
 
-    .service-panel:nth-child(2) {
-      background-color: var(--surface-raised);
-      border-radius: 28px 8px 28px 8px;
+    .service-pill-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.32);
+      box-shadow: var(--inner-glow-pill-active);
     }
 
-    .service-panel:hover {
-      background-color: var(--surface-raised);
-      transform: translateY(-3px);
+    .service-pill-card__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
     }
 
-    .service-title {
-      font-size: var(--step-lead);
-      color: var(--ink);
+    .service-pill-card__num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      font-size: 13px;
       font-weight: 700;
-      line-height: 1.15;
+      color: var(--text-primary);
+    }
+
+    .service-pill-card__plus {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: rgba(255, 255, 255, 0.75);
+      transition: transform 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .service-pill-card:hover .service-pill-card__plus {
+      transform: rotate(90deg);
+      color: #FFFFFF;
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .service-pill-card__title {
+      font-size: 25px;
+      font-weight: 700;
+      line-height: 1.22;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
       margin-bottom: 14px;
     }
 
-    .service-phrase {
-      font-size: var(--step-body);
-      color: var(--ink);
+    .service-pill-card__desc {
+      font-size: 17px;
       line-height: 1.58;
+      color: rgba(255, 255, 255, 0.82);
     }
 
-    .service-action {
-      color: var(--accent);
-      text-decoration: underline;
-      text-decoration-thickness: 1.5px;
-      text-underline-offset: 5px;
-      font-size: var(--step-small);
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      align-self: flex-start;
-      transition: transform 0.2s var(--ease-out), color 0.2s var(--ease-out);
-    }
-
-    .service-action:hover {
-      color: var(--accent-hover);
-      transform: translateX(4px);
-    }
-
-    /* ═══════════════════════════════════════════════════════════════════
-       6. CASOS REALES: SWEET FACTORY Y WIKY EN MARCO GRANDE
-       ═══════════════════════════════════════════════════════════════════ */
-    .cases-section {
-      padding: 56px 0 68px;
-    }
-
-    .cases-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-    }
-
-    .case-row {
-      background-color: var(--surface);
-      border-radius: 10px 32px 10px 32px;
-      padding: 24px;
+    /* ==========================================================================
+       5. FILA BENTO INFERIOR: SOBRE MÍ + CONTACTO DIRECTO (2 COLUMNAS ORDENADAS)
+       ========================================================================== */
+    .bottom-bento-row {
       display: grid;
-      grid-template-columns: 1.22fr 0.78fr;
-      align-items: center;
-      gap: 36px;
-    }
-
-    .case-row:nth-child(2) {
-      border-radius: 32px 10px 32px 10px;
-    }
-
-    .browser-mockup {
-      background-color: var(--bg);
-      border-radius: 8px 20px 8px 20px;
-      overflow: hidden;
-    }
-
-    .browser-top {
-      height: 42px;
-      background-color: var(--surface-raised);
-      padding: 0 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .browser-dots {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-    }
-
-    .browser-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background-color: var(--muted);
-      opacity: 0.45;
-    }
-
-    .browser-address {
-      font-size: var(--step-small);
-      color: var(--ink-body);
-      background-color: var(--bg);
-      padding: 4px 14px;
-      border-radius: 6px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .browser-screen {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      background-color: #080706;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .browser-screen img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.5s var(--ease-out);
-    }
-
-    .case-row:hover .browser-screen img {
-      transform: scale(1.02);
-    }
-
-    .case-details {
-      padding: 12px 16px 12px 4px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 18px;
-    }
-
-    .case-heading {
-      font-size: var(--step-head);
-    }
-
-    .case-description {
-      font-size: var(--step-body);
-      color: var(--ink-body);
-      line-height: 1.58;
-    }
-
-    .case-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 12px;
-      margin-top: 6px;
-    }
-
-    /* ═══════════════════════════════════════════════════════════════════
-       7. TESTIMONIOS (OCULTA MIENTRAS NO HAYA DATOS REALES)
-       ═══════════════════════════════════════════════════════════════════ */
-    .testimonials-section {
-      padding: 44px 0 60px;
-    }
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: 1.12fr 0.88fr;
-      gap: 24px;
-    }
-
-    .testimonial-card {
-      background-color: var(--surface);
-      padding: 32px;
-      border-radius: 8px 26px 8px 26px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .testimonial-quote {
-      font-size: var(--step-body);
-      color: var(--ink);
-      line-height: 1.58;
-    }
-
-    .testimonial-author {
-      font-size: var(--step-small);
-      color: var(--muted);
-      font-style: normal;
-      font-weight: 600;
-    }
-
-    /* ═══════════════════════════════════════════════════════════════════
-       8. SOBRE MÍ (CON ESPACIO PARA FOTO) Y CONTACTO DIRECTO
-       ═══════════════════════════════════════════════════════════════════ */
-    .about-section {
-      padding: 52px 0 84px;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: stretch;
     }
 
     .about-card {
-      background-color: var(--surface);
-      border-radius: 28px 8px 28px 8px;
-      padding: clamp(28px, 4vw, 48px);
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      align-items: center;
-      gap: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 48px 52px;
     }
 
-    .photo-slot {
+    .about-statement {
+      font-size: clamp(22px, 2.5vw, 28px);
+      font-weight: 600;
+      line-height: 1.38;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin: 22px 0 34px;
+    }
+
+    .about-author-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      padding: 10px 24px 10px 10px;
+      border-radius: 24px;
+      background: rgba(0, 0, 0, 0.26);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: var(--inner-glow-pill);
+       align-self: flex-start;
+    }
+
+    .about-photo-slot {
+      width: 68px;
+      height: 68px;
+      border-radius: 20px;
+      background: #14161d;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .about-photo-slot img {
       width: 100%;
-      aspect-ratio: 4 / 5;
-      background-color: var(--surface-raised);
-      border-radius: 8px 24px 8px 24px;
-      padding: 24px;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+    }
+
+    .about-author-meta strong {
+      display: block;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    .about-author-meta span {
+      display: block;
+      font-size: 14.5px;
+      color: var(--text-secondary);
+    }
+
+    /* Tarjeta derecha: Contacto Directo */
+    .connect-card {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      gap: 12px;
-      color: var(--ink-body);
-      position: relative;
-      overflow: hidden;
+      padding: 48px 44px;
     }
 
-    .photo-slot svg {
-      color: var(--accent);
+    .connect-title {
+      font-size: clamp(34px, 3.8vw, 44px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      margin: 18px 0 14px;
     }
 
-    .photo-slot-title {
-      font-weight: 600;
-      font-size: var(--step-body);
-      color: var(--ink);
+    .connect-sub {
+      font-size: 16.5px;
+      line-height: 1.55;
+      color: var(--text-secondary);
+      max-width: 340px;
+      margin-bottom: 28px;
     }
 
-    .photo-slot-note {
-      font-size: var(--step-small);
-      color: var(--muted);
-    }
-
-    .about-content {
+    .connect-actions {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      gap: 18px;
+      width: 100%;
+      max-width: 300px;
+      gap: 12px;
     }
 
-    .about-heading {
-      font-size: var(--step-head);
-    }
-
-    .about-bio {
-      font-size: var(--step-body);
-      color: var(--ink-body);
-      line-height: 1.62;
-    }
-
-    .about-cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 14px;
-      margin-top: 8px;
-    }
-
-    /* ═══════════════════════════════════════════════════════════════════
-       9. FOOTER Y BOTÓN FLOTANTE DE WHATSAPP
-       ═══════════════════════════════════════════════════════════════════ */
-    .site-footer {
-      padding: 36px 0 108px;
-      background-color: var(--surface);
-    }
-
-    .footer-inner {
+    /* ==========================================================================
+       6. FOOTER SLIM
+       ========================================================================== */
+    .footer-card {
+      padding: 24px 44px;
+      border-radius: 26px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 12px;
+      font-size: 15px;
+      color: var(--text-secondary);
     }
 
-    .footer-name {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: var(--step-lead);
-      color: var(--ink);
+    .footer-card strong {
+      color: var(--text-primary);
+      font-weight: 600;
     }
 
-    .footer-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: var(--ink-body);
-      text-decoration: none;
-      font-size: var(--step-small);
-      font-weight: 500;
-      transition: color 0.2s var(--ease-out);
-    }
-
-    .footer-links a:hover {
-      color: var(--accent);
-    }
-
-    /* Botón flotante de WhatsApp visible en toda la página sin tapar contenido */
-    .whatsapp-float {
+    /* ==========================================================================
+       BARRA DE NAVEGACIÓN FLOTANTE DERECHA (SELV ICON DOCK)
+       ========================================================================== */
+    .selv-dock {
       position: fixed;
-      bottom: 24px;
-      right: 68px;
-      z-index: 850;
-      min-height: 50px;
-      padding: 0 20px;
-      border-radius: 8px 22px 8px 22px;
-      background-color: var(--accent);
-      color: var(--accent-ink);
-      font-size: var(--step-small);
-      font-weight: 700;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 40;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 10px;
+      border-radius: 999px;
+      background: rgba(12, 12, 16, 0.52);
+      backdrop-filter: blur(24px) saturate(140%);
+      -webkit-backdrop-filter: blur(24px) saturate(140%);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: inset 0 0 22px rgba(255, 255, 255, 0.15), 0 16px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    .selv-dock__link {
+      position: relative;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.64);
       text-decoration: none;
+      transition: all 0.22s ease;
+    }
+
+    .selv-dock__link:hover,
+    .selv-dock__link.is-active {
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.14);
+      box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.18);
+    }
+
+    .selv-dock__tooltip {
+      position: absolute;
+      right: calc(100% + 12px);
+      top: 50%;
+      transform: translateY(-50%) translateX(6px);
+      background: rgba(10, 10, 14, 0.9);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 6px 12px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #FFFFFF;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .selv-dock__link:hover .selv-dock__tooltip {
+      opacity: 1;
+      transform: translateY(-50%) translateX(0);
+    }
+
+    /* ==========================================================================
+       BOTÓN FLOTANTE DE WHATSAPP
+       ========================================================================== */
+    .wa-float {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 45;
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      transition: transform 0.22s var(--ease-out), background-color 0.22s var(--ease-out);
-    }
-
-    .whatsapp-float:hover {
-      background-color: var(--accent-hover);
-      transform: translateY(-3px);
-    }
-
-    .whatsapp-float:active {
-      transform: scale(0.97);
-    }
-
-    /* ═══════════════════════════════════════════════════════════════════
-       10. LÍNEA DE TIEMPO DE EDICIÓN (DERECHA EN ESCRITORIO / BARRA SUPERIOR EN MÓVIL)
-       ═══════════════════════════════════════════════════════════════════ */
-    .edit-timeline[data-ui] {
-      position: fixed;
-      right: 16px;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 840;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 12px;
-      user-select: none;
-    }
-
-    .edit-timeline[data-ui] .timeline-timecode {
-      background-color: var(--surface-raised);
-      color: var(--accent);
-      font-family: var(--font-text);
-      font-variant-numeric: tabular-nums;
-      font-size: 13px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      background: rgba(12, 14, 18, 0.84);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(37, 211, 102, 0.45);
+      box-shadow: inset 0 0 20px rgba(37, 211, 102, 0.2), 0 14px 34px rgba(0, 0, 0, 0.55);
+      color: #FFFFFF;
+      font-size: 15px;
       font-weight: 600;
-      padding: 4px 8px;
-      border-radius: 4px 10px 4px 10px;
-      letter-spacing: 0.02em;
+      text-decoration: none;
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
     }
 
-    .edit-timeline[data-ui] .timeline-rail-wrap {
-      position: relative;
-      width: 28px;
-      height: 220px;
-      display: flex;
-      justify-content: center;
+    .wa-float:hover {
+      transform: translateY(-3px);
+      border-color: rgba(37, 211, 102, 0.8);
+      box-shadow: inset 0 0 24px rgba(37, 211, 102, 0.3), 0 18px 40px rgba(0, 0, 0, 0.65);
     }
 
-    .edit-timeline[data-ui] .timeline-rail {
-      width: 2px;
-      height: 100%;
-      background-color: var(--surface-raised);
-      border-radius: 2px;
-      position: relative;
-      overflow: hidden;
+    .wa-float__dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--whatsapp);
+      box-shadow: 0 0 10px var(--whatsapp);
     }
 
-    .edit-timeline[data-ui] .timeline-fill {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 0%;
-      background-color: var(--accent);
-    }
-
-    .edit-timeline[data-ui] .timeline-playhead {
-      position: absolute;
-      left: 50%;
-      top: 0%;
-      transform: translate(-50%, -50%);
-      width: 14px;
-      height: 6px;
-      border-radius: 2px;
-      background-color: var(--accent);
-      pointer-events: none;
-      transition: top 0.08s linear;
-    }
-
-    .edit-timeline[data-ui] .timeline-marker {
-      position: absolute;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 24px;
-      height: 24px;
-      border: none;
-      background: transparent;
+    /* ==========================================================================
+       MODAL DE VIDEO CON AUDIO EN PANTALLA COMPLETA
+       ========================================================================== */
+    .video-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(4, 4, 8, 0.86);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0;
-    }
-
-    .edit-timeline[data-ui] .timeline-marker-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background-color: var(--muted);
-      transition: transform 0.2s var(--ease-out), background-color 0.2s var(--ease-out);
-    }
-
-    .edit-timeline[data-ui] .timeline-marker:hover .timeline-marker-dot,
-    .edit-timeline[data-ui] .timeline-marker.is-active .timeline-marker-dot {
-      background-color: var(--accent);
-      transform: scale(1.35);
-    }
-
-    .edit-timeline[data-ui] .timeline-marker-label {
-      position: absolute;
-      right: 30px;
-      background-color: var(--surface-raised);
-      color: var(--ink);
-      font-size: 13px;
-      font-weight: 600;
-      padding: 4px 10px;
-      border-radius: 4px 10px 4px 10px;
-      white-space: nowrap;
+      padding: 20px;
       opacity: 0;
-      transform: translateX(6px);
       pointer-events: none;
-      transition: opacity 0.18s var(--ease-out), transform 0.18s var(--ease-out);
+      transition: opacity 0.28s ease;
     }
 
-    .edit-timeline[data-ui] .timeline-marker:hover .timeline-marker-label,
-    .edit-timeline[data-ui] .timeline-marker:focus-visible .timeline-marker-label {
+    .video-modal.is-open {
       opacity: 1;
-      transform: translateX(0);
+      pointer-events: auto;
     }
 
-    /* Barra de progreso fina arriba para móvil (oculta en escritorio) */
-    .mobile-progress-bar[data-ui] {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background-color: var(--surface);
-      z-index: 920;
-      pointer-events: none;
+    .video-modal__dialog {
+      position: relative;
+      width: min(380px, 92vw);
+      aspect-ratio: 9 / 16;
+      border-radius: 32px;
+      overflow: hidden;
+      background: #000;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      box-shadow: 0 32px 90px rgba(0, 0, 0, 0.85);
     }
 
-    .mobile-progress-bar[data-ui] .mobile-progress-fill {
-      width: 0%;
+    .video-modal__dialog video {
+      width: 100%;
       height: 100%;
-      background-color: var(--accent);
-      transition: width 0.08s linear;
+      object-fit: cover;
+      display: block;
     }
 
-    /* ═══════════════════════════════════════════════════════════════════
-       11. CURSOR PERSONALIZADO (SOLO ESCRITORIO CON PUNTERO FINO)
-       ═══════════════════════════════════════════════════════════════════ */
-    .custom-cursor[data-ui] {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 12px;
-      height: 12px;
-      border-radius: 99px;
-      background-color: var(--accent);
-      color: var(--accent-ink);
-      pointer-events: none;
-      z-index: 990;
+    .video-modal__close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      z-index: 5;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      background: rgba(10, 10, 14, 0.72);
+      backdrop-filter: blur(12px);
+      color: #FFFFFF;
+      font-size: 18px;
+      cursor: pointer;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      opacity: 0;
-      transform: translate3d(-100px, -100px, 0);
-      transition: width 0.2s var(--ease-out), height 0.2s var(--ease-out), padding 0.2s var(--ease-out), border-radius 0.2s var(--ease-out), opacity 0.2s var(--ease-out);
     }
 
-    .custom-cursor[data-ui].is-visible {
-      opacity: 1;
-    }
-
-    .custom-cursor[data-ui].has-label {
-      width: auto;
-      height: 30px;
-      padding: 0 12px;
-      border-radius: 6px 14px 6px 14px;
-    }
-
-    .custom-cursor[data-ui] .custom-cursor-label {
-      font-size: 13px;
-      font-weight: 700;
-      white-space: nowrap;
-      opacity: 0;
-      transition: opacity 0.15s var(--ease-out);
-    }
-
-    .custom-cursor[data-ui].has-label .custom-cursor-label {
-      opacity: 1;
-    }
-
-    @media (hover: none), (pointer: coarse) {
-      .custom-cursor[data-ui] {
-        display: none !important;
-      }
-    }
-
-    /* ═══════════════════════════════════════════════════════════════════
-       12. MODALES (VIDEO FULLSCREEN Y VISTA COMPLETA DE LANDING PAGE)
-       ═══════════════════════════════════════════════════════════════════ */
-    .modal-backdrop {
-      position: fixed;
-      inset: 0;
-      background-color: rgba(12, 11, 9, 0.94);
-      z-index: 950;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .modal-backdrop.active {
-      display: flex;
-    }
-
-    .modal-dialog {
-      width: 100%;
-      max-width: 440px;
-      max-height: 92dvh;
-      background-color: var(--surface);
-      border-radius: 10px 26px 10px 26px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-
-    .modal-dialog.modal-wide {
-      max-width: 860px;
-    }
-
-    .modal-top-bar {
-      padding: 14px 18px;
-      background-color: var(--surface-raised);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .modal-title {
-      font-weight: 600;
-      font-size: var(--step-small);
-      color: var(--ink);
-    }
-
-    .modal-close {
-      min-height: 38px;
-      padding: 0 14px;
-      border: none;
-      border-radius: 6px 12px 6px 12px;
-      background-color: var(--bg);
-      color: var(--ink);
-      font-size: var(--step-small);
-      font-weight: 600;
-    }
-
-    .modal-close:hover {
-      background-color: var(--accent);
-      color: var(--accent-ink);
-    }
-
-    .modal-dialog video {
-      width: 100%;
-      aspect-ratio: 9 / 16;
-      max-height: 76dvh;
-      object-fit: contain;
-      background-color: #000;
-      display: block;
-    }
-
-    .landing-preview-body {
-      overflow-y: auto;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      max-height: 78dvh;
-    }
-
-    .landing-preview-body img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      display: block;
-    }
-
-    /* ═══════════════════════════════════════════════════════════════════
-       13. ENTRADAS POR SCROLL (MÁXIMO 0.45S, VARIACIÓN POR SECCIÓN)
-       ═══════════════════════════════════════════════════════════════════ */
-    [data-reveal] {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-      transition: opacity 0.45s var(--ease-out), transform 0.45s var(--ease-out);
-    }
-
-    .js-motion [data-reveal="up"].is-waiting {
-      opacity: 0;
-      transform: translate3d(0, 22px, 0);
-    }
-
-    .js-motion [data-reveal="left"].is-waiting {
-      opacity: 0;
-      transform: translate3d(-24px, 0, 0);
-    }
-
-    .js-motion [data-reveal="right"].is-waiting {
-      opacity: 0;
-      transform: translate3d(24px, 0, 0);
-    }
-
-    .js-motion [data-reveal="scale"].is-waiting {
-      opacity: 0;
-      transform: translate3d(0, 16px, 0) scale(0.97);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-      .js-motion [data-reveal].is-waiting {
-        opacity: 1;
-        transform: none;
-      }
-    }
-
-    /* ═══════════════════════════════════════════════════════════════════
-       14. RESPONSIVE: TABLET Y MÓVIL (BARRA FINA SUPERIOR, CERO DESBORDES)
-       ═══════════════════════════════════════════════════════════════════ */
-    @media (max-width: 980px) {
-      .container {
-        padding: 0 24px;
-      }
-      .edit-timeline[data-ui] {
-        display: none;
-      }
-      .mobile-progress-bar[data-ui] {
-        display: block;
-      }
-      .whatsapp-float {
-        right: 20px;
-        bottom: 20px;
-      }
-      .hero-grid {
+    /* ==========================================================================
+       RESPONSIVE TABLET Y MÓVIL
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-card {
         grid-template-columns: 1fr;
-        gap: 36px;
+        text-align: center;
+        gap: 40px;
+        padding: 44px 36px;
       }
-      .hero-phone-stage {
-        order: 2;
-        padding-top: 8px;
-      }
-      .phone-chassis {
-        transform: none;
-        max-width: 300px;
-      }
-      .video-showcase-grid {
-        grid-template-columns: 1fr;
-        max-width: 440px;
-        margin: 0 auto;
-      }
-      .services-list {
-        grid-template-columns: 1fr;
-      }
-      .case-row {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-      .testimonials-grid {
-        grid-template-columns: 1fr;
-      }
-      .about-card {
-        grid-template-columns: 1fr;
-        gap: 28px;
-      }
-      .photo-slot {
-        max-width: 260px;
-      }
-      .nav-list {
-        display: none;
-      }
-    }
 
-    @media (max-width: 600px) {
-      .container {
-        padding: 0 18px;
+      .hero-content {
+        align-items: center;
+        text-align: center;
       }
-      .site-header {
-        padding: 18px 0 12px;
-      }
-      .brand-link {
-        font-size: var(--step-body);
-      }
-      .hero-section {
-        padding: 20px 0 36px;
-      }
-      .hero-lead {
-        font-size: var(--step-body);
-        line-height: 1.55;
-      }
+
+      .hero-kicker-row,
       .hero-actions {
-        width: 100%;
-        flex-direction: column;
-        align-items: stretch;
+        justify-content: center;
       }
-      .hero-actions .btn-primary,
-      .hero-actions .btn-secondary {
-        width: 100%;
+
+      .video-grid,
+      .services-grid,
+      .bottom-bento-row {
+        grid-template-columns: 1fr;
       }
-      .videos-section,
-      .services-section,
-      .cases-section,
-      .about-section {
-        padding: 36px 0 44px;
+
+      .selv-dock {
+        display: none;
       }
-      .case-row {
-        padding: 16px;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 20px 14px 96px;
       }
-      .service-panel {
-        padding: 28px 24px;
+
+      .selv-layout {
+        gap: 20px;
       }
-      .whatsapp-float {
-        bottom: 14px;
-        right: 14px;
-        padding: 0 15px;
-        min-height: 44px;
+
+      .selv-card {
+        padding: 32px 20px;
+        border-radius: 28px;
+      }
+
+      .mini-phone {
+        width: 244px;
+      }
+
+      .service-pill-card {
+        padding: 26px 22px;
+      }
+
+      .service-pill-card__title {
+        font-size: 23px;
+      }
+
+      .wa-float {
+        right: 16px;
+        bottom: 16px;
+        padding: 12px 18px;
+        font-size: 14.5px;
       }
     }
   </style>
 </head>
 <body>
 
-  <a href="#main-content" class="skip-link">Saltar al contenido</a>
-
-  <!-- Barra de progreso fina superior para móvil -->
-  <div class="mobile-progress-bar" data-ui aria-hidden="true">
-    <div class="mobile-progress-fill" id="mobileProgressFill"></div>
+  <!-- FONDO ATMOSFÉRICO FIJO ESTILO SELV (COSTA AL ATARDECER) -->
+  <div class="selv-backdrop" aria-hidden="true">
+    <img
+      id="selvBgImg"
+      src="assets/selv_coastal_bg.png"
+      alt=""
+      class="selv-backdrop__img"
+    />
+    <div class="selv-backdrop__fade"></div>
   </div>
 
-  <!-- Línea de tiempo de edición fija a la derecha (escritorio) -->
-  <aside class="edit-timeline" data-ui aria-label="Línea de tiempo de secciones">
-    <div class="timeline-timecode" id="timelineTimecode" aria-live="off">00:00:00</div>
-    <div class="timeline-rail-wrap">
-      <div class="timeline-rail">
-        <div class="timeline-fill" id="timelineFill"></div>
-      </div>
-      <div class="timeline-playhead" id="timelinePlayhead"></div>
+  <!-- DOCK FLOTANTE VERTICAL A LA DERECHA (IDÉNTICO A SELV) -->
+  <nav class="selv-dock" aria-label="Navegación rápida">
+    <a href="#inicio" class="selv-dock__link is-active" data-nav="inicio" aria-label="Inicio">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-9.5z"/>
+      </svg>
+      <span class="selv-dock__tooltip">Inicio</span>
+    </a>
+    <a href="#muestras" class="selv-dock__link" data-nav="muestras" aria-label="Muestras de video">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="7" width="18" height="13" rx="2.5"/>
+        <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+      </svg>
+      <span class="selv-dock__tooltip">Muestras</span>
+    </a>
+    <a href="#servicios" class="selv-dock__link" data-nav="servicios" aria-label="Servicios">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+        <line x1="8" y1="13" x2="16" y2="13"/>
+        <line x1="8" y1="17" x2="13" y2="17"/>
+      </svg>
+      <span class="selv-dock__tooltip">Servicios</span>
+    </a>
+    <a href="#sobre-mi" class="selv-dock__link" data-nav="sobre-mi" aria-label="Sobre mí">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="8" r="4"/>
+        <path d="M5 20c1.5-3.5 4.2-5 7-5s5.5 1.5 7 5"/>
+      </svg>
+      <span class="selv-dock__tooltip">Sobre mí</span>
+    </a>
+    <a href="#contacto" class="selv-dock__link" data-nav="contacto" aria-label="Contacto">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="22" y1="2" x2="11" y2="13"/>
+        <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+      </svg>
+      <span class="selv-dock__tooltip">Contacto</span>
+    </a>
+  </nav>
 
-      <button type="button" class="timeline-marker is-active" style="top: 12%;" onclick="scrollToSection('videos')" aria-label="Ir a Muestras">
-        <span class="timeline-marker-dot"></span>
-        <span class="timeline-marker-label">Muestras</span>
-      </button>
+  <!-- CONTENEDOR PRINCIPAL AMPLIO Y BIEN DISTRIBUIDO -->
+  <main class="selv-layout">
 
-      <button type="button" class="timeline-marker" style="top: 38%;" onclick="scrollToSection('servicios')" aria-label="Ir a Servicios">
-        <span class="timeline-marker-dot"></span>
-        <span class="timeline-marker-label">Servicios</span>
-      </button>
-
-      <button type="button" class="timeline-marker" style="top: 64%;" onclick="scrollToSection('casos')" aria-label="Ir a Casos">
-        <span class="timeline-marker-dot"></span>
-        <span class="timeline-marker-label">Casos</span>
-      </button>
-
-      <button type="button" class="timeline-marker" style="top: 90%;" onclick="scrollToSection('sobre-mi')" aria-label="Ir a Contacto">
-        <span class="timeline-marker-dot"></span>
-        <span class="timeline-marker-label">Contacto</span>
-      </button>
-    </div>
-  </aside>
-
-  <!-- Cursor personalizado contextual (solo escritorio) -->
-  <div id="customCursor" class="custom-cursor" data-ui aria-hidden="true">
-    <span id="customCursorLabel" class="custom-cursor-label"></span>
-  </div>
-
-  <!-- ═══════════════════════════════════════════════════════════════════
-       HEADER
-       ═══════════════════════════════════════════════════════════════════ -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="#" class="brand-link">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span>Fabricio Sotelo</span>
-      </a>
-
-      <nav aria-label="Navegación principal">
-        <ul class="nav-list">
-          <li><a href="#videos">Muestras</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#casos">Casos reales</a></li>
-          <li><a href="#sobre-mi">Sobre mí</a></li>
-        </ul>
-      </nav>
-
-      <div class="header-controls">
-        <button id="sfxToggleBtn" type="button" class="sfx-btn" aria-label="Activar o desactivar sonidos de interfaz">
-          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
-          </svg>
-        </button>
-
-        <a href="https://wa.me/51933734627?text=Hola%20Fabricio,%20vi%20tu%20portafolio%20y%20quiero%20cotizar%20un%20proyecto." target="_blank" rel="noopener" class="btn-primary btn-header" data-cursor="WhatsApp">
-          <span>Contactar</span>
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <main id="main-content">
-
-    <!-- ═══════════════════════════════════════════════════════════════════
-         HERO: TITULAR A LA IZQUIERDA + CELULAR CON VIDEO EN BUCLE A LA DERECHA
-         ═══════════════════════════════════════════════════════════════════ -->
-    <section class="hero-section">
-      <div class="container hero-grid">
-        
-        <div class="hero-copy" data-reveal="left">
-          <h1 class="hero-title">
-            Videos que retienen.<br>Páginas que venden.
-          </h1>
-
-          <p class="hero-lead">
-            Produzco anuncios verticales pensados para frenar el scroll en los primeros segundos y desarrollo landing pages de catálogo que convierten visitas en pedidos directos por WhatsApp.
-          </p>
-
-          <div class="hero-actions">
-            <a href="https://wa.me/51933734627?text=Hola%20Fabricio,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20cotizar%20un%20proyecto." target="_blank" rel="noopener" class="btn-primary" data-cursor="WhatsApp">
-              <span>Contactar por WhatsApp</span>
-              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </a>
-
-            <a href="#videos" class="btn-secondary" data-cursor="Play">
-              <span>Ver muestras en video</span>
-              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-            </a>
-          </div>
+    <!-- ======================================================================
+         1. HERO AMPLIO: TITULAR A LA IZQUIERDA + MINI CELULAR A LA DERECHA
+         ====================================================================== -->
+    <section class="selv-card hero-card" id="inicio">
+      <div class="hero-content">
+        <div class="hero-kicker-row">
+          <span class="section-pill-tag">Edición de Video Vertical &amp; Landing Pages</span>
+          <span class="hero-status-pill">
+            <span class="hero-status-dot"></span>
+            Disponible para proyectos
+          </span>
         </div>
 
-        <!-- Mockup de celular memorable con video en bucle e interacción en vivo -->
-        <div class="hero-phone-stage" data-reveal="right">
-          <div class="phone-chassis" data-ui>
-            <div class="phone-screen" data-cursor="Play">
-              <div class="phone-notch" aria-hidden="true">
-                <span class="phone-notch-dot"></span>
-              </div>
+        <h1 class="hero-name">Fabricio Sotelo</h1>
 
-              <video id="heroPhoneVideo" class="phone-video" autoplay loop muted playsinline preload="metadata" poster="assets/posters/reels_1.jpg" src="assets/reels/1.mp4?v=11"></video>
+        <div class="hero-tagline">
+          Videos que retienen. Páginas que venden.
+        </div>
 
-              <div class="phone-controls-bar">
-                <div class="phone-reel-pills" role="group" aria-label="Cambiar muestra en el celular">
-                  <button type="button" class="phone-pill-btn active" onclick="switchHeroPhone(0, this)">Reel</button>
-                  <button type="button" class="phone-pill-btn" onclick="switchHeroPhone(1, this)">IA</button>
-                  <button type="button" class="phone-pill-btn" onclick="switchHeroPhone(2, this)">Spot</button>
-                </div>
+        <p class="hero-desc">
+          Edición de reels dinámicos, anuncios comerciales con inteligencia artificial y páginas web de catálogo diseñadas para recibir pedidos directo en tu WhatsApp.
+        </p>
 
-                <button type="button" class="phone-sound-btn" data-cursor="Play" onclick="openVideoModal(document.getElementById('heroPhoneVideo').src, 'Muestra principal en formato vertical')" aria-label="Ver video del celular con sonido">
-                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
-                </button>
+        <div class="hero-actions">
+          <a
+            href="https://wa.me/51999999999?text=Hola%20Fabricio%2C%20vi%20tu%20portafolio%20y%20quiero%20cotizar%20un%20proyecto."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="selv-btn selv-btn--gold"
+          >
+            Contactar por WhatsApp
+          </a>
+          <a href="#muestras" class="selv-btn">
+            Ver muestras de video
+          </a>
+        </div>
+      </div>
+
+      <!-- Mini Celular Protagonista a la Derecha -->
+      <div class="hero-phone-wrap">
+        <div class="mini-phone" id="heroPhoneMockup" title="Haz clic para ver con audio">
+          <div class="mini-phone__screen">
+            <div class="mini-phone__island" aria-hidden="true">
+              <span class="mini-phone__cam"></span>
+            </div>
+            <video
+              id="heroPhoneVideo"
+              src="assets/reels/3.mp4"
+              poster="assets/posters/reels_3.jpg"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+            ></video>
+            <div class="mini-phone__overlay">
+              <div class="mini-phone__badge-bar">
+                <span class="mini-phone__badge-text">
+                  <span class="hero-status-dot"></span>
+                  Reel en vivo
+                </span>
+                <span class="mini-phone__audio-pill">🔊 Audio</span>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════════════════
-         MUESTRAS DE VIDEO VERTICAL (PROTAGONISTAS, PLAY AL PASAR CURSOR O TOCAR)
-         ═══════════════════════════════════════════════════════════════════ -->
-    <section id="videos" class="videos-section">
-      <div class="container">
-        <div class="section-intro" data-reveal="up">
-          <h2 class="section-title">Muestras en formato vertical</h2>
-          <p class="section-desc">
-            Pasa el cursor o toca cualquier pieza para reproducirla al instante, o cambia de número para explorar cada categoría.
-          </p>
+    <!-- ======================================================================
+         2. MUESTRAS EN FORMATO VERTICAL: 3 COLUMNAS VISIBLES AL MISMO TIEMPO
+         ====================================================================== -->
+    <section class="selv-card showcase-card" id="muestras">
+      <div class="section-header section-header--split">
+        <div>
+          <span class="section-pill-tag" style="margin-bottom: 14px;">Portafolio Audiovisual · 9:16</span>
+          <h2 class="section-title">Muestras en Formato Vertical</h2>
         </div>
+        <div class="subtitle-pill">
+          Reproducción automática en bucle · Cambia de clip con los números o abre con audio
+        </div>
+      </div>
 
-        <div class="video-showcase-grid">
+      <div class="video-grid">
 
-          <!-- Columna 1: Videos con IA -->
-          <article class="video-stage-card" id="card-ia" data-reveal="up">
-            <div class="video-frame-vertical" data-cursor="Play" onmouseenter="hoverPlay('ia', true)" onmouseleave="hoverPlay('ia', false)" onclick="toggleTouchPlay('ia')">
-              <video id="video-ia" loop muted playsinline preload="metadata" poster="assets/posters/ia_1.jpg" src="assets/videos_ia/1.mp4?v=11"></video>
-              <button type="button" class="video-expand-btn" data-cursor="Play" onclick="event.stopPropagation(); openVideoModal(document.getElementById('video-ia').src, document.getElementById('label-ia').innerText)">
-                <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-                <span>Con sonido</span>
+        <!-- COLUMNA 1: VIDEOS CON IA -->
+        <article class="video-column">
+          <div class="video-frame" data-open-modal="ia">
+            <div class="video-frame__top">
+              <span class="video-frame__badge">01 · Videos con IA</span>
+              <button type="button" class="video-frame__sound-btn" data-open-modal="ia">
+                🔊 Audio
               </button>
             </div>
-
-            <div class="video-meta-bar">
-              <div>
-                <h3 class="video-card-heading">Videos con IA</h3>
-                <p class="video-card-sub" id="label-ia">Spot cinemático y dirección visual</p>
-              </div>
-
-              <div class="clip-switcher" id="bubbles-ia" role="group" aria-label="Muestras de videos con IA">
-                <button type="button" class="clip-btn active" onclick="switchVideo('ia', 0)">1</button>
-                <button type="button" class="clip-btn" onclick="switchVideo('ia', 1)">2</button>
-                <button type="button" class="clip-btn" onclick="switchVideo('ia', 2)">3</button>
-                <button type="button" class="clip-btn" onclick="switchVideo('ia', 3)">4</button>
-                <button type="button" class="clip-btn" onclick="switchVideo('ia', 4)">5</button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Columna 2: Spots Corporativos -->
-          <article class="video-stage-card" id="card-edit" data-reveal="up">
-            <div class="video-frame-vertical" data-cursor="Play" onmouseenter="hoverPlay('edit', true)" onmouseleave="hoverPlay('edit', false)" onclick="toggleTouchPlay('edit')">
-              <video id="video-edit" loop muted playsinline preload="metadata" poster="assets/posters/edit_1.jpg" src="assets/videos_edit/1.mp4?v=11"></video>
-              <button type="button" class="video-expand-btn" data-cursor="Play" onclick="event.stopPropagation(); openVideoModal(document.getElementById('video-edit').src, document.getElementById('label-edit').innerText)">
-                <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-                <span>Con sonido</span>
-              </button>
-            </div>
-
-            <div class="video-meta-bar">
-              <div>
-                <h3 class="video-card-heading">Corporativos</h3>
-                <p class="video-card-sub" id="label-edit">Spot comercial Clínica Mater Salud</p>
-              </div>
-
-              <div class="clip-switcher" id="bubbles-edit" role="group" aria-label="Muestras de videos corporativos">
-                <button type="button" class="clip-btn active" onclick="switchVideo('edit', 0)">1</button>
-                <button type="button" class="clip-btn" onclick="switchVideo('edit', 1)">2</button>
-                <button type="button" class="clip-btn" onclick="switchVideo('edit', 2)">3</button>
-                <button type="button" class="clip-btn" onclick="switchVideo('edit', 3)">4</button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Columna 3: Reels y TikTok -->
-          <article class="video-stage-card" id="card-reels" data-reveal="up">
-            <div class="video-frame-vertical" data-cursor="Play" onmouseenter="hoverPlay('reels', true)" onmouseleave="hoverPlay('reels', false)" onclick="toggleTouchPlay('reels')">
-              <video id="video-reels" loop muted playsinline preload="metadata" poster="assets/posters/reels_1.jpg" src="assets/reels/1.mp4?v=11"></video>
-              <button type="button" class="video-expand-btn" data-cursor="Play" onclick="event.stopPropagation(); openVideoModal(document.getElementById('video-reels').src, document.getElementById('label-reels').innerText)">
-                <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-                <span>Con sonido</span>
-              </button>
-            </div>
-
-            <div class="video-meta-bar">
-              <div>
-                <h3 class="video-card-heading">Reels y TikTok</h3>
-                <p class="video-card-sub" id="label-reels">Campaña vertical de alta retención</p>
-              </div>
-
-              <div class="clip-switcher" id="bubbles-reels" role="group" aria-label="Muestras de Reels y TikTok">
-                <button type="button" class="clip-btn active" onclick="switchVideo('reels', 0)">1</button>
-                <button type="button" class="clip-btn" onclick="switchVideo('reels', 1)">2</button>
-                <button type="button" class="clip-btn" onclick="switchVideo('reels', 2)">3</button>
-                <button type="button" class="clip-btn" onclick="switchVideo('reels', 3)">4</button>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════════════
-         SERVICIOS: 3 BLOQUES CLAROS CON TONO DISTINTO Y ALTO CONTRASTE
-         ═══════════════════════════════════════════════════════════════════ -->
-    <section id="servicios" class="services-section">
-      <div class="container">
-        <div class="section-intro" data-reveal="left">
-          <h2 class="section-title">Tres servicios claros</h2>
-          <p class="section-desc">
-            Formatos pensados para marcas y negocios que buscan captar atención y cerrar pedidos sin fricción.
-          </p>
-        </div>
-
-        <div class="services-list">
-
-          <article class="service-panel" data-reveal="scale">
-            <div>
-              <h3 class="service-title">Edición de videos y reels</h3>
-              <p class="service-phrase">
-                Piezas verticales con gancho en los primeros segundos, subtítulos dinámicos y ritmo ágil para retener audiencia en TikTok y Meta Ads.
-              </p>
-            </div>
-            <a href="#videos" class="service-action" data-cursor="Play">
-              <span>Ver muestras verticales</span>
-            </a>
-          </article>
-
-          <article class="service-panel" data-reveal="scale">
-            <div>
-              <h3 class="service-title">Landing pages de catálogo</h3>
-              <p class="service-phrase">
-                Páginas web de carga rápida con selección visual de productos que envían el pedido detallado directo a tu WhatsApp.
-              </p>
-            </div>
-            <a href="#casos" class="service-action" data-cursor="Ver">
-              <span>Ver casos reales</span>
-            </a>
-          </article>
-
-          <article class="service-panel" data-reveal="scale">
-            <div>
-              <h3 class="service-title">Videos promocionales</h3>
-              <p class="service-phrase">
-                Spots comerciales para empresas y piezas visuales con inteligencia artificial para presentar tu marca de forma memorable.
-              </p>
-            </div>
-            <a href="https://wa.me/51933734627?text=Hola%20Fabricio,%20quiero%20cotizar%20un%20video%20promocional%20para%20mi%20marca." target="_blank" rel="noopener" class="service-action" data-cursor="WhatsApp">
-              <span>Cotizar por WhatsApp</span>
-            </a>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════════════
-         CASOS REALES: SWEET FACTORY Y WIKY EN MARCO GRANDE
-         ═══════════════════════════════════════════════════════════════════ -->
-    <section id="casos" class="cases-section">
-      <div class="container">
-        <div class="section-intro" data-reveal="up">
-          <h2 class="section-title">Casos reales de landing pages</h2>
-          <p class="section-desc">
-            Páginas construidas a medida para mostrar productos con claridad y llevar al cliente directo al chat de compra.
-          </p>
-        </div>
-
-        <div class="cases-stack">
-
-          <!-- Caso 1: Sweet Factory -->
-          <article class="case-row" data-reveal="left">
-            <div class="browser-mockup" data-ui data-cursor="Ver" onclick="openLandingModal('sweet')">
-              <div class="browser-top">
-                <div class="browser-dots" aria-hidden="true">
-                  <span class="browser-dot"></span>
-                  <span class="browser-dot"></span>
-                  <span class="browser-dot"></span>
-                </div>
-                <span class="browser-address">sweetfactory.pe</span>
-                <span></span>
-              </div>
-              <div class="browser-screen">
-                <img src="assets/sweet_factory_personalizados.jpg" width="1200" height="900" alt="Captura real de la landing page de Sweet Factory Repostería" loading="lazy">
-              </div>
-            </div>
-
-            <div class="case-details">
-              <h3 class="case-heading">Sweet Factory</h3>
-              <p class="case-description">
-                Catálogo interactivo para repostería y eventos. Reemplaza el carrito lento por una selección visual de tortas y mesas de dulces que arma el pedido listo para enviar por WhatsApp.
-              </p>
-
-              <div class="case-buttons">
-                <button type="button" class="btn-primary" data-cursor="Ver" onclick="openLandingModal('sweet')">
-                  <span>Ver landing</span>
-                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M15 3h6v6M10 14L21 3M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
-                  </svg>
-                </button>
-
-                <a href="https://wa.me/51933734627?text=Hola%20Fabricio,%20quiero%20cotizar%20una%20landing%20page%20como%20Sweet%20Factory." target="_blank" rel="noopener" class="btn-secondary" data-cursor="WhatsApp">
-                  <span>Pedir una similar</span>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Caso 2: Wiky Cosmética -->
-          <article class="case-row" data-reveal="right">
-            <div class="browser-mockup" data-ui data-cursor="Ver" onclick="openLandingModal('wiky')">
-              <div class="browser-top">
-                <div class="browser-dots" aria-hidden="true">
-                  <span class="browser-dot"></span>
-                  <span class="browser-dot"></span>
-                  <span class="browser-dot"></span>
-                </div>
-                <span class="browser-address">wiky.pe</span>
-                <span></span>
-              </div>
-              <div class="browser-screen">
-                <img src="assets/proyectos/WhatsApp Image 2026-05-06 at 9.36.00 AMsds.jpeg" width="1200" height="900" alt="Captura real de la presentación de productos artesanales Wiky" loading="lazy">
-              </div>
-            </div>
-
-            <div class="case-details">
-              <h3 class="case-heading">Wiky Cosmética</h3>
-              <p class="case-description">
-                Página de producto para jabones y cosmética artesanal. Presenta ingredientes, beneficios y fotografía real con un flujo pensado para cerrar ventas desde anuncios en redes sociales.
-              </p>
-
-              <div class="case-buttons">
-                <button type="button" class="btn-primary" data-cursor="Ver" onclick="openLandingModal('wiky')">
-                  <span>Ver landing</span>
-                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M15 3h6v6M10 14L21 3M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
-                  </svg>
-                </button>
-
-                <a href="https://wa.me/51933734627?text=Hola%20Fabricio,%20quiero%20cotizar%20una%20landing%20page%20como%20Wiky." target="_blank" rel="noopener" class="btn-secondary" data-cursor="WhatsApp">
-                  <span>Pedir una similar</span>
-                </a>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════════════
-         TESTIMONIOS (OCULTA HASTA TENER FRASES REALES DE CLIENTES)
-         Quita el atributo hidden cuando agregues las 2 frases reales.
-         ═══════════════════════════════════════════════════════════════════ -->
-    <section id="testimonios" class="testimonials-section" hidden aria-hidden="true">
-      <div class="container">
-        <div class="section-intro">
-          <h2 class="section-title">Lo que dicen los clientes</h2>
-        </div>
-        <div class="testimonials-grid">
-          <article class="testimonial-card">
-            <blockquote class="testimonial-quote"></blockquote>
-            <cite class="testimonial-author"></cite>
-          </article>
-          <article class="testimonial-card">
-            <blockquote class="testimonial-quote"></blockquote>
-            <cite class="testimonial-author"></cite>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════════════
-         SOBRE MÍ (CON ESPACIO PARA FOTO) Y CONTACTO DIRECTO
-         ═══════════════════════════════════════════════════════════════════ -->
-    <section id="sobre-mi" class="about-section">
-      <div class="container">
-        <div class="about-card" data-reveal="scale">
-
-          <div class="photo-slot">
-            <svg width="42" height="42" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-              <circle cx="12" cy="13" r="4"/>
-            </svg>
-            <span class="photo-slot-title">Espacio para tu foto</span>
-            <span class="photo-slot-note">Reemplaza por tu retrato en assets/tu_foto.jpg</span>
+            <video
+              id="video-ia"
+              src="assets/videos_ia/1.mp4"
+              poster="assets/posters/ia_1.jpg"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+            ></video>
           </div>
 
-          <div class="about-content">
-            <h2 class="about-heading">Sobre mí</h2>
-            <p class="about-bio">
-              Soy Fabricio Sotelo, realizador audiovisual y desarrollador web. Uno dos áreas que suelen trabajarse por separado: la edición de video vertical para captar atención en redes y la creación de páginas rápidas para convertir ese interés en pedidos por WhatsApp.
+          <div class="video-meta">
+            <h3 class="video-meta__title">Videos Comerciales con IA</h3>
+            <p class="video-meta__sub-pill">
+              Impacto visual desde el primer segundo para campañas y anuncios.
             </p>
-
-            <div class="about-cta-row">
-              <a href="https://wa.me/51933734627?text=Hola%20Fabricio,%20vi%20tu%20portafolio%20y%20quiero%20conversar%20sobre%20un%20proyecto." target="_blank" rel="noopener" class="btn-primary" data-cursor="WhatsApp">
-                <span>Escribirme por WhatsApp</span>
-              </a>
-              <a href="https://www.tiktok.com/@blushadown" target="_blank" rel="noopener" class="btn-secondary">
-                <span>Ver perfil en TikTok</span>
-              </a>
+            <div class="video-clips-bar">
+              <span class="video-clips-label">Muestra:</span>
+              <div class="video-clips-buttons" data-clip-group="ia">
+                <button type="button" class="clip-btn is-active" data-cat="ia" data-idx="0">1</button>
+                <button type="button" class="clip-btn" data-cat="ia" data-idx="1">2</button>
+                <button type="button" class="clip-btn" data-cat="ia" data-idx="2">3</button>
+                <button type="button" class="clip-btn" data-cat="ia" data-idx="3">4</button>
+                <button type="button" class="clip-btn" data-cat="ia" data-idx="4">5</button>
+              </div>
             </div>
           </div>
+        </article>
 
-        </div>
+        <!-- COLUMNA 2: VIDEOS CORPORATIVOS -->
+        <article class="video-column">
+          <div class="video-frame" data-open-modal="edit">
+            <div class="video-frame__top">
+              <span class="video-frame__badge">02 · Corporativos</span>
+              <button type="button" class="video-frame__sound-btn" data-open-modal="edit">
+                🔊 Audio
+              </button>
+            </div>
+            <video
+              id="video-edit"
+              src="assets/videos_edit/1.mp4"
+              poster="assets/posters/edit_1.jpg"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+            ></video>
+          </div>
+
+          <div class="video-meta">
+            <h3 class="video-meta__title">Edición Corporativa</h3>
+            <p class="video-meta__sub-pill">
+              Presentación limpia y profesional para negocios, productos y servicios.
+            </p>
+            <div class="video-clips-bar">
+              <span class="video-clips-label">Muestra:</span>
+              <div class="video-clips-buttons" data-clip-group="edit">
+                <button type="button" class="clip-btn is-active" data-cat="edit" data-idx="0">1</button>
+                <button type="button" class="clip-btn" data-cat="edit" data-idx="1">2</button>
+                <button type="button" class="clip-btn" data-cat="edit" data-idx="2">3</button>
+                <button type="button" class="clip-btn" data-cat="edit" data-idx="3">4</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- COLUMNA 3: REELS Y TIKTOK -->
+        <article class="video-column">
+          <div class="video-frame" data-open-modal="reels">
+            <div class="video-frame__top">
+              <span class="video-frame__badge">03 · Reels &amp; TikTok</span>
+              <button type="button" class="video-frame__sound-btn" data-open-modal="reels">
+                🔊 Audio
+              </button>
+            </div>
+            <video
+              id="video-reels"
+              src="assets/reels/1.mp4"
+              poster="assets/posters/reels_1.jpg"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+            ></video>
+          </div>
+
+          <div class="video-meta">
+            <h3 class="video-meta__title">Reels y TikTok Dinámicos</h3>
+            <p class="video-meta__sub-pill">
+              Cortes rápidos, subtítulos claros y ritmo pensado para retener la atención.
+            </p>
+            <div class="video-clips-bar">
+              <span class="video-clips-label">Muestra:</span>
+              <div class="video-clips-buttons" data-clip-group="reels">
+                <button type="button" class="clip-btn is-active" data-cat="reels" data-idx="0">1</button>
+                <button type="button" class="clip-btn" data-cat="reels" data-idx="1">2</button>
+                <button type="button" class="clip-btn" data-cat="reels" data-idx="2">3</button>
+                <button type="button" class="clip-btn" data-cat="reels" data-idx="3">4</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
       </div>
     </section>
+
+    <!-- ======================================================================
+         3. FRANJA MARQUEE HORIZONTAL
+         ====================================================================== -->
+    <div class="selv-card marquee-card" aria-label="Especialidades">
+      <div class="marquee-mask">
+        <div class="marquee-track">
+          <span class="marquee-item">Edición de <strong>Reels y TikTok</strong></span>
+          <span class="marquee-item">Landing Pages <strong>Directo a WhatsApp</strong></span>
+          <span class="marquee-item">Videos Comerciales <strong>con IA</strong></span>
+          <span class="marquee-item">Entrega Rápida <strong>Lista para Publicar</strong></span>
+          <span class="marquee-item">Edición de <strong>Reels y TikTok</strong></span>
+          <span class="marquee-item">Landing Pages <strong>Directo a WhatsApp</strong></span>
+          <span class="marquee-item">Videos Comerciales <strong>con IA</strong></span>
+          <span class="marquee-item">Entrega Rápida <strong>Lista para Publicar</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         4. SERVICIOS: 3 BLOQUES AMPLIOS EN 3 COLUMNAS CON INNER-GLOW DE SELV
+         ====================================================================== -->
+    <section class="selv-card services-card" id="servicios">
+      <div class="section-header section-header--split">
+        <div>
+          <span class="section-pill-tag" style="margin-bottom: 14px;">Qué puedo hacer por tu marca</span>
+          <h2 class="section-title">Servicios</h2>
+        </div>
+        <div class="subtitle-pill">
+          Soluciones concretas enfocadas en atención y ventas
+        </div>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-pill-card">
+          <div>
+            <div class="service-pill-card__top">
+              <span class="service-pill-card__num">Servicio 01</span>
+              <span class="service-pill-card__plus" aria-hidden="true">+</span>
+            </div>
+            <h3 class="service-pill-card__title">Edición de videos y reels</h3>
+            <p class="service-pill-card__desc">
+              Cortes dinámicos, subtítulos claros y ritmo pensado para retener la atención de principio a fin.
+            </p>
+          </div>
+        </article>
+
+        <article class="service-pill-card">
+          <div>
+            <div class="service-pill-card__top">
+              <span class="service-pill-card__num">Servicio 02</span>
+              <span class="service-pill-card__plus" aria-hidden="true">+</span>
+            </div>
+            <h3 class="service-pill-card__title">Landing pages de catálogo</h3>
+            <p class="service-pill-card__desc">
+              Páginas rápidas donde tus clientes ven tus productos y te hacen el pedido directo al WhatsApp.
+            </p>
+          </div>
+        </article>
+
+        <article class="service-pill-card">
+          <div>
+            <div class="service-pill-card__top">
+              <span class="service-pill-card__num">Servicio 03</span>
+              <span class="service-pill-card__plus" aria-hidden="true">+</span>
+            </div>
+            <h3 class="service-pill-card__title">Videos promocionales</h3>
+            <p class="service-pill-card__desc">
+              Piezas comerciales con inteligencia artificial y edición profesional para campañas y anuncios.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECCIÓN DE TESTIMONIOS OCULTA HASTA TENER DATOS REALES -->
+    <section class="selv-card" id="testimonios" hidden aria-hidden="true">
+      <span class="section-pill-tag">Testimonios</span>
+      <div class="services-grid" style="margin-top: 20px;">
+        <blockquote class="service-pill-card">
+          <p class="service-pill-card__desc">"[Espacio reservado para testimonio real de cliente 1]"</p>
+        </blockquote>
+        <blockquote class="service-pill-card">
+          <p class="service-pill-card__desc">"[Espacio reservado para testimonio real de cliente 2]"</p>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. FILA BENTO INFERIOR: SOBRE MÍ + CONTACTO DIRECTO
+         ====================================================================== -->
+    <div class="bottom-bento-row">
+      <!-- Tarjeta Izquierda: Sobre mí -->
+      <section class="selv-card about-card" id="sobre-mi">
+        <div>
+          <span class="section-pill-tag">Sobre mí</span>
+          <p class="about-statement">
+            “Trabajo directo contigo, sin agencias intermediarias ni entregas eternas. Me encargo de que tus videos detengan el scroll y de que tu página convierta visitas en pedidos reales por WhatsApp.”
+          </p>
+        </div>
+
+        <div class="about-author-pill">
+          <div class="about-photo-slot" title="Fabricio Sotelo">
+            <img src="assets/fabricio_camisa.png" alt="Fabricio Sotelo" id="aboutPhotoImg" />
+          </div>
+          <div class="about-author-meta">
+            <strong>Fabricio Sotelo</strong>
+            <span>Realizador Audiovisual &amp; Desarrollador Web · Lima, Perú</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tarjeta Derecha: Hablemos hoy -->
+      <section class="selv-card selv-card--dark connect-card" id="contacto">
+        <span class="section-pill-tag">¿Listo para empezar?</span>
+        <h2 class="connect-title">Hablemos hoy</h2>
+        <p class="connect-sub">
+          Cuéntame qué necesitas editar o qué catálogo quieres lanzar y te respondo al instante por WhatsApp.
+        </p>
+
+        <div class="connect-actions">
+          <a
+            href="https://wa.me/51999999999?text=Hola%20Fabricio%2C%20vi%20tu%20portafolio%20y%20quiero%20cotizar%20un%20servicio."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="selv-btn selv-btn--gold"
+          >
+            Escribir al WhatsApp
+          </a>
+          <a href="#muestras" class="selv-btn">
+            Volver a ver muestras
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <!-- ======================================================================
+         6. PIE DE PÁGINA SLIM
+         ====================================================================== -->
+    <footer class="selv-card selv-card--dark footer-card">
+      <span>Hecho por <strong>Fabricio Sotelo</strong></span>
+      <span>Lima, Perú · <strong>Portafolio de Servicios Freelance</strong></span>
+    </footer>
 
   </main>
 
-  <!-- ═══════════════════════════════════════════════════════════════════
-       FOOTER
-       ═══════════════════════════════════════════════════════════════════ -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-name">Fabricio Sotelo</div>
-      <div class="footer-links">
-        <a href="#videos">Muestras</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#casos">Casos reales</a>
-        <a href="https://wa.me/51933734627" target="_blank" rel="noopener" data-cursor="WhatsApp">WhatsApp</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ═══════════════════════════════════════════════════════════════════
-       BOTÓN FLOTANTE PERMANENTE DE WHATSAPP
-       ═══════════════════════════════════════════════════════════════════ -->
-  <a href="https://wa.me/51933734627?text=Hola%20Fabricio,%20estoy%20viendo%20tu%20portafolio%20y%20quiero%20hacerte%20una%20consulta." target="_blank" rel="noopener" class="whatsapp-float" data-cursor="WhatsApp" aria-label="Contactar por WhatsApp">
-    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.825z"/>
-    </svg>
+  <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+  <a
+    href="https://wa.me/51999999999?text=Hola%20Fabricio%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20cotizar."
+    target="_blank"
+    rel="noopener noreferrer"
+    class="wa-float"
+    aria-label="Contactar por WhatsApp"
+  >
+    <span class="wa-float__dot"></span>
     <span>WhatsApp</span>
   </a>
 
-  <!-- ═══════════════════════════════════════════════════════════════════
-       MODAL DE VIDEO CON SONIDO
-       ═══════════════════════════════════════════════════════════════════ -->
-  <div class="modal-backdrop" id="videoModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="closeVideoModal(event)">
-    <div class="modal-dialog" onclick="event.stopPropagation()">
-      <div class="modal-top-bar">
-        <span class="modal-title" id="modalTitle">Muestra de video</span>
-        <button type="button" class="modal-close" onclick="closeVideoModal()">Cerrar</button>
-      </div>
-      <video id="modalVideo" playsinline controls></video>
+  <!-- MODAL PARA VER VIDEO CON AUDIO -->
+  <div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Reproductor de video con audio">
+    <div class="video-modal__dialog">
+      <button type="button" class="video-modal__close" id="closeModalBtn" aria-label="Cerrar video">✕</button>
+      <video id="modalVideoPlayer" controls playsinline></video>
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════════════════════════════════
-       MODAL DE VISTA COMPLETA DE LANDING PAGES (SWEET FACTORY & WIKY)
-       ═══════════════════════════════════════════════════════════════════ -->
-  <div class="modal-backdrop" id="landingModal" role="dialog" aria-modal="true" aria-labelledby="landingModalTitle" onclick="closeLandingModal(event)">
-    <div class="modal-dialog modal-wide" onclick="event.stopPropagation()">
-      <div class="modal-top-bar">
-        <span class="modal-title" id="landingModalTitle">Vista de Landing Page</span>
-        <button type="button" class="modal-close" onclick="closeLandingModal()">Cerrar</button>
-      </div>
-      <div class="landing-preview-body" id="landingModalBody"></div>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════════════════════════════════════════════
-       SCRIPTS: VIDEO EN BUCLE, LÍNEA DE TIEMPO, CURSOR Y REVEAL
-       ═══════════════════════════════════════════════════════════════════ -->
   <script>
-    // 1. Efectos de sonido de interfaz
-    let _audioCtx = null;
-    let sfxEnabled = localStorage.getItem('fs_studio_sfx') !== 'false';
-    const sfxBtn = document.getElementById('sfxToggleBtn');
-
-    function getAudioCtx() {
-      if (!_audioCtx) {
-        const AudioClass = window.AudioContext || window.webkitAudioContext;
-        if (AudioClass) _audioCtx = new AudioClass();
-      }
-      return _audioCtx;
-    }
-
-    function unlockAudio() {
-      const ctx = getAudioCtx();
-      if (ctx && ctx.state === 'suspended') ctx.resume();
-    }
-    window.addEventListener('pointerdown', unlockAudio, { once: true });
-    window.addEventListener('keydown', unlockAudio, { once: true });
-
-    function playClickSfx() {
-      if (!sfxEnabled) return;
-      try {
-        const ctx = getAudioCtx();
-        if (!ctx) return;
-        if (ctx.state === 'suspended') ctx.resume();
-        const now = ctx.currentTime;
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(580, now);
-        osc.frequency.exponentialRampToValueAtTime(780, now + 0.03);
-        gain.gain.setValueAtTime(0.025, now);
-        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.03);
-        osc.connect(gain);
-        gain.connect(ctx.destination);
-        osc.start(now);
-        osc.stop(now + 0.03);
-      } catch (e) {}
-    }
-
-    if (sfxBtn) {
-      if (!sfxEnabled) sfxBtn.classList.add('is-muted');
-      sfxBtn.addEventListener('click', () => {
-        sfxEnabled = !sfxEnabled;
-        localStorage.setItem('fs_studio_sfx', sfxEnabled ? 'true' : 'false');
-        sfxBtn.classList.toggle('is-muted', !sfxEnabled);
-        if (sfxEnabled) playClickSfx();
-      });
-    }
-
-    // 2. Garantizar que el video del celular en el Hero se reproduzca en bucle continuo
-    const heroClips = [
-      { src: 'assets/reels/1.mp4?v=11', poster: 'assets/posters/reels_1.jpg' },
-      { src: 'assets/videos_ia/1.mp4?v=11', poster: 'assets/posters/ia_1.jpg' },
-      { src: 'assets/videos_edit/1.mp4?v=11', poster: 'assets/posters/edit_1.jpg' }
-    ];
-
-    function ensureHeroVideoLoop() {
-      const v = document.getElementById('heroPhoneVideo');
-      if (!v) return;
-      v.loop = true;
-      v.muted = true;
-      v.playsInline = true;
-      const p = v.play();
-      if (p && typeof p.catch === 'function') p.catch(() => {});
-    }
-
-    window.addEventListener('DOMContentLoaded', ensureHeroVideoLoop);
-    window.addEventListener('load', ensureHeroVideoLoop);
-
-    function switchHeroPhone(index, btn) {
-      playClickSfx();
-      const v = document.getElementById('heroPhoneVideo');
-      const item = heroClips[index];
-      if (!v || !item) return;
-      document.querySelectorAll('.phone-pill-btn').forEach(b => b.classList.remove('active'));
-      if (btn) btn.classList.add('active');
-      v.poster = item.poster;
-      v.src = item.src;
-      v.loop = true;
-      v.muted = true;
-      v.play().catch(() => {});
-    }
-
-    // 3. Catálogo de muestras verticales (play al pasar cursor o tocar)
-    const videoData = {
-      ia: [
-        { src: 'assets/videos_ia/1.mp4?v=11', poster: 'assets/posters/ia_1.jpg', label: 'Spot cinemático y dirección visual' },
-        { src: 'assets/videos_ia/2.mp4?v=11', poster: 'assets/posters/ia_2.jpg', label: ' Comercial conceptual con IA' },
-        { src: 'assets/videos_ia/3.mp4?v=11', poster: 'assets/posters/ia_3.jpg', label: 'Narrativa visual de alto impacto' },
-        { src: 'assets/videos_ia/4.mp4?v=11', poster: 'assets/posters/ia_4.jpg', label: 'Secuencia publicitaria dinámica' },
-        { src: 'assets/videos_ia/5.mp4?v=11', poster: 'assets/posters/ia_5.jpg', label: 'Campaña visual generativa' }
-      ],
-      edit: [
-        { src: 'assets/videos_edit/1.mp4?v=11', poster: 'assets/posters/edit_1.jpg', label: 'Spot comercial Clínica Mater Salud' },
-        { src: 'assets/videos_edit/2.mp4?v=11', poster: 'assets/posters/edit_2.jpg', label: 'Edición corporativa de servicios' },
-        { src: 'assets/videos_edit/3.mp4?v=11', poster: 'assets/posters/edit_3.jpg', label: 'Presentación institucional dinámica' },
-        { src: 'assets/videos_edit/4.mp4?v=11', poster: 'assets/posters/edit_4.jpg', label: 'Pieza promocional para negocios' }
-      ],
-      reels: [
-        { src: 'assets/reels/1.mp4?v=11', poster: 'assets/posters/reels_1.jpg', label: 'Campaña vertical de alta retención' },
-        { src: 'assets/reels/2.mp4?v=11', poster: 'assets/posters/reels_2.jpg', label: 'Reel dinámico con gancho visual' },
-        { src: 'assets/reels/3.mp4?v=11', poster: 'assets/posters/reels_3.jpg', label: 'Edición rítmica para TikTok y Reels' },
-        { src: 'assets/reels/4.mp4?v=11', poster: 'assets/posters/reels_4.jpg', label: 'Formato corto enfocado en conversión' }
-      ]
-    };
-
-    function hoverPlay(cat, play) {
-      const video = document.getElementById('video-' + cat);
-      const card = document.getElementById('card-' + cat);
-      if (!video) return;
-      if (play) {
-        video.play().catch(() => {});
-        if (card) card.classList.add('is-playing');
-      } else {
-        video.pause();
-        if (card) card.classList.remove('is-playing');
-      }
-    }
-
-    function toggleTouchPlay(cat) {
-      const video = document.getElementById('video-' + cat);
-      const card = document.getElementById('card-' + cat);
-      if (!video) return;
-      if (video.paused) {
-        ['ia', 'edit', 'reels'].forEach(other => {
-          if (other !== cat) {
-            const ov = document.getElementById('video-' + other);
-            const oc = document.getElementById('card-' + other);
-            if (ov) ov.pause();
-            if (oc) oc.classList.remove('is-playing');
-          }
-        });
-        video.play().catch(() => {});
-        if (card) card.classList.add('is-playing');
-      } else {
-        video.pause();
-        if (card) card.classList.remove('is-playing');
-      }
-    }
-
-    function switchVideo(cat, index) {
-      playClickSfx();
-      const list = videoData[cat];
-      if (!list || !list[index]) return;
-      const item = list[index];
-      const video = document.getElementById('video-' + cat);
-      const label = document.getElementById('label-' + cat);
-      const group = document.getElementById('bubbles-' + cat);
-      const card = document.getElementById('card-' + cat);
-
-      if (group) {
-        const btns = group.querySelectorAll('.clip-btn');
-        btns.forEach((b, idx) => b.classList.toggle('active', idx === index));
-      }
-      if (label) label.textContent = item.label.trim();
-      if (video) {
-        video.poster = item.poster;
-        video.src = item.src;
-        video.play().catch(() => {});
-        if (card) card.classList.add('is-playing');
-      }
-    }
-
-    // 4. Modales de video con sonido y de vista completa de Landing Pages
-    function openVideoModal(src, title) {
-      playClickSfx();
-      const modal = document.getElementById('videoModal');
-      const video = document.getElementById('modalVideo');
-      const titleEl = document.getElementById('modalTitle');
-      if (!modal || !video) return;
-      if (titleEl) titleEl.textContent = title || 'Muestra de video';
-      video.src = src;
-      modal.classList.add('active');
-      video.currentTime = 0;
-      video.muted = false;
-      video.play().catch(() => {});
-    }
-
-    function closeVideoModal(e) {
-      if (e && e.target && e.target.id !== 'videoModal') return;
-      const modal = document.getElementById('videoModal');
-      const video = document.getElementById('modalVideo');
-      if (video) {
-        video.pause();
-        video.removeAttribute('src');
-      }
-      if (modal) modal.classList.remove('active');
-    }
-
-    const landingGallery = {
-      sweet: {
-        title: 'Sweet Factory — Catálogo con pedido directo a WhatsApp',
-        images: [
-          { src: 'assets/sweet_factory_personalizados.jpg', alt: 'Vista principal del catálogo Sweet Factory' },
-          { src: 'assets/sweet_factory_ingredientes.jpg', alt: 'Detalle de productos e ingredientes en Sweet Factory' }
+    // Catálogo real de videos verticales en las 3 columnas
+    const CATALOG = {
+      ia: {
+        videoEl: document.getElementById('video-ia'),
+        clips: [
+          { src: 'assets/videos_ia/1.mp4', poster: 'assets/posters/ia_1.jpg' },
+          { src: 'assets/videos_ia/2.mp4', poster: 'assets/posters/ia_2.jpg' },
+          { src: 'assets/videos_ia/3.mp4', poster: 'assets/posters/ia_3.jpg' },
+          { src: 'assets/videos_ia/4.mp4', poster: 'assets/posters/ia_4.jpg' },
+          { src: 'assets/videos_ia/5.mp4', poster: 'assets/posters/ia_5.jpg' }
         ]
       },
-      wiky: {
-        title: 'Wiky Cosmética — Página de producto artesanal',
-        images: [
-          { src: 'assets/proyectos/WhatsApp Image 2026-05-06 at 9.36.00 AMsds.jpeg', alt: 'Presentación de marca y empaques Wiky Cosmética' },
-          { src: 'assets/proyectos/WhatsApp Image 2026-05-06 at 9.36.01 AMfd.jpeg', alt: 'Catálogo de jabones artesanales Wiky' },
-          { src: 'assets/proyectos/WhatsApp Image 2026-05-06 at 9.35.50 AM.jpeg', alt: 'Detalle visual de producto Wiky' }
+      reels: {
+        videoEl: document.getElementById('video-reels'),
+        clips: [
+          { src: 'assets/reels/1.mp4', poster: 'assets/posters/reels_1.jpg' },
+          { src: 'assets/reels/2.mp4', poster: 'assets/posters/reels_2.jpg' },
+          { src: 'assets/reels/3.mp4', poster: 'assets/posters/reels_3.jpg' },
+          { src: 'assets/reels/4.mp4', poster: 'assets/posters/reels_4.jpg' }
+        ]
+      },
+      edit: {
+        videoEl: document.getElementById('video-edit'),
+        clips: [
+          { src: 'assets/videos_edit/1.mp4', poster: 'assets/posters/edit_1.jpg' },
+          { src: 'assets/videos_edit/2.mp4', poster: 'assets/posters/edit_2.jpg' },
+          { src: 'assets/videos_edit/3.mp4', poster: 'assets/posters/edit_3.jpg' },
+          { src: 'assets/videos_edit/4.mp4', poster: 'assets/posters/edit_4.jpg' }
         ]
       }
     };
 
-    function openLandingModal(key) {
-      playClickSfx();
-      const data = landingGallery[key];
-      const modal = document.getElementById('landingModal');
-      const titleEl = document.getElementById('landingModalTitle');
-      const bodyEl = document.getElementById('landingModalBody');
-      if (!data || !modal || !bodyEl) return;
+    const currentClipIdx = { ia: 0, reels: 0, edit: 0 };
 
-      if (titleEl) titleEl.textContent = data.title;
-      bodyEl.innerHTML = '';
-      data.images.forEach(imgData => {
-        const img = document.createElement('img');
-        img.src = imgData.src;
-        img.alt = imgData.alt;
-        bodyEl.appendChild(img);
+    // Garantizar que el mini celular y las 3 columnas de video estén siempre reproduciéndose en bucle
+    function ensureAllVideosPlaying() {
+      const videos = document.querySelectorAll('#heroPhoneVideo, #video-ia, #video-reels, #video-edit');
+      videos.forEach((v) => {
+        v.muted = true;
+        v.loop = true;
+        v.playsInline = true;
+        if (v.paused) {
+          v.play().catch(() => {});
+        }
       });
-      modal.classList.add('active');
     }
 
-    function closeLandingModal(e) {
-      if (e && e.target && e.target.id !== 'landingModal') return;
-      const modal = document.getElementById('landingModal');
-      if (modal) modal.classList.remove('active');
-    }
-
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        closeVideoModal();
-        closeLandingModal();
-      }
+    document.addEventListener('DOMContentLoaded', () => {
+      ensureAllVideosPlaying();
+      setInterval(ensureAllVideosPlaying, 1500);
     });
 
-    // 5. Línea de tiempo de edición (playhead + timecode 00:00:00 + barra móvil)
-    function twoDigits(n) {
-      const val = Math.max(0, Math.floor(n));
-      return val < 10 ? '0' + val : '' + val;
+    // Cambiar clip con los botones numerados (1, 2, 3, 4, 5) de cada columna
+    document.querySelectorAll('.clip-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const cat = btn.getAttribute('data-cat');
+        const idx = Number(btn.getAttribute('data-idx'));
+        const entry = CATALOG[cat];
+        if (!entry || !entry.clips[idx]) return;
+
+        currentClipIdx[cat] = idx;
+        const clip = entry.clips[idx];
+        entry.videoEl.poster = clip.poster;
+        entry.videoEl.src = clip.src;
+        entry.videoEl.muted = true;
+        entry.videoEl.play().catch(() => {});
+
+        const group = document.querySelector(`[data-clip-group="${cat}"]`);
+        if (group) {
+          group.querySelectorAll('.clip-btn').forEach((b, i) => {
+            b.classList.toggle('is-active', i === idx);
+          });
+        }
+      });
+    });
+
+    // Modal de pantalla completa con audio
+    const videoModal = document.getElementById('videoModal');
+    const modalVideoPlayer = document.getElementById('modalVideoPlayer');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const heroPhoneMockup = document.getElementById('heroPhoneMockup');
+
+    function openModalWithSrc(src) {
+      modalVideoPlayer.src = src;
+      modalVideoPlayer.muted = false;
+      videoModal.classList.add('is-open');
+      modalVideoPlayer.play().catch(() => {});
     }
 
-    function scrollToSection(id) {
-      playClickSfx();
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    function closeModal() {
+      videoModal.classList.remove('is-open');
+      modalVideoPlayer.pause();
+      modalVideoPlayer.removeAttribute('src');
+      ensureAllVideosPlaying();
     }
 
-    const timelineFill = document.getElementById('timelineFill');
-    const timelinePlayhead = document.getElementById('timelinePlayhead');
-    const timelineTimecode = document.getElementById('timelineTimecode');
-    const mobileProgressFill = document.getElementById('mobileProgressFill');
-    const timelineMarkers = document.querySelectorAll('.timeline-marker');
-    const trackedSectionIds = ['videos', 'servicios', 'casos', 'sobre-mi'];
+    document.querySelectorAll('[data-open-modal]').forEach((el) => {
+      el.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const cat = el.getAttribute('data-open-modal');
+        const idx = currentClipIdx[cat] || 0;
+        openModalWithSrc(CATALOG[cat].clips[idx].src);
+      });
+    });
 
-    function updateTimelineOnScroll() {
-      const doc = document.documentElement;
-      const maxScroll = Math.max(1, doc.scrollHeight - window.innerHeight);
-      const progress = Math.min(1, Math.max(0, window.scrollY / maxScroll));
-      const pct = (progress * 100).toFixed(1) + '%';
+    heroPhoneMockup.addEventListener('click', () => {
+      openModalWithSrc('assets/reels/3.mp4');
+    });
 
-      if (timelineFill) timelineFill.style.height = pct;
-      if (timelinePlayhead) timelinePlayhead.style.top = pct;
-      if (mobileProgressFill) mobileProgressFill.style.width = pct;
+    closeModalBtn.addEventListener('click', closeModal);
+    videoModal.addEventListener('click', (e) => {
+      if (e.target === videoModal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && videoModal.classList.contains('is-open')) closeModal();
+    });
 
-      if (timelineTimecode) {
-        // Simula un timeline de edición de 60 segundos a 24 fps (MM:SS:FF)
-        const totalFrames = Math.round(progress * 60 * 24);
-        const totalSecs = Math.floor(totalFrames / 24);
-        const mins = Math.floor(totalSecs / 60);
-        const secs = totalSecs % 60;
-        const frames = totalFrames % 24;
-        timelineTimecode.textContent = twoDigits(mins) + ':' + twoDigits(secs) + ':' + twoDigits(frames);
-      }
+    // Parallax suave del paisaje de fondo en escritorio
+    window.addEventListener('pointermove', (e) => {
+      const x = ((e.clientX / window.innerWidth) - 0.5) * -18;
+      const y = ((e.clientY / window.innerHeight) - 0.5) * -12;
+      document.documentElement.style.setProperty('--bg-x', `${x.toFixed(1)}px`);
+      document.documentElement.style.setProperty('--bg-y', `${y.toFixed(1)}px`);
+    });
 
-      // Actualizar marcador activo según sección en pantalla
-      let activeIndex = 0;
-      const triggerY = window.innerHeight * 0.42;
-      trackedSectionIds.forEach((id, idx) => {
-        const sec = document.getElementById(id);
-        if (sec) {
-          const rect = sec.getBoundingClientRect();
-          if (rect.top <= triggerY) activeIndex = idx;
+    // Actualizar icono activo del dock derecho al hacer scroll
+    const dockLinks = Array.from(document.querySelectorAll('.selv-dock__link'));
+    const sections = ['inicio', 'muestras', 'servicios', 'sobre-mi', 'contacto'].map((id) =>
+      document.getElementById(id)
+    );
+
+    window.addEventListener('scroll', () => {
+      const scrollMid = window.scrollY + window.innerHeight * 0.4;
+      let currentId = 'inicio';
+      sections.forEach((sec) => {
+        if (sec && sec.offsetTop <= scrollMid) {
+          currentId = sec.id;
         }
       });
-      timelineMarkers.forEach((m, idx) => m.classList.toggle('is-active', idx === activeIndex));
-    }
-
-    window.addEventListener('scroll', updateTimelineOnScroll, { passive: true });
-    window.addEventListener('resize', updateTimelineOnScroll, { passive: true });
-    updateTimelineOnScroll();
-
-    // 6. Cursor personalizado contextual (solo escritorio con puntero fino)
-    (function initCustomCursor() {
-      const cursor = document.getElementById('customCursor');
-      const label = document.getElementById('customCursorLabel');
-      if (!cursor || !label) return;
-      if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
-
-      window.addEventListener('pointermove', (e) => {
-        if (e.pointerType && e.pointerType !== 'mouse') {
-          cursor.classList.remove('is-visible');
-          return;
-        }
-        cursor.classList.add('is-visible');
-        cursor.style.transform = 'translate3d(' + (e.clientX + 14) + 'px, ' + (e.clientY + 14) + 'px, 0)';
-
-        const target = e.target && e.target.closest ? e.target.closest('[data-cursor]') : null;
-        if (target) {
-          const text = target.getAttribute('data-cursor') || '';
-          label.textContent = text;
-          cursor.classList.add('has-label');
-        } else {
-          label.textContent = '';
-          cursor.classList.remove('has-label');
-        }
-      }, { passive: true });
-
-      document.addEventListener('mouseleave', () => {
-        cursor.classList.remove('is-visible');
+      dockLinks.forEach((link) => {
+        link.classList.toggle('is-active', link.getAttribute('data-nav') === currentId);
       });
-    })();
-
-    // 7. Entradas por scroll con variación por sección (<= 0.45s)
-    (function initReveal() {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      const items = document.querySelectorAll('[data-reveal]');
-      if (!('IntersectionObserver' in window)) return;
-
-      document.documentElement.classList.add('js-motion');
-      const vh = window.innerHeight || 800;
-
-      items.forEach((el) => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top > vh * 0.92) {
-          el.classList.add('is-waiting');
-        }
-      });
-
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.remove('is-waiting');
-            io.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
-
-      items.forEach((el) => {
-        if (el.classList.contains('is-waiting')) io.observe(el);
-      });
-    })();
+    }, { passive: true });
   </script>
 </body>
 </html>
