@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+  <defs>
+    <filter id="glow-amber" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#FFB830"/>
+      <feDropShadow dx="0" dy="1.5" stdDeviation="1.2" flood-color="rgba(0,0,0,0.85)"/>
+    </filter>
+  </defs>
+  <!-- Chispas activas intensas -->
+  <line x1="4" y1="6" x2="1" y2="3" stroke="#FFD166" stroke-width="2.6" stroke-linecap="round"/>
+  <line x1="11" y1="3" x2="11" y2="0.5" stroke="#FFD166" stroke-width="2.6" stroke-linecap="round"/>
+  <line x1="18" y1="6" x2="21" y2="3" stroke="#FFD166" stroke-width="2.6" stroke-linecap="round"/>
+  <!-- Flecha interactiva con acento dorado -->
+  <path d="M11 7 L11 25 L15 21 L18.5 28 L21.5 26.5 L18 19.5 L24 19.5 Z" fill="#FFFDF2" stroke="#E5A93C" stroke-width="2" stroke-linejoin="round" filter="url(#glow-amber)"/>
+  <circle cx="11" cy="7" r="1.8" fill="#FFB830"/>
+</svg>

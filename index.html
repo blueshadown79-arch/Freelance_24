@@ -52,6 +52,7 @@
       font-size: 16px;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      cursor: url("assets/cursor_spark_clean.svg") 11 7, auto;
     }
 
     body {
@@ -61,6 +62,11 @@
       overflow-x: hidden;
       position: relative;
       padding: 44px 32px 100px;
+      cursor: url("assets/cursor_spark_clean.svg") 11 7, auto;
+    }
+
+    a, button, [role="button"], input, select, .mini-phone, .video-frame, .clip-btn, [data-open-modal], .wa-float, .selv-dock__link {
+      cursor: url("assets/cursor_spark_pointer.svg") 11 7, pointer;
     }
 
     /* ==========================================================================
@@ -1130,6 +1136,74 @@
         font-size: 14.5px;
       }
     }
+
+    /* ==========================================================================
+       EFECTO INTERACTIVO DE CHISPAS & ONDA AL CLIC Y AL TOCAR
+       ========================================================================== */
+    .click-fx-burst {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 0;
+      height: 0;
+      pointer-events: none;
+      z-index: 999999;
+      transform: translate(var(--fx-x, 0), var(--fx-y, 0));
+    }
+
+    .click-fx-ring {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      margin: -8px 0 0 -8px;
+      border-radius: 50%;
+      border: 2px solid #FFB830;
+      background: radial-gradient(circle, rgba(255, 184, 48, 0.45) 0%, rgba(255, 184, 48, 0) 70%);
+      box-shadow: 0 0 16px rgba(255, 184, 48, 0.9), inset 0 0 10px rgba(255, 209, 102, 0.6);
+      animation: clickRingBurst 0.46s cubic-bezier(0.12, 0.8, 0.32, 1) forwards;
+      will-change: transform, opacity;
+    }
+
+    .click-fx-particle {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 5px;
+      height: 5px;
+      margin: -2.5px 0 0 -2.5px;
+      border-radius: 50%;
+      background: #FFE082;
+      box-shadow: 0 0 8px #FFB830, 0 0 16px #FFA000;
+      animation: clickParticleBurst 0.42s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      will-change: transform, opacity;
+    }
+
+    @keyframes clickRingBurst {
+      0% {
+        transform: scale(0.3);
+        opacity: 1;
+      }
+      65% {
+        opacity: 0.85;
+      }
+      100% {
+        transform: scale(3.4);
+        opacity: 0;
+      }
+    }
+
+    @keyframes clickParticleBurst {
+      0% {
+        transform: rotate(var(--angle, 0deg)) translate(0px) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: rotate(var(--angle, 0deg)) translate(var(--dist, 28px)) scale(0.15);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1497,7 +1571,7 @@
           </div>
           <div class="about-author-meta">
             <strong>Fabricio Sotelo</strong>
-            <span>Realizador Audiovisual &amp; Desarrollador Web · Lima, Perú</span>
+            <span>Estudiante de Marketing · Lima, Perú</span>
           </div>
         </div>
       </section>
@@ -1700,6 +1774,47 @@
         link.classList.toggle('is-active', link.getAttribute('data-nav') === currentId);
       });
     }, { passive: true });
+
+    // ========================================================================
+    // EFECTO VISUAL AL CLIC (ESCRITORIO) Y AL TOCAR (PANTALLA TÁCTIL / MÓVIL)
+    // ========================================================================
+    (function initClickTouchBurst() {
+      function triggerBurst(x, y) {
+        if (!x && !y) return;
+        const burst = document.createElement('div');
+        burst.className = 'click-fx-burst';
+        burst.style.setProperty('--fx-x', `${x}px`);
+        burst.style.setProperty('--fx-y', `${y}px`);
+
+        const ring = document.createElement('div');
+        ring.className = 'click-fx-ring';
+        burst.appendChild(ring);
+
+        const particleCount = 7;
+        for (let i = 0; i < particleCount; i++) {
+          const p = document.createElement('span');
+          p.className = 'click-fx-particle';
+          const baseAngle = (i / particleCount) * 360;
+          const jitter = (Math.random() - 0.5) * 28;
+          const angle = baseAngle + jitter;
+          const dist = 24 + Math.random() * 20;
+          p.style.setProperty('--angle', `${angle}deg`);
+          p.style.setProperty('--dist', `${dist}px`);
+          burst.appendChild(p);
+        }
+
+        document.body.appendChild(burst);
+        setTimeout(() => {
+          burst.remove();
+        }, 500);
+      }
+
+      // Funciona tanto con clics de mouse como con toques táctiles (pointerdown)
+      window.addEventListener('pointerdown', (e) => {
+        if (e.pointerType === 'mouse' && e.button !== 0) return;
+        triggerBurst(e.clientX, e.clientY);
+      }, { passive: true });
+    })();
   </script>
 </body>
 </html>
