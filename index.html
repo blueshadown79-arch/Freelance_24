@@ -20,11 +20,11 @@
        ═══════════════════════════════════════════════════════════════════ */
     :root {
       --bg: #0c0b09;
-      --surface: #161411;
-      --surface-raised: #211e19;
+      --surface: #1b1814;
+      --surface-raised: #26221c;
       --ink: #f0efec;
-      --ink-body: #dcdad4;
-      --muted: #a39e93;
+      --ink-body: #e4e2dc;
+      --muted: #b8b2a6;
       --accent: #e2a84b;
       --accent-hover: #eeb65b;
       --accent-ink: #0c0b09;
@@ -32,14 +32,19 @@
       --font-display: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-text: 'General Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
-      /* Escala de 5 pasos estrictos (mínimo 16px en móvil y escritorio) */
+      /* Escala de 5 pasos estrictos:
+         - small: 16px
+         - body: 17px–18px (descripciones de servicios y videos)
+         - lead: 24px–25px (títulos de tarjetas >= 24px)
+         - head: 31px–48px (títulos de sección)
+         - display: 34px–68px (titular hero) */
       --step-small: 1rem;                                            /* 16px */
-      --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);       /* 17px–19px */
-      --step-lead: clamp(1.25rem, 1.1rem + 0.55vw, 1.5rem);          /* 20px–24px */
-      --step-head: clamp(1.85rem, 1.35rem + 2.2vw, 3rem);            /* 30px–48px */
+      --step-body: clamp(1.0625rem, 1.02rem + 0.2vw, 1.125rem);      /* 17px–18px */
+      --step-lead: clamp(1.5rem, 1.45rem + 0.25vw, 1.5625rem);       /* 24px–25px */
+      --step-head: clamp(1.95rem, 1.4rem + 2.1vw, 3rem);             /* 31px–48px */
       --step-display: clamp(2.15rem, 1.2rem + 3.6vw, 4.25rem);       /* 34px–68px */
 
-      --container: 1260px;
+      --container: 1240px;
       --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
     }
 
@@ -67,11 +72,10 @@
       -webkit-font-smoothing: antialiased;
       font-kerning: normal;
       text-rendering: optimizeLegibility;
-      cursor: url("assets/cursor_monkey.png") 4 4, auto;
     }
 
     a, button {
-      cursor: url("assets/cursor_monkey.png") 4 4, pointer;
+      cursor: pointer;
       font-family: inherit;
     }
 
@@ -83,6 +87,10 @@
     :focus-visible {
       outline: 2px solid var(--accent);
       outline-offset: 3px;
+    }
+
+    [hidden] {
+      display: none !important;
     }
 
     /* Enlace de accesibilidad para teclado */
@@ -97,7 +105,7 @@
       font-size: var(--step-small);
       text-decoration: none;
       border-radius: 4px;
-      z-index: 900;
+      z-index: 960;
       transition: transform 0.2s var(--ease-out);
     }
 
@@ -108,7 +116,7 @@
     .container {
       max-width: var(--container);
       margin: 0 auto;
-      padding: 0 28px;
+      padding: 0 76px 0 28px;
     }
 
     h1, h2, h3 {
@@ -132,10 +140,10 @@
     }
 
     /* ═══════════════════════════════════════════════════════════════════
-       2. NAVEGACIÓN PLANA CON IDENTIDAD (SIN CÁPSULAS DE CRISTAL)
+       2. NAVEGACIÓN PLANA CON IDENTIDAD
        ═══════════════════════════════════════════════════════════════════ */
     .site-header {
-      padding: 22px 0 18px;
+      padding: 24px 0 20px;
     }
 
     .header-inner {
@@ -283,17 +291,17 @@
     }
 
     /* ═══════════════════════════════════════════════════════════════════
-       3. HERO: TITULAR GRANDE A LA IZQUIERDA + CELULAR EN BUCLE A LA DERECHA
+       3. HERO: TITULAR GRANDE + CELULAR EN BUCLE CON AIRE SUPERIOR
        ═══════════════════════════════════════════════════════════════════ */
     .hero-section {
-      padding: 28px 0 48px;
+      padding: 44px 0 56px;
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1.18fr 0.82fr;
       align-items: center;
-      gap: 44px;
+      gap: 48px;
     }
 
     .hero-copy {
@@ -314,9 +322,9 @@
 
     .hero-lead {
       font-size: var(--step-lead);
-      line-height: 1.48;
+      line-height: 1.42;
       color: var(--ink-body);
-      max-width: 46ch;
+      max-width: 44ch;
       margin-bottom: 32px;
     }
 
@@ -327,12 +335,13 @@
       gap: 14px;
     }
 
-    /* El elemento memorable: Mockup de celular con video en bucle e interacción */
+    /* Mockup de celular con aire generoso arriba para no tocar la barra superior */
     .hero-phone-stage {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      padding-top: 24px;
     }
 
     .phone-chassis {
@@ -397,7 +406,7 @@
       z-index: 4;
       margin: 0 12px 12px;
       padding: 10px 12px;
-      background-color: rgba(12, 11, 9, 0.86);
+      background-color: rgba(12, 11, 9, 0.88);
       border-radius: 20px;
       display: flex;
       align-items: center;
@@ -449,10 +458,10 @@
     }
 
     /* ═══════════════════════════════════════════════════════════════════
-       4. MUESTRAS DE VIDEO VERTICAL (PROTAGONISTAS, HOVER/TOUCH PLAY)
+       4. MUESTRAS DE VIDEO VERTICAL (TÍTULOS Y DESCRIPCIONES CON ALTO CONTRASTE)
        ═══════════════════════════════════════════════════════════════════ */
     .videos-section {
-      padding: 36px 0 64px;
+      padding: 36px 0 68px;
     }
 
     .section-intro {
@@ -468,7 +477,7 @@
 
     .section-desc {
       font-size: var(--step-body);
-      color: var(--muted);
+      color: var(--ink-body);
       max-width: 58ch;
     }
 
@@ -479,7 +488,6 @@
       align-items: start;
     }
 
-    /* Piezas verticales directas sobre la sala oscura, con bordes asimétricos */
     .video-stage-card {
       background-color: transparent;
       padding: 0;
@@ -514,7 +522,6 @@
       display: block;
     }
 
-    /* Botón para abrir con sonido en pantalla completa */
     .video-expand-btn {
       position: absolute;
       bottom: 14px;
@@ -523,7 +530,7 @@
       padding: 0 14px;
       border: none;
       border-radius: 6px 14px 6px 14px;
-      background-color: rgba(12, 11, 9, 0.85);
+      background-color: rgba(12, 11, 9, 0.88);
       color: var(--ink);
       font-size: var(--step-small);
       font-weight: 600;
@@ -540,22 +547,32 @@
       transform: scale(1.04);
     }
 
+    /* Bloque inferior con superficie cálida y alto contraste */
     .video-meta-bar {
-      padding: 2px 4px 4px;
+      background-color: var(--surface);
+      padding: 18px 20px;
+      border-radius: 6px 20px 6px 20px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 14px;
+    }
+
+    .video-stage-card:nth-child(2) .video-meta-bar {
+      border-radius: 20px 6px 20px 6px;
     }
 
     .video-card-heading {
       font-size: var(--step-lead);
+      color: var(--ink);
       font-weight: 700;
       line-height: 1.15;
+      margin-bottom: 6px;
     }
 
     .video-card-sub {
-      font-size: var(--step-small);
-      color: var(--muted);
+      font-size: var(--step-body);
+      color: var(--ink-body);
+      line-height: 1.45;
     }
 
     .clip-switcher {
@@ -571,8 +588,8 @@
       padding: 0 12px;
       border: none;
       border-radius: 6px 12px 6px 12px;
-      background-color: var(--surface);
-      color: var(--ink-body);
+      background-color: var(--surface-raised);
+      color: var(--ink);
       font-size: var(--step-small);
       font-weight: 600;
       font-variant-numeric: tabular-nums;
@@ -580,8 +597,8 @@
     }
 
     .clip-btn:hover {
-      background-color: var(--surface-raised);
-      color: var(--ink);
+      background-color: var(--bg);
+      color: var(--accent);
     }
 
     .clip-btn.active {
@@ -590,10 +607,10 @@
     }
 
     /* ═══════════════════════════════════════════════════════════════════
-       5. SERVICIOS: 3 BLOQUES CLAROS CON UNA FRASE CORTA CADA UNO
+       5. SERVICIOS: 3 TARJETAS CON TONO DISTINTO, TÍTULO >= 24PX Y ALTO CONTRASTE
        ═══════════════════════════════════════════════════════════════════ */
     .services-section {
-      padding: 52px 0 64px;
+      padding: 56px 0 68px;
     }
 
     .services-list {
@@ -605,33 +622,37 @@
 
     .service-panel {
       background-color: var(--surface);
-      padding: 34px 30px;
-      border-radius: 6px 28px 6px 28px;
+      padding: 36px 32px;
+      border-radius: 8px 28px 8px 28px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 24px;
+      gap: 26px;
       transition: transform 0.25s var(--ease-out), background-color 0.25s var(--ease-out);
     }
 
     .service-panel:nth-child(2) {
       background-color: var(--surface-raised);
-      border-radius: 28px 6px 28px 6px;
+      border-radius: 28px 8px 28px 8px;
     }
 
     .service-panel:hover {
+      background-color: var(--surface-raised);
       transform: translateY(-3px);
     }
 
     .service-title {
       font-size: var(--step-lead);
-      margin-bottom: 12px;
+      color: var(--ink);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 14px;
     }
 
     .service-phrase {
       font-size: var(--step-body);
-      color: var(--ink-body);
-      line-height: 1.55;
+      color: var(--ink);
+      line-height: 1.58;
     }
 
     .service-action {
@@ -657,7 +678,7 @@
        6. CASOS REALES: SWEET FACTORY Y WIKY EN MARCO GRANDE
        ═══════════════════════════════════════════════════════════════════ */
     .cases-section {
-      padding: 52px 0 64px;
+      padding: 56px 0 68px;
     }
 
     .cases-stack {
@@ -680,7 +701,6 @@
       border-radius: 32px 10px 32px 10px;
     }
 
-    /* Marco de navegador realista (data-ui) */
     .browser-mockup {
       background-color: var(--bg);
       border-radius: 8px 20px 8px 20px;
@@ -769,10 +789,46 @@
     }
 
     /* ═══════════════════════════════════════════════════════════════════
-       7. SOBRE MÍ (CON ESPACIO PARA FOTO) Y CONTACTO DIRECTO
+       7. TESTIMONIOS (OCULTA MIENTRAS NO HAYA DATOS REALES)
+       ═══════════════════════════════════════════════════════════════════ */
+    .testimonials-section {
+      padding: 44px 0 60px;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background-color: var(--surface);
+      padding: 32px;
+      border-radius: 8px 26px 8px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .testimonial-quote {
+      font-size: var(--step-body);
+      color: var(--ink);
+      line-height: 1.58;
+    }
+
+    .testimonial-author {
+      font-size: var(--step-small);
+      color: var(--muted);
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       8. SOBRE MÍ (CON ESPACIO PARA FOTO) Y CONTACTO DIRECTO
        ═══════════════════════════════════════════════════════════════════ */
     .about-section {
-      padding: 52px 0 80px;
+      padding: 52px 0 84px;
     }
 
     .about-card {
@@ -843,10 +899,10 @@
     }
 
     /* ═══════════════════════════════════════════════════════════════════
-       8. FOOTER Y BOTÓN FLOTANTE DE WHATSAPP
+       9. FOOTER Y BOTÓN FLOTANTE DE WHATSAPP
        ═══════════════════════════════════════════════════════════════════ */
     .site-footer {
-      padding: 36px 0 100px;
+      padding: 36px 0 108px;
       background-color: var(--surface);
     }
 
@@ -884,14 +940,14 @@
       color: var(--accent);
     }
 
-    /* Botón flotante de WhatsApp visible en toda la página */
+    /* Botón flotante de WhatsApp visible en toda la página sin tapar contenido */
     .whatsapp-float {
       position: fixed;
       bottom: 24px;
-      right: 24px;
+      right: 68px;
       z-index: 850;
-      min-height: 52px;
-      padding: 0 22px;
+      min-height: 50px;
+      padding: 0 20px;
       border-radius: 8px 22px 8px 22px;
       background-color: var(--accent);
       color: var(--accent-ink);
@@ -914,7 +970,195 @@
     }
 
     /* ═══════════════════════════════════════════════════════════════════
-       9. MODALES (VIDEO FULLSCREEN Y VISTA COMPLETA DE LANDING PAGE)
+       10. LÍNEA DE TIEMPO DE EDICIÓN (DERECHA EN ESCRITORIO / BARRA SUPERIOR EN MÓVIL)
+       ═══════════════════════════════════════════════════════════════════ */
+    .edit-timeline[data-ui] {
+      position: fixed;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 840;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 12px;
+      user-select: none;
+    }
+
+    .edit-timeline[data-ui] .timeline-timecode {
+      background-color: var(--surface-raised);
+      color: var(--accent);
+      font-family: var(--font-text);
+      font-variant-numeric: tabular-nums;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 4px 10px 4px 10px;
+      letter-spacing: 0.02em;
+    }
+
+    .edit-timeline[data-ui] .timeline-rail-wrap {
+      position: relative;
+      width: 28px;
+      height: 220px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .edit-timeline[data-ui] .timeline-rail {
+      width: 2px;
+      height: 100%;
+      background-color: var(--surface-raised);
+      border-radius: 2px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .edit-timeline[data-ui] .timeline-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0%;
+      background-color: var(--accent);
+    }
+
+    .edit-timeline[data-ui] .timeline-playhead {
+      position: absolute;
+      left: 50%;
+      top: 0%;
+      transform: translate(-50%, -50%);
+      width: 14px;
+      height: 6px;
+      border-radius: 2px;
+      background-color: var(--accent);
+      pointer-events: none;
+      transition: top 0.08s linear;
+    }
+
+    .edit-timeline[data-ui] .timeline-marker {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 24px;
+      height: 24px;
+      border: none;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .edit-timeline[data-ui] .timeline-marker-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--muted);
+      transition: transform 0.2s var(--ease-out), background-color 0.2s var(--ease-out);
+    }
+
+    .edit-timeline[data-ui] .timeline-marker:hover .timeline-marker-dot,
+    .edit-timeline[data-ui] .timeline-marker.is-active .timeline-marker-dot {
+      background-color: var(--accent);
+      transform: scale(1.35);
+    }
+
+    .edit-timeline[data-ui] .timeline-marker-label {
+      position: absolute;
+      right: 30px;
+      background-color: var(--surface-raised);
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 4px 10px 4px 10px;
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateX(6px);
+      pointer-events: none;
+      transition: opacity 0.18s var(--ease-out), transform 0.18s var(--ease-out);
+    }
+
+    .edit-timeline[data-ui] .timeline-marker:hover .timeline-marker-label,
+    .edit-timeline[data-ui] .timeline-marker:focus-visible .timeline-marker-label {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Barra de progreso fina arriba para móvil (oculta en escritorio) */
+    .mobile-progress-bar[data-ui] {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background-color: var(--surface);
+      z-index: 920;
+      pointer-events: none;
+    }
+
+    .mobile-progress-bar[data-ui] .mobile-progress-fill {
+      width: 0%;
+      height: 100%;
+      background-color: var(--accent);
+      transition: width 0.08s linear;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       11. CURSOR PERSONALIZADO (SOLO ESCRITORIO CON PUNTERO FINO)
+       ═══════════════════════════════════════════════════════════════════ */
+    .custom-cursor[data-ui] {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 12px;
+      height: 12px;
+      border-radius: 99px;
+      background-color: var(--accent);
+      color: var(--accent-ink);
+      pointer-events: none;
+      z-index: 990;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: translate3d(-100px, -100px, 0);
+      transition: width 0.2s var(--ease-out), height 0.2s var(--ease-out), padding 0.2s var(--ease-out), border-radius 0.2s var(--ease-out), opacity 0.2s var(--ease-out);
+    }
+
+    .custom-cursor[data-ui].is-visible {
+      opacity: 1;
+    }
+
+    .custom-cursor[data-ui].has-label {
+      width: auto;
+      height: 30px;
+      padding: 0 12px;
+      border-radius: 6px 14px 6px 14px;
+    }
+
+    .custom-cursor[data-ui] .custom-cursor-label {
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.15s var(--ease-out);
+    }
+
+    .custom-cursor[data-ui].has-label .custom-cursor-label {
+      opacity: 1;
+    }
+
+    @media (hover: none), (pointer: coarse) {
+      .custom-cursor[data-ui] {
+        display: none !important;
+      }
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       12. MODALES (VIDEO FULLSCREEN Y VISTA COMPLETA DE LANDING PAGE)
        ═══════════════════════════════════════════════════════════════════ */
     .modal-backdrop {
       position: fixed;
@@ -1004,17 +1248,32 @@
     }
 
     /* ═══════════════════════════════════════════════════════════════════
-       10. COREOGRAFÍA DE MOVIMIENTO (REVEAL & REDUCED MOTION)
+       13. ENTRADAS POR SCROLL (MÁXIMO 0.45S, VARIACIÓN POR SECCIÓN)
        ═══════════════════════════════════════════════════════════════════ */
     [data-reveal] {
       opacity: 1;
-      transform: translateY(0);
-      transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out);
+      transform: translate3d(0, 0, 0);
+      transition: opacity 0.45s var(--ease-out), transform 0.45s var(--ease-out);
     }
 
-    .js-motion [data-reveal].is-waiting {
+    .js-motion [data-reveal="up"].is-waiting {
       opacity: 0;
-      transform: translateY(22px);
+      transform: translate3d(0, 22px, 0);
+    }
+
+    .js-motion [data-reveal="left"].is-waiting {
+      opacity: 0;
+      transform: translate3d(-24px, 0, 0);
+    }
+
+    .js-motion [data-reveal="right"].is-waiting {
+      opacity: 0;
+      transform: translate3d(24px, 0, 0);
+    }
+
+    .js-motion [data-reveal="scale"].is-waiting {
+      opacity: 0;
+      transform: translate3d(0, 16px, 0) scale(0.97);
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1030,15 +1289,29 @@
     }
 
     /* ═══════════════════════════════════════════════════════════════════
-       11. RESPONSIVE: TABLET Y MÓVIL (TEXTO >= 16PX, CERO DESBORDES)
+       14. RESPONSIVE: TABLET Y MÓVIL (BARRA FINA SUPERIOR, CERO DESBORDES)
        ═══════════════════════════════════════════════════════════════════ */
     @media (max-width: 980px) {
+      .container {
+        padding: 0 24px;
+      }
+      .edit-timeline[data-ui] {
+        display: none;
+      }
+      .mobile-progress-bar[data-ui] {
+        display: block;
+      }
+      .whatsapp-float {
+        right: 20px;
+        bottom: 20px;
+      }
       .hero-grid {
         grid-template-columns: 1fr;
         gap: 36px;
       }
       .hero-phone-stage {
         order: 2;
+        padding-top: 8px;
       }
       .phone-chassis {
         transform: none;
@@ -1055,6 +1328,9 @@
       .case-row {
         grid-template-columns: 1fr;
         gap: 24px;
+      }
+      .testimonials-grid {
+        grid-template-columns: 1fr;
       }
       .about-card {
         grid-template-columns: 1fr;
@@ -1073,13 +1349,17 @@
         padding: 0 18px;
       }
       .site-header {
-        padding: 16px 0 12px;
+        padding: 18px 0 12px;
       }
       .brand-link {
         font-size: var(--step-body);
       }
       .hero-section {
-        padding: 16px 0 36px;
+        padding: 20px 0 36px;
+      }
+      .hero-lead {
+        font-size: var(--step-body);
+        line-height: 1.55;
       }
       .hero-actions {
         width: 100%;
@@ -1100,13 +1380,13 @@
         padding: 16px;
       }
       .service-panel {
-        padding: 26px 22px;
+        padding: 28px 24px;
       }
       .whatsapp-float {
-        bottom: 16px;
-        right: 16px;
-        padding: 0 18px;
-        min-height: 48px;
+        bottom: 14px;
+        right: 14px;
+        padding: 0 15px;
+        min-height: 44px;
       }
     }
   </style>
@@ -1115,33 +1395,74 @@
 
   <a href="#main-content" class="skip-link">Saltar al contenido</a>
 
+  <!-- Barra de progreso fina superior para móvil -->
+  <div class="mobile-progress-bar" data-ui aria-hidden="true">
+    <div class="mobile-progress-fill" id="mobileProgressFill"></div>
+  </div>
+
+  <!-- Línea de tiempo de edición fija a la derecha (escritorio) -->
+  <aside class="edit-timeline" data-ui aria-label="Línea de tiempo de secciones">
+    <div class="timeline-timecode" id="timelineTimecode" aria-live="off">00:00:00</div>
+    <div class="timeline-rail-wrap">
+      <div class="timeline-rail">
+        <div class="timeline-fill" id="timelineFill"></div>
+      </div>
+      <div class="timeline-playhead" id="timelinePlayhead"></div>
+
+      <button type="button" class="timeline-marker is-active" style="top: 12%;" onclick="scrollToSection('videos')" aria-label="Ir a Muestras">
+        <span class="timeline-marker-dot"></span>
+        <span class="timeline-marker-label">Muestras</span>
+      </button>
+
+      <button type="button" class="timeline-marker" style="top: 38%;" onclick="scrollToSection('servicios')" aria-label="Ir a Servicios">
+        <span class="timeline-marker-dot"></span>
+        <span class="timeline-marker-label">Servicios</span>
+      </button>
+
+      <button type="button" class="timeline-marker" style="top: 64%;" onclick="scrollToSection('casos')" aria-label="Ir a Casos">
+        <span class="timeline-marker-dot"></span>
+        <span class="timeline-marker-label">Casos</span>
+      </button>
+
+      <button type="button" class="timeline-marker" style="top: 90%;" onclick="scrollToSection('sobre-mi')" aria-label="Ir a Contacto">
+        <span class="timeline-marker-dot"></span>
+        <span class="timeline-marker-label">Contacto</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Cursor personalizado contextual (solo escritorio) -->
+  <div id="customCursor" class="custom-cursor" data-ui aria-hidden="true">
+    <span id="customCursorLabel" class="custom-cursor-label"></span>
+  </div>
+
   <!-- ═══════════════════════════════════════════════════════════════════
        HEADER
        ═══════════════════════════════════════════════════════════════════ -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#" class="brand-link" data-reveal>
+      <a href="#" class="brand-link">
         <span class="brand-mark" aria-hidden="true"></span>
         <span>Fabricio Sotelo</span>
       </a>
 
       <nav aria-label="Navegación principal">
         <ul class="nav-list">
-          <li><a href="#videos" data-reveal>Muestras</a></li>
-          <li><a href="#servicios" data-reveal>Servicios</a></li>
-          <li><a href="#casos" data-reveal>Casos reales</a></li>
-          <li><a href="#sobre-mi" data-reveal>Sobre mí</a></li>
+          <li><a href="#videos">Muestras</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#casos">Casos reales</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
         </ul>
       </nav>
 
-      <div class="header-controls" data-reveal>
+      <div class="header-controls">
         <button id="sfxToggleBtn" type="button" class="sfx-btn" aria-label="Activar o desactivar sonidos de interfaz">
           <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
           </svg>
         </button>
 
-        <a href="https://wa.me/51933734627?text=Hola%20Fabricio,%20vi%20tu%20portafolio%20y%20quiero%20cotizar%20un%20proyecto." target="_blank" rel="noopener" class="btn-primary btn-header">
+        <a href="https://wa.me/51933734627?text=Hola%20Fabricio,%20vi%20tu%20portafolio%20y%20quiero%20cotizar%20un%20proyecto." target="_blank" rel="noopener" class="btn-primary btn-header" data-cursor="WhatsApp">
           <span>Contactar</span>
         </a>
       </div>
@@ -1156,24 +1477,24 @@
     <section class="hero-section">
       <div class="container hero-grid">
         
-        <div class="hero-copy">
-          <h1 class="hero-title" data-reveal>
+        <div class="hero-copy" data-reveal="left">
+          <h1 class="hero-title">
             Videos que retienen.<br>Páginas que venden.
           </h1>
 
-          <p class="hero-lead" data-reveal>
+          <p class="hero-lead">
             Produzco anuncios verticales pensados para frenar el scroll en los primeros segundos y desarrollo landing pages de catálogo que convierten visitas en pedidos directos por WhatsApp.
           </p>
 
-          <div class="hero-actions" data-reveal>
-            <a href="https://wa.me/51933734627?text=Hola%20Fabricio,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20cotizar%20un%20proyecto." target="_blank" rel="noopener" class="btn-primary">
+          <div class="hero-actions">
+            <a href="https://wa.me/51933734627?text=Hola%20Fabricio,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20cotizar%20un%20proyecto." target="_blank" rel="noopener" class="btn-primary" data-cursor="WhatsApp">
               <span>Contactar por WhatsApp</span>
               <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
             </a>
 
-            <a href="#videos" class="btn-secondary">
+            <a href="#videos" class="btn-secondary" data-cursor="Play">
               <span>Ver muestras en video</span>
               <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M8 5v14l11-7z"/>
@@ -1183,9 +1504,9 @@
         </div>
 
         <!-- Mockup de celular memorable con video en bucle e interacción en vivo -->
-        <div class="hero-phone-stage" data-reveal>
+        <div class="hero-phone-stage" data-reveal="right">
           <div class="phone-chassis" data-ui>
-            <div class="phone-screen">
+            <div class="phone-screen" data-cursor="Play">
               <div class="phone-notch" aria-hidden="true">
                 <span class="phone-notch-dot"></span>
               </div>
@@ -1199,7 +1520,7 @@
                   <button type="button" class="phone-pill-btn" onclick="switchHeroPhone(2, this)">Spot</button>
                 </div>
 
-                <button type="button" class="phone-sound-btn" onclick="openVideoModal(document.getElementById('heroPhoneVideo').src, 'Muestra principal en formato vertical')" aria-label="Ver video del celular con sonido">
+                <button type="button" class="phone-sound-btn" data-cursor="Play" onclick="openVideoModal(document.getElementById('heroPhoneVideo').src, 'Muestra principal en formato vertical')" aria-label="Ver video del celular con sonido">
                   <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M8 5v14l11-7z"/>
                   </svg>
@@ -1217,9 +1538,9 @@
          ═══════════════════════════════════════════════════════════════════ -->
     <section id="videos" class="videos-section">
       <div class="container">
-        <div class="section-intro">
-          <h2 class="section-title" data-reveal>Muestras en formato vertical</h2>
-          <p class="section-desc" data-reveal>
+        <div class="section-intro" data-reveal="up">
+          <h2 class="section-title">Muestras en formato vertical</h2>
+          <p class="section-desc">
             Pasa el cursor o toca cualquier pieza para reproducirla al instante, o cambia de número para explorar cada categoría.
           </p>
         </div>
@@ -1227,10 +1548,10 @@
         <div class="video-showcase-grid">
 
           <!-- Columna 1: Videos con IA -->
-          <article class="video-stage-card" id="card-ia" data-reveal>
-            <div class="video-frame-vertical" onmouseenter="hoverPlay('ia', true)" onmouseleave="hoverPlay('ia', false)" onclick="toggleTouchPlay('ia')">
+          <article class="video-stage-card" id="card-ia" data-reveal="up">
+            <div class="video-frame-vertical" data-cursor="Play" onmouseenter="hoverPlay('ia', true)" onmouseleave="hoverPlay('ia', false)" onclick="toggleTouchPlay('ia')">
               <video id="video-ia" loop muted playsinline preload="metadata" poster="assets/posters/ia_1.jpg" src="assets/videos_ia/1.mp4?v=11"></video>
-              <button type="button" class="video-expand-btn" onclick="event.stopPropagation(); openVideoModal(document.getElementById('video-ia').src, document.getElementById('label-ia').innerText)">
+              <button type="button" class="video-expand-btn" data-cursor="Play" onclick="event.stopPropagation(); openVideoModal(document.getElementById('video-ia').src, document.getElementById('label-ia').innerText)">
                 <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
                 <span>Con sonido</span>
               </button>
@@ -1253,10 +1574,10 @@
           </article>
 
           <!-- Columna 2: Spots Corporativos -->
-          <article class="video-stage-card" id="card-edit" data-reveal>
-            <div class="video-frame-vertical" onmouseenter="hoverPlay('edit', true)" onmouseleave="hoverPlay('edit', false)" onclick="toggleTouchPlay('edit')">
+          <article class="video-stage-card" id="card-edit" data-reveal="up">
+            <div class="video-frame-vertical" data-cursor="Play" onmouseenter="hoverPlay('edit', true)" onmouseleave="hoverPlay('edit', false)" onclick="toggleTouchPlay('edit')">
               <video id="video-edit" loop muted playsinline preload="metadata" poster="assets/posters/edit_1.jpg" src="assets/videos_edit/1.mp4?v=11"></video>
-              <button type="button" class="video-expand-btn" onclick="event.stopPropagation(); openVideoModal(document.getElementById('video-edit').src, document.getElementById('label-edit').innerText)">
+              <button type="button" class="video-expand-btn" data-cursor="Play" onclick="event.stopPropagation(); openVideoModal(document.getElementById('video-edit').src, document.getElementById('label-edit').innerText)">
                 <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
                 <span>Con sonido</span>
               </button>
@@ -1278,10 +1599,10 @@
           </article>
 
           <!-- Columna 3: Reels y TikTok -->
-          <article class="video-stage-card" id="card-reels" data-reveal>
-            <div class="video-frame-vertical" onmouseenter="hoverPlay('reels', true)" onmouseleave="hoverPlay('reels', false)" onclick="toggleTouchPlay('reels')">
+          <article class="video-stage-card" id="card-reels" data-reveal="up">
+            <div class="video-frame-vertical" data-cursor="Play" onmouseenter="hoverPlay('reels', true)" onmouseleave="hoverPlay('reels', false)" onclick="toggleTouchPlay('reels')">
               <video id="video-reels" loop muted playsinline preload="metadata" poster="assets/posters/reels_1.jpg" src="assets/reels/1.mp4?v=11"></video>
-              <button type="button" class="video-expand-btn" onclick="event.stopPropagation(); openVideoModal(document.getElementById('video-reels').src, document.getElementById('label-reels').innerText)">
+              <button type="button" class="video-expand-btn" data-cursor="Play" onclick="event.stopPropagation(); openVideoModal(document.getElementById('video-reels').src, document.getElementById('label-reels').innerText)">
                 <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
                 <span>Con sonido</span>
               </button>
@@ -1307,51 +1628,51 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════════
-         SERVICIOS: 3 BLOQUES CLAROS CON UNA FRASE CORTA CADA UNO
+         SERVICIOS: 3 BLOQUES CLAROS CON TONO DISTINTO Y ALTO CONTRASTE
          ═══════════════════════════════════════════════════════════════════ -->
     <section id="servicios" class="services-section">
       <div class="container">
-        <div class="section-intro">
-          <h2 class="section-title" data-reveal>Tres servicios claros</h2>
-          <p class="section-desc" data-reveal>
+        <div class="section-intro" data-reveal="left">
+          <h2 class="section-title">Tres servicios claros</h2>
+          <p class="section-desc">
             Formatos pensados para marcas y negocios que buscan captar atención y cerrar pedidos sin fricción.
           </p>
         </div>
 
         <div class="services-list">
 
-          <article class="service-panel" data-reveal>
+          <article class="service-panel" data-reveal="scale">
             <div>
               <h3 class="service-title">Edición de videos y reels</h3>
               <p class="service-phrase">
                 Piezas verticales con gancho en los primeros segundos, subtítulos dinámicos y ritmo ágil para retener audiencia en TikTok y Meta Ads.
               </p>
             </div>
-            <a href="#videos" class="service-action">
+            <a href="#videos" class="service-action" data-cursor="Play">
               <span>Ver muestras verticales</span>
             </a>
           </article>
 
-          <article class="service-panel" data-reveal>
+          <article class="service-panel" data-reveal="scale">
             <div>
               <h3 class="service-title">Landing pages de catálogo</h3>
               <p class="service-phrase">
                 Páginas web de carga rápida con selección visual de productos que envían el pedido detallado directo a tu WhatsApp.
               </p>
             </div>
-            <a href="#casos" class="service-action">
+            <a href="#casos" class="service-action" data-cursor="Ver">
               <span>Ver casos reales</span>
             </a>
           </article>
 
-          <article class="service-panel" data-reveal>
+          <article class="service-panel" data-reveal="scale">
             <div>
               <h3 class="service-title">Videos promocionales</h3>
               <p class="service-phrase">
                 Spots comerciales para empresas y piezas visuales con inteligencia artificial para presentar tu marca de forma memorable.
               </p>
             </div>
-            <a href="https://wa.me/51933734627?text=Hola%20Fabricio,%20quiero%20cotizar%20un%20video%20promocional%20para%20mi%20marca." target="_blank" rel="noopener" class="service-action">
+            <a href="https://wa.me/51933734627?text=Hola%20Fabricio,%20quiero%20cotizar%20un%20video%20promocional%20para%20mi%20marca." target="_blank" rel="noopener" class="service-action" data-cursor="WhatsApp">
               <span>Cotizar por WhatsApp</span>
             </a>
           </article>
@@ -1365,9 +1686,9 @@
          ═══════════════════════════════════════════════════════════════════ -->
     <section id="casos" class="cases-section">
       <div class="container">
-        <div class="section-intro">
-          <h2 class="section-title" data-reveal>Casos reales de landing pages</h2>
-          <p class="section-desc" data-reveal>
+        <div class="section-intro" data-reveal="up">
+          <h2 class="section-title">Casos reales de landing pages</h2>
+          <p class="section-desc">
             Páginas construidas a medida para mostrar productos con claridad y llevar al cliente directo al chat de compra.
           </p>
         </div>
@@ -1375,8 +1696,8 @@
         <div class="cases-stack">
 
           <!-- Caso 1: Sweet Factory -->
-          <article class="case-row" data-reveal>
-            <div class="browser-mockup" data-ui>
+          <article class="case-row" data-reveal="left">
+            <div class="browser-mockup" data-ui data-cursor="Ver" onclick="openLandingModal('sweet')">
               <div class="browser-top">
                 <div class="browser-dots" aria-hidden="true">
                   <span class="browser-dot"></span>
@@ -1398,14 +1719,14 @@
               </p>
 
               <div class="case-buttons">
-                <button type="button" class="btn-primary" onclick="openLandingModal('sweet')">
+                <button type="button" class="btn-primary" data-cursor="Ver" onclick="openLandingModal('sweet')">
                   <span>Ver landing</span>
                   <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M15 3h6v6M10 14L21 3M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
                   </svg>
                 </button>
 
-                <a href="https://wa.me/51933734627?text=Hola%20Fabricio,%20quiero%20cotizar%20una%20landing%20page%20como%20Sweet%20Factory." target="_blank" rel="noopener" class="btn-secondary">
+                <a href="https://wa.me/51933734627?text=Hola%20Fabricio,%20quiero%20cotizar%20una%20landing%20page%20como%20Sweet%20Factory." target="_blank" rel="noopener" class="btn-secondary" data-cursor="WhatsApp">
                   <span>Pedir una similar</span>
                 </a>
               </div>
@@ -1413,8 +1734,8 @@
           </article>
 
           <!-- Caso 2: Wiky Cosmética -->
-          <article class="case-row" data-reveal>
-            <div class="browser-mockup" data-ui>
+          <article class="case-row" data-reveal="right">
+            <div class="browser-mockup" data-ui data-cursor="Ver" onclick="openLandingModal('wiky')">
               <div class="browser-top">
                 <div class="browser-dots" aria-hidden="true">
                   <span class="browser-dot"></span>
@@ -1436,14 +1757,14 @@
               </p>
 
               <div class="case-buttons">
-                <button type="button" class="btn-primary" onclick="openLandingModal('wiky')">
+                <button type="button" class="btn-primary" data-cursor="Ver" onclick="openLandingModal('wiky')">
                   <span>Ver landing</span>
                   <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M15 3h6v6M10 14L21 3M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
                   </svg>
                 </button>
 
-                <a href="https://wa.me/51933734627?text=Hola%20Fabricio,%20quiero%20cotizar%20una%20landing%20page%20como%20Wiky." target="_blank" rel="noopener" class="btn-secondary">
+                <a href="https://wa.me/51933734627?text=Hola%20Fabricio,%20quiero%20cotizar%20una%20landing%20page%20como%20Wiky." target="_blank" rel="noopener" class="btn-secondary" data-cursor="WhatsApp">
                   <span>Pedir una similar</span>
                 </a>
               </div>
@@ -1455,11 +1776,33 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════════
+         TESTIMONIOS (OCULTA HASTA TENER FRASES REALES DE CLIENTES)
+         Quita el atributo hidden cuando agregues las 2 frases reales.
+         ═══════════════════════════════════════════════════════════════════ -->
+    <section id="testimonios" class="testimonials-section" hidden aria-hidden="true">
+      <div class="container">
+        <div class="section-intro">
+          <h2 class="section-title">Lo que dicen los clientes</h2>
+        </div>
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <blockquote class="testimonial-quote"></blockquote>
+            <cite class="testimonial-author"></cite>
+          </article>
+          <article class="testimonial-card">
+            <blockquote class="testimonial-quote"></blockquote>
+            <cite class="testimonial-author"></cite>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
          SOBRE MÍ (CON ESPACIO PARA FOTO) Y CONTACTO DIRECTO
          ═══════════════════════════════════════════════════════════════════ -->
     <section id="sobre-mi" class="about-section">
       <div class="container">
-        <div class="about-card" data-reveal>
+        <div class="about-card" data-reveal="scale">
 
           <div class="photo-slot">
             <svg width="42" height="42" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
@@ -1477,7 +1820,7 @@
             </p>
 
             <div class="about-cta-row">
-              <a href="https://wa.me/51933734627?text=Hola%20Fabricio,%20vi%20tu%20portafolio%20y%20quiero%20conversar%20sobre%20un%20proyecto." target="_blank" rel="noopener" class="btn-primary">
+              <a href="https://wa.me/51933734627?text=Hola%20Fabricio,%20vi%20tu%20portafolio%20y%20quiero%20conversar%20sobre%20un%20proyecto." target="_blank" rel="noopener" class="btn-primary" data-cursor="WhatsApp">
                 <span>Escribirme por WhatsApp</span>
               </a>
               <a href="https://www.tiktok.com/@blushadown" target="_blank" rel="noopener" class="btn-secondary">
@@ -1502,7 +1845,7 @@
         <a href="#videos">Muestras</a>
         <a href="#servicios">Servicios</a>
         <a href="#casos">Casos reales</a>
-        <a href="https://wa.me/51933734627" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://wa.me/51933734627" target="_blank" rel="noopener" data-cursor="WhatsApp">WhatsApp</a>
       </div>
     </div>
   </footer>
@@ -1510,7 +1853,7 @@
   <!-- ═══════════════════════════════════════════════════════════════════
        BOTÓN FLOTANTE PERMANENTE DE WHATSAPP
        ═══════════════════════════════════════════════════════════════════ -->
-  <a href="https://wa.me/51933734627?text=Hola%20Fabricio,%20estoy%20viendo%20tu%20portafolio%20y%20quiero%20hacerte%20una%20consulta." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+  <a href="https://wa.me/51933734627?text=Hola%20Fabricio,%20estoy%20viendo%20tu%20portafolio%20y%20quiero%20hacerte%20una%20consulta." target="_blank" rel="noopener" class="whatsapp-float" data-cursor="WhatsApp" aria-label="Contactar por WhatsApp">
     <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.825z"/>
     </svg>
@@ -1544,10 +1887,10 @@
   </div>
 
   <!-- ═══════════════════════════════════════════════════════════════════
-       SCRIPTS: SONIDO SUTIL, REPRODUCCIÓN HOVER/TOUCH Y REVEAL
+       SCRIPTS: VIDEO EN BUCLE, LÍNEA DE TIEMPO, CURSOR Y REVEAL
        ═══════════════════════════════════════════════════════════════════ -->
   <script>
-    // 1. Efectos de sonido de interfaz (conservados del portafolio original)
+    // 1. Efectos de sonido de interfaz
     let _audioCtx = null;
     let sfxEnabled = localStorage.getItem('fs_studio_sfx') !== 'false';
     const sfxBtn = document.getElementById('sfxToggleBtn');
@@ -1598,154 +1941,187 @@
       });
     }
 
-    document.querySelectorAll('a, button').forEach(el => {
-      el.addEventListener('click', playClickSfx);
-    });
-
-    // 2. Celular interactivo del Hero (Video en bucle)
+    // 2. Garantizar que el video del celular en el Hero se reproduzca en bucle continuo
     const heroClips = [
       { src: 'assets/reels/1.mp4?v=11', poster: 'assets/posters/reels_1.jpg' },
       { src: 'assets/videos_ia/1.mp4?v=11', poster: 'assets/posters/ia_1.jpg' },
       { src: 'assets/videos_edit/1.mp4?v=11', poster: 'assets/posters/edit_1.jpg' }
     ];
 
-    function switchHeroPhone(index, btn) {
-      const video = document.getElementById('heroPhoneVideo');
-      const clip = heroClips[index];
-      if (!video || !clip) return;
-      video.poster = clip.poster;
-      video.src = clip.src;
-      video.play().catch(() => {});
-      btn.parentElement.querySelectorAll('.phone-pill-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+    function ensureHeroVideoLoop() {
+      const v = document.getElementById('heroPhoneVideo');
+      if (!v) return;
+      v.loop = true;
+      v.muted = true;
+      v.playsInline = true;
+      const p = v.play();
+      if (p && typeof p.catch === 'function') p.catch(() => {});
     }
 
-    // 3. Muestras de video vertical: Reproducción al pasar el cursor o tocar
-    const videoPlaylists = {
+    window.addEventListener('DOMContentLoaded', ensureHeroVideoLoop);
+    window.addEventListener('load', ensureHeroVideoLoop);
+
+    function switchHeroPhone(index, btn) {
+      playClickSfx();
+      const v = document.getElementById('heroPhoneVideo');
+      const item = heroClips[index];
+      if (!v || !item) return;
+      document.querySelectorAll('.phone-pill-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      v.poster = item.poster;
+      v.src = item.src;
+      v.loop = true;
+      v.muted = true;
+      v.play().catch(() => {});
+    }
+
+    // 3. Catálogo de muestras verticales (play al pasar cursor o tocar)
+    const videoData = {
       ia: [
         { src: 'assets/videos_ia/1.mp4?v=11', poster: 'assets/posters/ia_1.jpg', label: 'Spot cinemático y dirección visual' },
-        { src: 'assets/videos_ia/2.mp4?v=11', poster: 'assets/posters/ia_2.jpg', label: 'Composición publicitaria con IA' },
-        { src: 'assets/videos_ia/3.mp4?v=11', poster: 'assets/posters/ia_3.jpg', label: 'Presentación comercial con IA' },
-        { src: 'assets/videos_ia/4.mp4?v=11', poster: 'assets/posters/ia_4.jpg', label: 'Escenas generativas de marca' },
-        { src: 'assets/videos_ia/5.mp4?v=11', poster: 'assets/posters/ia_5.jpg', label: 'Estética visual y narrativa' }
+        { src: 'assets/videos_ia/2.mp4?v=11', poster: 'assets/posters/ia_2.jpg', label: ' Comercial conceptual con IA' },
+        { src: 'assets/videos_ia/3.mp4?v=11', poster: 'assets/posters/ia_3.jpg', label: 'Narrativa visual de alto impacto' },
+        { src: 'assets/videos_ia/4.mp4?v=11', poster: 'assets/posters/ia_4.jpg', label: 'Secuencia publicitaria dinámica' },
+        { src: 'assets/videos_ia/5.mp4?v=11', poster: 'assets/posters/ia_5.jpg', label: 'Campaña visual generativa' }
       ],
       edit: [
         { src: 'assets/videos_edit/1.mp4?v=11', poster: 'assets/posters/edit_1.jpg', label: 'Spot comercial Clínica Mater Salud' },
-        { src: 'assets/videos_edit/2.mp4?v=11', poster: 'assets/posters/edit_2.jpg', label: 'Cortes dinámicos de producto' },
-        { src: 'assets/videos_edit/3.mp4?v=11', poster: 'assets/posters/edit_3.jpg', label: 'Montaje promocional corporativo' },
-        { src: 'assets/videos_edit/4.mp4?v=11', poster: 'assets/posters/edit_4.jpg', label: 'Edición comercial con ritmo' }
+        { src: 'assets/videos_edit/2.mp4?v=11', poster: 'assets/posters/edit_2.jpg', label: 'Edición corporativa de servicios' },
+        { src: 'assets/videos_edit/3.mp4?v=11', poster: 'assets/posters/edit_3.jpg', label: 'Presentación institucional dinámica' },
+        { src: 'assets/videos_edit/4.mp4?v=11', poster: 'assets/posters/edit_4.jpg', label: 'Pieza promocional para negocios' }
       ],
       reels: [
         { src: 'assets/reels/1.mp4?v=11', poster: 'assets/posters/reels_1.jpg', label: 'Campaña vertical de alta retención' },
-        { src: 'assets/reels/2.mp4?v=11', poster: 'assets/posters/reels_2.jpg', label: 'Gancho visual en primeros segundos' },
-        { src: 'assets/reels/3.mp4?v=11', poster: 'assets/posters/reels_3.jpg', label: 'Formato dinámico para pauta' },
-        { src: 'assets/reels/4.mp4?v=11', poster: 'assets/posters/reels_4.jpg', label: 'Pieza vertical para TikTok y Reels' }
+        { src: 'assets/reels/2.mp4?v=11', poster: 'assets/posters/reels_2.jpg', label: 'Reel dinámico con gancho visual' },
+        { src: 'assets/reels/3.mp4?v=11', poster: 'assets/posters/reels_3.jpg', label: 'Edición rítmica para TikTok y Reels' },
+        { src: 'assets/reels/4.mp4?v=11', poster: 'assets/posters/reels_4.jpg', label: 'Formato corto enfocado en conversión' }
       ]
     };
 
-    function hoverPlay(category, shouldPlay) {
-      const video = document.getElementById(`video-${category}`);
-      const card = document.getElementById(`card-${category}`);
-      if (!video || !card) return;
-      if (shouldPlay) {
+    function hoverPlay(cat, play) {
+      const video = document.getElementById('video-' + cat);
+      const card = document.getElementById('card-' + cat);
+      if (!video) return;
+      if (play) {
         video.play().catch(() => {});
-        card.classList.add('is-playing');
+        if (card) card.classList.add('is-playing');
       } else {
         video.pause();
-        card.classList.remove('is-playing');
+        if (card) card.classList.remove('is-playing');
       }
     }
 
-    function toggleTouchPlay(category) {
-      const video = document.getElementById(`video-${category}`);
-      const card = document.getElementById(`card-${category}`);
-      if (!video || !card) return;
-      ['ia', 'edit', 'reels'].forEach(other => {
-        if (other !== category) {
-          const v = document.getElementById(`video-${other}`);
-          const c = document.getElementById(`card-${other}`);
-          if (v && !v.paused) v.pause();
-          if (c) c.classList.remove('is-playing');
-        }
-      });
+    function toggleTouchPlay(cat) {
+      const video = document.getElementById('video-' + cat);
+      const card = document.getElementById('card-' + cat);
+      if (!video) return;
       if (video.paused) {
+        ['ia', 'edit', 'reels'].forEach(other => {
+          if (other !== cat) {
+            const ov = document.getElementById('video-' + other);
+            const oc = document.getElementById('card-' + other);
+            if (ov) ov.pause();
+            if (oc) oc.classList.remove('is-playing');
+          }
+        });
         video.play().catch(() => {});
-        card.classList.add('is-playing');
+        if (card) card.classList.add('is-playing');
       } else {
         video.pause();
-        card.classList.remove('is-playing');
+        if (card) card.classList.remove('is-playing');
       }
     }
 
-    function switchVideo(category, index) {
-      const list = videoPlaylists[category];
+    function switchVideo(cat, index) {
+      playClickSfx();
+      const list = videoData[cat];
       if (!list || !list[index]) return;
       const item = list[index];
-      const video = document.getElementById(`video-${category}`);
-      const label = document.getElementById(`label-${category}`);
-      const card = document.getElementById(`card-${category}`);
-      if (item.poster) video.poster = item.poster;
-      video.src = item.src;
-      video.play().catch(() => {});
-      if (card) card.classList.add('is-playing');
-      if (label) label.innerText = item.label;
-      const buttons = document.getElementById(`bubbles-${category}`).querySelectorAll('button');
-      buttons.forEach((b, i) => b.classList.toggle('active', i === index));
+      const video = document.getElementById('video-' + cat);
+      const label = document.getElementById('label-' + cat);
+      const group = document.getElementById('bubbles-' + cat);
+      const card = document.getElementById('card-' + cat);
+
+      if (group) {
+        const btns = group.querySelectorAll('.clip-btn');
+        btns.forEach((b, idx) => b.classList.toggle('active', idx === index));
+      }
+      if (label) label.textContent = item.label.trim();
+      if (video) {
+        video.poster = item.poster;
+        video.src = item.src;
+        video.play().catch(() => {});
+        if (card) card.classList.add('is-playing');
+      }
     }
 
-    // 4. Modal de video con sonido
-    const videoModal = document.getElementById('videoModal');
-    const modalVideo = document.getElementById('modalVideo');
-    const modalTitle = document.getElementById('modalTitle');
-
+    // 4. Modales de video con sonido y de vista completa de Landing Pages
     function openVideoModal(src, title) {
-      modalVideo.src = src;
-      modalTitle.innerText = title;
-      videoModal.classList.add('active');
-      modalVideo.play().catch(() => {});
+      playClickSfx();
+      const modal = document.getElementById('videoModal');
+      const video = document.getElementById('modalVideo');
+      const titleEl = document.getElementById('modalTitle');
+      if (!modal || !video) return;
+      if (titleEl) titleEl.textContent = title || 'Muestra de video';
+      video.src = src;
+      modal.classList.add('active');
+      video.currentTime = 0;
+      video.muted = false;
+      video.play().catch(() => {});
     }
 
-    function closeVideoModal() {
-      modalVideo.pause();
-      modalVideo.src = '';
-      videoModal.classList.remove('active');
+    function closeVideoModal(e) {
+      if (e && e.target && e.target.id !== 'videoModal') return;
+      const modal = document.getElementById('videoModal');
+      const video = document.getElementById('modalVideo');
+      if (video) {
+        video.pause();
+        video.removeAttribute('src');
+      }
+      if (modal) modal.classList.remove('active');
     }
 
-    // 5. Modal de vista completa para Casos Reales (Sweet Factory y Wiky)
-    const landingModal = document.getElementById('landingModal');
-    const landingModalTitle = document.getElementById('landingModalTitle');
-    const landingModalBody = document.getElementById('landingModalBody');
-
-    const landingShowcases = {
+    const landingGallery = {
       sweet: {
-        title: 'Sweet Factory — Catálogo de pedidos a WhatsApp',
+        title: 'Sweet Factory — Catálogo con pedido directo a WhatsApp',
         images: [
-          { src: 'assets/sweet_factory_personalizados.jpg', alt: 'Portada de la landing page de Sweet Factory Repostería' },
-          { src: 'assets/sweet_factory_ingredientes.jpg', alt: 'Sección de ingredientes y calidad de Sweet Factory' }
+          { src: 'assets/sweet_factory_personalizados.jpg', alt: 'Vista principal del catálogo Sweet Factory' },
+          { src: 'assets/sweet_factory_ingredientes.jpg', alt: 'Detalle de productos e ingredientes en Sweet Factory' }
         ]
       },
       wiky: {
         title: 'Wiky Cosmética — Página de producto artesanal',
         images: [
-          { src: 'assets/proyectos/WhatsApp Image 2026-05-06 at 9.36.00 AMsds.jpeg', alt: 'Presentación principal de productos Wiky Cosmética' },
-          { src: 'assets/proyectos/WhatsApp Image 2026-05-06 at 9.35.50 AM.jpeg', alt: 'Detalle de empaque y catálogo Wiky' }
+          { src: 'assets/proyectos/WhatsApp Image 2026-05-06 at 9.36.00 AMsds.jpeg', alt: 'Presentación de marca y empaques Wiky Cosmética' },
+          { src: 'assets/proyectos/WhatsApp Image 2026-05-06 at 9.36.01 AMfd.jpeg', alt: 'Catálogo de jabones artesanales Wiky' },
+          { src: 'assets/proyectos/WhatsApp Image 2026-05-06 at 9.35.50 AM.jpeg', alt: 'Detalle visual de producto Wiky' }
         ]
       }
     };
 
     function openLandingModal(key) {
-      const data = landingShowcases[key];
-      if (!data) return;
-      landingModalTitle.innerText = data.title;
-      landingModalBody.innerHTML = data.images.map(img =>
-        `<img src="${img.src}" width="1200" height="900" alt="${img.alt}">`
-      ).join('');
-      landingModal.classList.add('active');
+      playClickSfx();
+      const data = landingGallery[key];
+      const modal = document.getElementById('landingModal');
+      const titleEl = document.getElementById('landingModalTitle');
+      const bodyEl = document.getElementById('landingModalBody');
+      if (!data || !modal || !bodyEl) return;
+
+      if (titleEl) titleEl.textContent = data.title;
+      bodyEl.innerHTML = '';
+      data.images.forEach(imgData => {
+        const img = document.createElement('img');
+        img.src = imgData.src;
+        img.alt = imgData.alt;
+        bodyEl.appendChild(img);
+      });
+      modal.classList.add('active');
     }
 
-    function closeLandingModal() {
-      landingModal.classList.remove('active');
-      landingModalBody.innerHTML = '';
+    function closeLandingModal(e) {
+      if (e && e.target && e.target.id !== 'landingModal') return;
+      const modal = document.getElementById('landingModal');
+      if (modal) modal.classList.remove('active');
     }
 
     window.addEventListener('keydown', (e) => {
@@ -1755,25 +2131,122 @@
       }
     });
 
-    // 6. Coreografía de entrada al hacer scroll
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
-      document.documentElement.classList.add('js-motion');
-      const revealEls = document.querySelectorAll('[data-reveal]');
-      revealEls.forEach(el => el.classList.add('is-waiting'));
+    // 5. Línea de tiempo de edición (playhead + timecode 00:00:00 + barra móvil)
+    function twoDigits(n) {
+      const val = Math.max(0, Math.floor(n));
+      return val < 10 ? '0' + val : '' + val;
+    }
 
-      const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry, idx) => {
+    function scrollToSection(id) {
+      playClickSfx();
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    const timelineFill = document.getElementById('timelineFill');
+    const timelinePlayhead = document.getElementById('timelinePlayhead');
+    const timelineTimecode = document.getElementById('timelineTimecode');
+    const mobileProgressFill = document.getElementById('mobileProgressFill');
+    const timelineMarkers = document.querySelectorAll('.timeline-marker');
+    const trackedSectionIds = ['videos', 'servicios', 'casos', 'sobre-mi'];
+
+    function updateTimelineOnScroll() {
+      const doc = document.documentElement;
+      const maxScroll = Math.max(1, doc.scrollHeight - window.innerHeight);
+      const progress = Math.min(1, Math.max(0, window.scrollY / maxScroll));
+      const pct = (progress * 100).toFixed(1) + '%';
+
+      if (timelineFill) timelineFill.style.height = pct;
+      if (timelinePlayhead) timelinePlayhead.style.top = pct;
+      if (mobileProgressFill) mobileProgressFill.style.width = pct;
+
+      if (timelineTimecode) {
+        // Simula un timeline de edición de 60 segundos a 24 fps (MM:SS:FF)
+        const totalFrames = Math.round(progress * 60 * 24);
+        const totalSecs = Math.floor(totalFrames / 24);
+        const mins = Math.floor(totalSecs / 60);
+        const secs = totalSecs % 60;
+        const frames = totalFrames % 24;
+        timelineTimecode.textContent = twoDigits(mins) + ':' + twoDigits(secs) + ':' + twoDigits(frames);
+      }
+
+      // Actualizar marcador activo según sección en pantalla
+      let activeIndex = 0;
+      const triggerY = window.innerHeight * 0.42;
+      trackedSectionIds.forEach((id, idx) => {
+        const sec = document.getElementById(id);
+        if (sec) {
+          const rect = sec.getBoundingClientRect();
+          if (rect.top <= triggerY) activeIndex = idx;
+        }
+      });
+      timelineMarkers.forEach((m, idx) => m.classList.toggle('is-active', idx === activeIndex));
+    }
+
+    window.addEventListener('scroll', updateTimelineOnScroll, { passive: true });
+    window.addEventListener('resize', updateTimelineOnScroll, { passive: true });
+    updateTimelineOnScroll();
+
+    // 6. Cursor personalizado contextual (solo escritorio con puntero fino)
+    (function initCustomCursor() {
+      const cursor = document.getElementById('customCursor');
+      const label = document.getElementById('customCursorLabel');
+      if (!cursor || !label) return;
+      if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+      window.addEventListener('pointermove', (e) => {
+        if (e.pointerType && e.pointerType !== 'mouse') {
+          cursor.classList.remove('is-visible');
+          return;
+        }
+        cursor.classList.add('is-visible');
+        cursor.style.transform = 'translate3d(' + (e.clientX + 14) + 'px, ' + (e.clientY + 14) + 'px, 0)';
+
+        const target = e.target && e.target.closest ? e.target.closest('[data-cursor]') : null;
+        if (target) {
+          const text = target.getAttribute('data-cursor') || '';
+          label.textContent = text;
+          cursor.classList.add('has-label');
+        } else {
+          label.textContent = '';
+          cursor.classList.remove('has-label');
+        }
+      }, { passive: true });
+
+      document.addEventListener('mouseleave', () => {
+        cursor.classList.remove('is-visible');
+      });
+    })();
+
+    // 7. Entradas por scroll con variación por sección (<= 0.45s)
+    (function initReveal() {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const items = document.querySelectorAll('[data-reveal]');
+      if (!('IntersectionObserver' in window)) return;
+
+      document.documentElement.classList.add('js-motion');
+      const vh = window.innerHeight || 800;
+
+      items.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top > vh * 0.92) {
+          el.classList.add('is-waiting');
+        }
+      });
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setTimeout(() => {
-              entry.target.classList.remove('is-waiting');
-            }, idx * 55);
-            revealObserver.unobserve(entry.target);
+            entry.target.classList.remove('is-waiting');
+            io.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.08 });
+      }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
 
-      revealEls.forEach(el => revealObserver.observe(el));
-    }
+      items.forEach((el) => {
+        if (el.classList.contains('is-waiting')) io.observe(el);
+      });
+    })();
   </script>
 </body>
 </html>
