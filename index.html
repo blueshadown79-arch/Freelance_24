@@ -777,6 +777,115 @@
       color: rgba(255, 255, 255, 0.82);
     }
 
+    .service-pill-card__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+      padding: 10px 18px;
+      width: fit-content;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: var(--text-primary);
+      font-size: 14.5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .service-pill-card__cta:hover {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.38);
+      color: #FFFFFF;
+      transform: translateX(3px);
+    }
+
+    .service-pill-card__cta-arrow {
+      transition: transform 0.2s ease;
+    }
+
+    .service-pill-card:hover .service-pill-card__cta-arrow {
+      transform: translateX(4px);
+    }
+
+    /* Barra inferior de Cotiza ahora dentro de Servicios */
+    .services-bottom-cta {
+      margin-top: 32px;
+      padding: 28px 36px;
+      border-radius: 24px;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: var(--inner-glow-pill);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .services-bottom-cta__info {
+      max-width: 640px;
+    }
+
+    .services-bottom-cta__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent-gold);
+      margin-bottom: 8px;
+    }
+
+    .status-pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10B981;
+      box-shadow: 0 0 10px #10B981;
+      display: inline-block;
+      animation: pulseGreen 2s infinite ease-in-out;
+    }
+
+    @keyframes pulseGreen {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(0.85); }
+    }
+
+    .services-bottom-cta__title {
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      margin: 0 0 6px;
+    }
+
+    .services-bottom-cta__desc {
+      font-size: 15.5px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.78);
+      margin: 0;
+    }
+
+    .services-bottom-cta__btn {
+      white-space: nowrap;
+      font-size: 16px;
+      padding: 16px 34px;
+    }
+
+    @media (max-width: 768px) {
+      .services-bottom-cta {
+        padding: 24px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .services-bottom-cta__btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
     /* ==========================================================================
        5. FILA BENTO INFERIOR: SOBRE MÍ + CONTACTO DIRECTO (2 COLUMNAS ORDENADAS)
        ========================================================================== */
@@ -1509,6 +1618,15 @@
               Cortes dinámicos, subtítulos claros y ritmo pensado para retener la atención de principio a fin.
             </p>
           </div>
+          <a
+            href="https://wa.me/51933734627?text=Hola%20Fabricio%2C%20quisiera%20cotizar%20la%20edici%C3%B3n%20de%20videos%20y%20reels"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="service-pill-card__cta"
+          >
+            <span>Cotiza ahora</span>
+            <span class="service-pill-card__cta-arrow" aria-hidden="true">→</span>
+          </a>
         </article>
 
         <article class="service-pill-card">
@@ -1522,6 +1640,15 @@
               Páginas rápidas donde tus clientes ven tus productos y te hacen el pedido directo al WhatsApp.
             </p>
           </div>
+          <a
+            href="https://wa.me/51933734627?text=Hola%20Fabricio%2C%20quisiera%20cotizar%20una%20landing%20page%20de%20cat%C3%A1logo"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="service-pill-card__cta"
+          >
+            <span>Cotiza ahora</span>
+            <span class="service-pill-card__cta-arrow" aria-hidden="true">→</span>
+          </a>
         </article>
 
         <article class="service-pill-card">
@@ -1535,7 +1662,39 @@
               Piezas comerciales con inteligencia artificial y edición profesional para campañas y anuncios.
             </p>
           </div>
+          <a
+            href="https://wa.me/51933734627?text=Hola%20Fabricio%2C%20quisiera%20cotizar%20videos%20promocionales"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="service-pill-card__cta"
+          >
+            <span>Cotiza ahora</span>
+            <span class="service-pill-card__cta-arrow" aria-hidden="true">→</span>
+          </a>
         </article>
+      </div>
+
+      <!-- Barra inferior dentro de Servicios: Cotiza ahora -->
+      <div class="services-bottom-cta">
+        <div class="services-bottom-cta__info">
+          <div class="services-bottom-cta__badge">
+            <span class="status-pulse-dot" aria-hidden="true"></span>
+            <span>Atención directa · Respuesta rápida</span>
+          </div>
+          <h3 class="services-bottom-cta__title">¿Tienes un proyecto en mente para tu marca?</h3>
+          <p class="services-bottom-cta__desc">
+            Cuéntame qué necesitas editar o lanzar y te preparo una cotización personalizada por WhatsApp.
+          </p>
+        </div>
+        <a
+          href="https://wa.me/51933734627?text=Hola%20Fabricio%2C%20quisiera%20cotizar%20un%20proyecto%20para%20mi%20marca"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="selv-btn selv-btn--gold services-bottom-cta__btn"
+        >
+          <span>Cotiza ahora</span>
+          <span aria-hidden="true">→</span>
+        </a>
       </div>
     </section>
 
@@ -1561,7 +1720,7 @@
         <div>
           <span class="section-pill-tag">Sobre mí</span>
           <p class="about-statement">
-            “Trabajo directo contigo, sin agencias intermediarias ni entregas eternas. Me encargo de que tus videos detengan el scroll y de que tu página convierta visitas en pedidos reales por WhatsApp.”
+            “Trabajo directo contigo, sin agencias intermediarias ni entregas eternas. Sin prometerte el cielo, me enfoco en crear videos dinámicos, con buen ritmo y una edición limpia para que tu marca se vea profesional.”
           </p>
         </div>
 
