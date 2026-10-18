@@ -515,11 +515,15 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
       transition: transform 0.4s ease;
     }
 
     .video-frame:hover video {
-      transform: scale(1.02);
+      transform: scale(1.02) translateZ(0);
     }
 
     .video-frame__top {
@@ -1469,11 +1473,10 @@
               id="video-ia"
               src="assets/videos_ia/1.mp4"
               poster="assets/posters/ia_1.jpg"
-              autoplay
               muted
               loop
               playsinline
-              preload="auto"
+              preload="metadata"
             ></video>
           </div>
 
@@ -1508,11 +1511,10 @@
               id="video-edit"
               src="assets/videos_edit/1.mp4"
               poster="assets/posters/edit_1.jpg"
-              autoplay
               muted
               loop
               playsinline
-              preload="auto"
+              preload="metadata"
             ></video>
           </div>
 
@@ -1546,11 +1548,10 @@
               id="video-reels"
               src="assets/reels/1.mp4"
               poster="assets/posters/reels_1.jpg"
-              autoplay
               muted
               loop
               playsinline
-              preload="auto"
+              preload="metadata"
             ></video>
           </div>
 
@@ -1824,26 +1825,42 @@
 
     const currentClipIdx = { ia: 0, reels: 0, edit: 0 };
 
-    // Garantizar que el mini celular y las 3 columnas de video estén siempre reproduciéndose en bucle
-    function ensureAllVideosPlaying() {
-      const videos = document.querySelectorAll('#heroPhoneVideo, #video-ia, #video-reels, #video-edit');
-      videos.forEach((v) => {
-        v.muted = true;
-        v.loop = true;
-        v.playsInline = true;
-        if (v.paused) {
-          v.play().catch(() => {});
+    // Observer de alto rendimiento: sólo decodifica en GPU los videos visibles en la pantalla
+    const allBgVideos = Array.from(document.querySelectorAll('#heroPhoneVideo, #video-ia, #video-reels, #video-edit'));
+    
+    allBgVideos.forEach((v) => {
+      v.muted = true;
+      v.loop = true;
+      v.playsInline = true;
+    });
+
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+        if (entry.isIntersecting) {
+          if (video.paused && !videoModal.classList.contains('is-open')) {
+            video.play().catch(() => {});
+          }
+        } else {
+          if (!video.paused) {
+            video.pause();
+          }
         }
       });
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      ensureAllVideosPlaying();
-      setInterval(ensureAllVideosPlaying, 1500);
+    }, {
+      threshold: 0.15
     });
-    window.addEventListener('load', ensureAllVideosPlaying);
+
+    allBgVideos.forEach((v) => videoObserver.observe(v));
+
+    const wakeHeroVideo = () => {
+      const hero = document.getElementById('heroPhoneVideo');
+      if (hero && hero.paused && !videoModal.classList.contains('is-open')) {
+        hero.play().catch(() => {});
+      }
+    };
     ['touchstart', 'pointerdown', 'scroll'].forEach((evt) => {
-      window.addEventListener(evt, ensureAllVideosPlaying, { once: true, passive: true });
+      window.addEventListener(evt, wakeHeroVideo, { once: true, passive: true });
     });
 
     // Cambiar clip con los botones numerados (1, 2, 3, 4, 5) de cada columna
@@ -1877,6 +1894,8 @@
     const heroPhoneMockup = document.getElementById('heroPhoneMockup');
 
     function openModalWithSrc(src) {
+      // Pausar todos los videos de fondo para que el 100% de la GPU y la conexión se dediquen al reproductor con audio
+      allBgVideos.forEach((v) => v.pause());
       modalVideoPlayer.src = src;
       modalVideoPlayer.muted = false;
       videoModal.classList.add('is-open');
@@ -1887,7 +1906,14 @@
       videoModal.classList.remove('is-open');
       modalVideoPlayer.pause();
       modalVideoPlayer.removeAttribute('src');
-      ensureAllVideosPlaying();
+      // Reanudar exclusivamente los videos que estén actualmente a la vista
+      allBgVideos.forEach((v) => {
+        const rect = v.getBoundingClientRect();
+        const inView = rect.top < window.innerHeight && rect.bottom > 0;
+        if (inView) {
+          v.play().catch(() => {});
+        }
+      });
     }
 
     document.querySelectorAll('[data-open-modal]').forEach((el) => {
