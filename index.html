@@ -35,7 +35,7 @@
       --radius-card: 36px;
       --radius-inner: 26px;
       --radius-pill: 20px;
-      --container-max: 1180px;
+      --container-max: 1320px;
     }
 
     *, *::before, *::after {
@@ -475,8 +475,8 @@
     /* Grilla de 3 columnas amplias para ver los 3 videos completos a la vez */
     .video-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(16px, 1.4vw, 22px);
       align-items: stretch;
     }
 
@@ -1205,14 +1205,24 @@
         justify-content: center;
       }
 
-      .video-grid,
       .services-grid,
       .bottom-bento-row {
         grid-template-columns: 1fr;
       }
 
+      .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
       .selv-dock {
         display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .video-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -1572,6 +1582,42 @@
           </div>
         </article>
 
+        <!-- COLUMNA 4: MARCA PERSONAL -->
+        <article class="video-column">
+          <div class="video-frame" data-open-modal="marca">
+            <div class="video-frame__top">
+              <span class="video-frame__badge">04 · Marca Personal</span>
+              <button type="button" class="video-frame__sound-btn" data-open-modal="marca">
+                🔊 Audio
+              </button>
+            </div>
+            <video
+              id="video-marca"
+              src="assets/marca_personal/1.mp4"
+              poster="assets/posters/marca_1.jpg"
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            ></video>
+          </div>
+
+          <div class="video-meta">
+            <h3 class="video-meta__title">Marca Personal &amp; Creadores</h3>
+            <p class="video-meta__sub-pill">
+              Storytelling visual, autoridad y conexión genuina para marcas personales.
+            </p>
+            <div class="video-clips-bar">
+              <span class="video-clips-label">Muestra:</span>
+              <div class="video-clips-buttons" data-clip-group="marca">
+                <button type="button" class="clip-btn is-active" data-cat="marca" data-idx="0">1</button>
+                <button type="button" class="clip-btn" data-cat="marca" data-idx="1">2</button>
+                <button type="button" class="clip-btn" data-cat="marca" data-idx="2">3</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
       </div>
     </section>
 
@@ -1820,13 +1866,21 @@
           { src: 'assets/videos_edit/3.mp4', poster: 'assets/posters/edit_3.jpg' },
           { src: 'assets/videos_edit/4.mp4', poster: 'assets/posters/edit_4.jpg' }
         ]
+      },
+      marca: {
+        videoEl: document.getElementById('video-marca'),
+        clips: [
+          { src: 'assets/marca_personal/1.mp4', poster: 'assets/posters/marca_1.jpg' },
+          { src: 'assets/marca_personal/2.mp4', poster: 'assets/posters/marca_2.jpg' },
+          { src: 'assets/marca_personal/3.mp4', poster: 'assets/posters/marca_3.jpg' }
+        ]
       }
     };
 
-    const currentClipIdx = { ia: 0, reels: 0, edit: 0 };
+    const currentClipIdx = { ia: 0, reels: 0, edit: 0, marca: 0 };
 
     // Observer de alto rendimiento: sólo decodifica en GPU los videos visibles en la pantalla
-    const allBgVideos = Array.from(document.querySelectorAll('#heroPhoneVideo, #video-ia, #video-reels, #video-edit'));
+    const allBgVideos = Array.from(document.querySelectorAll('#heroPhoneVideo, #video-ia, #video-reels, #video-edit, #video-marca'));
     
     allBgVideos.forEach((v) => {
       v.muted = true;
