@@ -1464,6 +1464,8 @@
               muted
               loop
               playsinline
+              webkit-playsinline
+              webkit-playsinline
               preload="auto"
             ></video>
             <div class="mini-phone__overlay">
@@ -1508,12 +1510,14 @@
             <div class="video-loading-spinner" aria-hidden="true"></div>
             <video
               id="video-ia"
+              autoplay
               src="assets/videos_ia/1.mp4?v=12"
               poster="assets/posters/ia_1.jpg"
               muted
               loop
               playsinline
-              preload="metadata"
+              webkit-playsinline
+              preload="auto"
             ></video>
           </div>
 
@@ -1547,12 +1551,14 @@
             <div class="video-loading-spinner" aria-hidden="true"></div>
             <video
               id="video-edit"
+              autoplay
               src="assets/videos_edit/1.mp4?v=12"
               poster="assets/posters/edit_1.jpg"
               muted
               loop
               playsinline
-              preload="metadata"
+              webkit-playsinline
+              preload="auto"
             ></video>
           </div>
 
@@ -1585,12 +1591,14 @@
             <div class="video-loading-spinner" aria-hidden="true"></div>
             <video
               id="video-reels"
+              autoplay
               src="assets/reels/1.mp4?v=12"
               poster="assets/posters/reels_1.jpg"
               muted
               loop
               playsinline
-              preload="metadata"
+              webkit-playsinline
+              preload="auto"
             ></video>
           </div>
 
@@ -1623,12 +1631,14 @@
             <div class="video-loading-spinner" aria-hidden="true"></div>
             <video
               id="video-marca"
+              autoplay
               src="assets/marca_personal/1.mp4?v=12"
               poster="assets/posters/marca_1.jpg"
               muted
               loop
               playsinline
-              preload="metadata"
+              webkit-playsinline
+              preload="auto"
             ></video>
           </div>
 
@@ -1918,26 +1928,21 @@
       v.playsInline = true;
     });
 
-    // Delays escalonados para no saturar conexiones simultáneas
-    const videoDelays = {
-      'heroPhoneVideo': 100,
-      'video-ia': 80,
-      'video-edit': 220,
-      'video-reels': 380,
-      'video-marca': 520
-    };
+    allBgVideos.forEach((v) => {
+      v.defaultMuted = true;
+      v.muted = true;
+      v.loop = true;
+      v.playsInline = true;
+      v.setAttribute('playsinline', '');
+      v.setAttribute('webkit-playsinline', '');
+    });
 
     const videoObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         const video = entry.target;
         if (entry.isIntersecting) {
           if (video.paused && !videoModal.classList.contains('is-open')) {
-            const delay = videoDelays[video.id] || 150;
-            setTimeout(() => {
-              if (video.paused && !videoModal.classList.contains('is-open')) {
-                video.play().catch(() => {});
-              }
-            }, delay);
+            video.play().catch(() => {});
           }
         } else {
           if (!video.paused) {
@@ -1946,7 +1951,7 @@
         }
       });
     }, {
-      threshold: 0.15
+      threshold: 0.1
     });
 
     allBgVideos.forEach((v) => videoObserver.observe(v));
@@ -1957,9 +1962,11 @@
       if (!vid) return;
       const frame = vid.closest('.video-frame');
 
-      vid.addEventListener('waiting', () => frame && frame.classList.add('is-buffering'));
-      vid.addEventListener('stalled', () => frame && frame.classList.add('is-buffering'));
+      vid.addEventListener('waiting', () => {
+        if (vid.readyState < 3 && frame) frame.classList.add('is-buffering');
+      });
       vid.addEventListener('playing', () => frame && frame.classList.remove('is-buffering'));
+      vid.addEventListener('timeupdate', () => frame && frame.classList.remove('is-buffering'));
       vid.addEventListener('canplay', () => frame && frame.classList.remove('is-buffering'));
       vid.addEventListener('error', () => {
         if (frame) frame.classList.remove('is-buffering');
@@ -1967,14 +1974,19 @@
       });
     });
 
-    const wakeHeroVideo = () => {
-      const hero = document.getElementById('heroPhoneVideo');
-      if (hero && hero.paused && !videoModal.classList.contains('is-open')) {
-        hero.play().catch(() => {});
-      }
+    // Despertar y asegurar reproducción fluida en cualquier interacción (móvil y escritorio)
+    const wakeAllVideos = () => {
+      allBgVideos.forEach((v) => {
+        if (v && v.paused && !videoModal.classList.contains('is-open')) {
+          const rect = v.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom > 0) {
+            v.play().catch(() => {});
+          }
+        }
+      });
     };
-    ['touchstart', 'pointerdown', 'scroll'].forEach((evt) => {
-      window.addEventListener(evt, wakeHeroVideo, { once: true, passive: true });
+    ['touchstart', 'pointerdown', 'scroll', 'click'].forEach((evt) => {
+      window.addEventListener(evt, wakeAllVideos, { passive: true });
     });
 
     // Cambiar clip con los botones numerados (1, 2, 3, 4, 5) de cada columna
@@ -1991,7 +2003,9 @@
         if (frame) frame.classList.add('is-buffering');
         entry.videoEl.poster = clip.poster;
         entry.videoEl.src = clip.src;
+        entry.videoEl.defaultMuted = true;
         entry.videoEl.muted = true;
+        entry.videoEl.load();
         entry.videoEl.play().catch(() => {});
 
         const group = document.querySelector(`[data-clip-group="${cat}"]`);
