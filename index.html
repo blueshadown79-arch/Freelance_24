@@ -526,6 +526,32 @@
       transform: scale(1.02) translateZ(0);
     }
 
+    /* Spinner sutil de buffering al cambiar de clip */
+    .video-frame .video-loading-spinner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(255, 255, 255, 0.16);
+      border-top-color: #ffd875;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 5;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      animation: spinSpinner 0.85s linear infinite;
+    }
+
+    @keyframes spinSpinner {
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    .video-frame.is-buffering .video-loading-spinner {
+      opacity: 1;
+    }
+
     .video-frame__top {
       position: absolute;
       top: 12px;
@@ -1432,7 +1458,7 @@
             </div>
             <video
               id="heroPhoneVideo"
-              src="assets/reels/3.mp4"
+              src="assets/reels/3.mp4?v=12"
               poster="assets/posters/reels_3.jpg"
               autoplay
               muted
@@ -1479,9 +1505,10 @@
                 🔊 Audio
               </button>
             </div>
+            <div class="video-loading-spinner" aria-hidden="true"></div>
             <video
               id="video-ia"
-              src="assets/videos_ia/1.mp4"
+              src="assets/videos_ia/1.mp4?v=12"
               poster="assets/posters/ia_1.jpg"
               muted
               loop
@@ -1517,9 +1544,10 @@
                 🔊 Audio
               </button>
             </div>
+            <div class="video-loading-spinner" aria-hidden="true"></div>
             <video
               id="video-edit"
-              src="assets/videos_edit/1.mp4"
+              src="assets/videos_edit/1.mp4?v=12"
               poster="assets/posters/edit_1.jpg"
               muted
               loop
@@ -1554,9 +1582,10 @@
                 🔊 Audio
               </button>
             </div>
+            <div class="video-loading-spinner" aria-hidden="true"></div>
             <video
               id="video-reels"
-              src="assets/reels/1.mp4"
+              src="assets/reels/1.mp4?v=12"
               poster="assets/posters/reels_1.jpg"
               muted
               loop
@@ -1591,9 +1620,10 @@
                 🔊 Audio
               </button>
             </div>
+            <div class="video-loading-spinner" aria-hidden="true"></div>
             <video
               id="video-marca"
-              src="assets/marca_personal/1.mp4"
+              src="assets/marca_personal/1.mp4?v=12"
               poster="assets/posters/marca_1.jpg"
               muted
               loop
@@ -1842,37 +1872,37 @@
       ia: {
         videoEl: document.getElementById('video-ia'),
         clips: [
-          { src: 'assets/videos_ia/1.mp4', poster: 'assets/posters/ia_1.jpg' },
-          { src: 'assets/videos_ia/2.mp4', poster: 'assets/posters/ia_2.jpg' },
-          { src: 'assets/videos_ia/3.mp4', poster: 'assets/posters/ia_3.jpg' },
-          { src: 'assets/videos_ia/4.mp4', poster: 'assets/posters/ia_4.jpg' },
-          { src: 'assets/videos_ia/5.mp4', poster: 'assets/posters/ia_5.jpg' }
+          { src: 'assets/videos_ia/1.mp4?v=12', poster: 'assets/posters/ia_1.jpg' },
+          { src: 'assets/videos_ia/2.mp4?v=12', poster: 'assets/posters/ia_2.jpg' },
+          { src: 'assets/videos_ia/3.mp4?v=12', poster: 'assets/posters/ia_3.jpg' },
+          { src: 'assets/videos_ia/4.mp4?v=12', poster: 'assets/posters/ia_4.jpg' },
+          { src: 'assets/videos_ia/5.mp4?v=12', poster: 'assets/posters/ia_5.jpg' }
         ]
       },
       reels: {
         videoEl: document.getElementById('video-reels'),
         clips: [
-          { src: 'assets/reels/1.mp4', poster: 'assets/posters/reels_1.jpg' },
-          { src: 'assets/reels/2.mp4', poster: 'assets/posters/reels_2.jpg' },
-          { src: 'assets/reels/3.mp4', poster: 'assets/posters/reels_3.jpg' },
-          { src: 'assets/reels/4.mp4', poster: 'assets/posters/reels_4.jpg' }
+          { src: 'assets/reels/1.mp4?v=12', poster: 'assets/posters/reels_1.jpg' },
+          { src: 'assets/reels/2.mp4?v=12', poster: 'assets/posters/reels_2.jpg' },
+          { src: 'assets/reels/3.mp4?v=12', poster: 'assets/posters/reels_3.jpg' },
+          { src: 'assets/reels/4.mp4?v=12', poster: 'assets/posters/reels_4.jpg' }
         ]
       },
       edit: {
         videoEl: document.getElementById('video-edit'),
         clips: [
-          { src: 'assets/videos_edit/1.mp4', poster: 'assets/posters/edit_1.jpg' },
-          { src: 'assets/videos_edit/2.mp4', poster: 'assets/posters/edit_2.jpg' },
-          { src: 'assets/videos_edit/3.mp4', poster: 'assets/posters/edit_3.jpg' },
-          { src: 'assets/videos_edit/4.mp4', poster: 'assets/posters/edit_4.jpg' }
+          { src: 'assets/videos_edit/1.mp4?v=12', poster: 'assets/posters/edit_1.jpg' },
+          { src: 'assets/videos_edit/2.mp4?v=12', poster: 'assets/posters/edit_2.jpg' },
+          { src: 'assets/videos_edit/3.mp4?v=12', poster: 'assets/posters/edit_3.jpg' },
+          { src: 'assets/videos_edit/4.mp4?v=12', poster: 'assets/posters/edit_4.jpg' }
         ]
       },
       marca: {
         videoEl: document.getElementById('video-marca'),
         clips: [
-          { src: 'assets/marca_personal/1.mp4', poster: 'assets/posters/marca_1.jpg' },
-          { src: 'assets/marca_personal/2.mp4', poster: 'assets/posters/marca_2.jpg' },
-          { src: 'assets/marca_personal/3.mp4', poster: 'assets/posters/marca_3.jpg' }
+          { src: 'assets/marca_personal/1.mp4?v=12', poster: 'assets/posters/marca_1.jpg' },
+          { src: 'assets/marca_personal/2.mp4?v=12', poster: 'assets/posters/marca_2.jpg' },
+          { src: 'assets/marca_personal/3.mp4?v=12', poster: 'assets/posters/marca_3.jpg' }
         ]
       }
     };
@@ -1888,12 +1918,26 @@
       v.playsInline = true;
     });
 
+    // Delays escalonados para no saturar conexiones simultáneas
+    const videoDelays = {
+      'heroPhoneVideo': 100,
+      'video-ia': 80,
+      'video-edit': 220,
+      'video-reels': 380,
+      'video-marca': 520
+    };
+
     const videoObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         const video = entry.target;
         if (entry.isIntersecting) {
           if (video.paused && !videoModal.classList.contains('is-open')) {
-            video.play().catch(() => {});
+            const delay = videoDelays[video.id] || 150;
+            setTimeout(() => {
+              if (video.paused && !videoModal.classList.contains('is-open')) {
+                video.play().catch(() => {});
+              }
+            }, delay);
           }
         } else {
           if (!video.paused) {
@@ -1906,6 +1950,22 @@
     });
 
     allBgVideos.forEach((v) => videoObserver.observe(v));
+
+    // Monitoreo de buffering y recuperación para los marcos de video
+    ['ia', 'edit', 'reels', 'marca'].forEach((cat) => {
+      const vid = document.getElementById(`video-${cat}`);
+      if (!vid) return;
+      const frame = vid.closest('.video-frame');
+
+      vid.addEventListener('waiting', () => frame && frame.classList.add('is-buffering'));
+      vid.addEventListener('stalled', () => frame && frame.classList.add('is-buffering'));
+      vid.addEventListener('playing', () => frame && frame.classList.remove('is-buffering'));
+      vid.addEventListener('canplay', () => frame && frame.classList.remove('is-buffering'));
+      vid.addEventListener('error', () => {
+        if (frame) frame.classList.remove('is-buffering');
+        setTimeout(() => { if (vid.paused) vid.load(); }, 2500);
+      });
+    });
 
     const wakeHeroVideo = () => {
       const hero = document.getElementById('heroPhoneVideo');
@@ -1927,6 +1987,8 @@
 
         currentClipIdx[cat] = idx;
         const clip = entry.clips[idx];
+        const frame = entry.videoEl.closest('.video-frame');
+        if (frame) frame.classList.add('is-buffering');
         entry.videoEl.poster = clip.poster;
         entry.videoEl.src = clip.src;
         entry.videoEl.muted = true;
